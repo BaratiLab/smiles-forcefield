@@ -7,3 +7,5 @@ __pycache__/
 data/
 *.sqlite*
 .DS_Store
+mpl-cache/
+deploy/cloud.env
