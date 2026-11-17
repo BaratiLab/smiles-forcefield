@@ -1,0 +1,291 @@
+{
+  "api": "localhost HTTP",
+  "real_molecule_jobs": [
+    {
+      "molecule": "butane",
+      "id": "e783df6c705745b5b20921d1b7486ea2",
+      "status": "succeeded",
+      "error": null,
+      "downloads": {
+        "all": {
+          "bytes": 33789,
+          "files": 32
+        },
+        "gromacs": {
+          "bytes": 24352,
+          "files": 21
+        },
+        "lammps": {
+          "bytes": 7438,
+          "files": 12
+        },
+        "namd": {
+          "bytes": 4589,
+          "files": 9
+        }
+      },
+      "validation": {
+        "energy_tolerance_kj_mol": 0.01,
+        "force_component_tolerance_kj_mol_nm": 0.1,
+        "scope": "One isolated geometry per molecule; no native NAMD executable",
+        "results": [
+          {
+            "molecule": "molecule",
+            "route": "AMBER readback (OpenMM; not native NAMD)",
+            "coordinate_max_error_nm": 4.993186142332462e-09,
+            "energy_kj_mol": 68.85578608086718,
+            "energy_abs_error": 1.1060483018354716e-06,
+            "force_max_abs_error": 5.036212058939782e-05,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "GROMACS native",
+            "energy_kj_mol": 68.855766,
+            "energy_abs_error": 1.7069217776111145e-05,
+            "force_max_abs_error": 0.015266086578265003,
+            "coordinate_max_error_nm": 4.993186142332462e-09,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "LAMMPS native",
+            "energy_kj_mol": 68.8557834590641,
+            "energy_abs_error": 1.5157547750277445e-06,
+            "force_max_abs_error": 0.0031774925489571615,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "molecule": "biphenyl",
+      "id": "75402773c65a4fd4aa0beba9e8c9f77a",
+      "status": "succeeded",
+      "error": null,
+      "downloads": {
+        "all": {
+          "bytes": 38717,
+          "files": 32
+        },
+        "gromacs": {
+          "bytes": 26655,
+          "files": 21
+        },
+        "lammps": {
+          "bytes": 8691,
+          "files": 12
+        },
+        "namd": {
+          "bytes": 5696,
+          "files": 9
+        }
+      },
+      "validation": {
+        "energy_tolerance_kj_mol": 0.01,
+        "force_component_tolerance_kj_mol_nm": 0.1,
+        "scope": "One isolated geometry per molecule; no native NAMD executable",
+        "results": [
+          {
+            "molecule": "molecule",
+            "route": "AMBER readback (OpenMM; not native NAMD)",
+            "coordinate_max_error_nm": 4.9807293844850165e-09,
+            "energy_kj_mol": 102.74120085290605,
+            "energy_abs_error": 1.0932609484370914e-07,
+            "force_max_abs_error": 0.00015696634190476288,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "GROMACS native",
+            "energy_kj_mol": 102.741081,
+            "energy_abs_error": 0.00010432919641800709,
+            "force_max_abs_error": 0.021285786853013633,
+            "coordinate_max_error_nm": 4.980729495507319e-09,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "LAMMPS native",
+            "energy_kj_mol": 102.74119090403988,
+            "energy_abs_error": 9.839540069833674e-06,
+            "force_max_abs_error": 0.017523787488784137,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "molecule": "anisole",
+      "id": "690a47b57e9746e4a9ec5031fbeb0a7c",
+      "status": "succeeded",
+      "error": null,
+      "downloads": {
+        "all": {
+          "bytes": 36598,
+          "files": 32
+        },
+        "gromacs": {
+          "bytes": 25449,
+          "files": 21
+        },
+        "lammps": {
+          "bytes": 8043,
+          "files": 12
+        },
+        "namd": {
+          "bytes": 5291,
+          "files": 9
+        }
+      },
+      "validation": {
+        "energy_tolerance_kj_mol": 0.01,
+        "force_component_tolerance_kj_mol_nm": 0.1,
+        "scope": "One isolated geometry per molecule; no native NAMD executable",
+        "results": [
+          {
+            "molecule": "molecule",
+            "route": "AMBER readback (OpenMM; not native NAMD)",
+            "coordinate_max_error_nm": 4.989775648223116e-09,
+            "energy_kj_mol": 30.57008378137192,
+            "energy_abs_error": 1.480583478041808e-07,
+            "force_max_abs_error": 0.0001520855753227579,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "GROMACS native",
+            "energy_kj_mol": 30.570032,
+            "energy_abs_error": 4.1895044095241474e-05,
+            "force_max_abs_error": 0.03387665617094626,
+            "coordinate_max_error_nm": 4.989775703734267e-09,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "LAMMPS native",
+            "energy_kj_mol": 30.570075306711963,
+            "energy_abs_error": 8.326601609098816e-06,
+            "force_max_abs_error": 0.004086927233288407,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "molecule": "nma",
+      "id": "b734b8d8a1b748ffaae842180aa72dfb",
+      "status": "succeeded",
+      "error": null,
+      "downloads": {
+        "all": {
+          "bytes": 35809,
+          "files": 32
+        },
+        "gromacs": {
+          "bytes": 24924,
+          "files": 21
+        },
+        "lammps": {
+          "bytes": 7718,
+          "files": 12
+        },
+        "namd": {
+          "bytes": 5222,
+          "files": 9
+        }
+      },
+      "validation": {
+        "energy_tolerance_kj_mol": 0.01,
+        "force_component_tolerance_kj_mol_nm": 0.1,
+        "scope": "One isolated geometry per molecule; no native NAMD executable",
+        "results": [
+          {
+            "molecule": "molecule",
+            "route": "AMBER readback (OpenMM; not native NAMD)",
+            "coordinate_max_error_nm": 4.997068481227274e-09,
+            "energy_kj_mol": -100.27098306467587,
+            "energy_abs_error": 1.1693438466409134e-06,
+            "force_max_abs_error": 6.753687262062158e-05,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "GROMACS native",
+            "energy_kj_mol": -100.270737,
+            "energy_abs_error": 0.0002328328913279165,
+            "force_max_abs_error": 0.011766876963747563,
+            "coordinate_max_error_nm": 4.9970684257161224e-09,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "LAMMPS native",
+            "energy_kj_mol": -100.27096699104911,
+            "energy_abs_error": 1.724297061400648e-05,
+            "force_max_abs_error": 0.0018975384114128246,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "molecule": "phenylethanol",
+      "id": "e3c711fbcbce4deb86719cc857bb2f97",
+      "status": "succeeded",
+      "error": null,
+      "downloads": {
+        "all": {
+          "bytes": 39744,
+          "files": 32
+        },
+        "gromacs": {
+          "bytes": 26847,
+          "files": 21
+        },
+        "lammps": {
+          "bytes": 8636,
+          "files": 12
+        },
+        "namd": {
+          "bytes": 6037,
+          "files": 9
+        }
+      },
+      "validation": {
+        "energy_tolerance_kj_mol": 0.01,
+        "force_component_tolerance_kj_mol_nm": 0.1,
+        "scope": "One isolated geometry per molecule; no native NAMD executable",
+        "results": [
+          {
+            "molecule": "molecule",
+            "route": "AMBER readback (OpenMM; not native NAMD)",
+            "coordinate_max_error_nm": 4.981175916185521e-09,
+            "energy_kj_mol": 62.54542572400406,
+            "energy_abs_error": 3.9319145628269325e-07,
+            "force_max_abs_error": 0.00014746250603536737,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "GROMACS native",
+            "energy_kj_mol": 62.545441,
+            "energy_abs_error": 2.0943988658927992e-06,
+            "force_max_abs_error": 0.01881036397824687,
+            "coordinate_max_error_nm": 4.981175916185521e-09,
+            "passed": true
+          },
+          {
+            "molecule": "molecule",
+            "route": "LAMMPS native",
+            "energy_kj_mol": 62.545445959314414,
+            "energy_abs_error": 2.0628501808062083e-05,
+            "force_max_abs_error": 0.004657718853323445,
+            "passed": true
+          }
+        ]
+      }
+    }
+  ],
+  "native_namd_tested": false
+}

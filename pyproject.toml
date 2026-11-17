@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smiles-forcefield"
+version = "0.1.0"
+description = "SMILES to validated GROMACS, LAMMPS and NAMD-compatible force-field packages"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+include = ["smiles_service*"]
+
+[tool.setuptools.package-data]
+smiles_service = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      SMILES_DATA_DIR: /app/data
+      SMILES_API_KEY: ${SMILES_API_KEY:-}
+      SMILES_CORS_ORIGINS: ${SMILES_CORS_ORIGINS:-}
+    volumes:
+      - jobs:/app/data
+    restart: unless-stopped
+  worker:
+    build: .
+    command: ["python", "-m", "smiles_service.worker"]
+    environment:
+      SMILES_DATA_DIR: /app/data
+      SMILES_JOB_TIMEOUT: "900"
+      SMILES_RETENTION_SECONDS: "86400"
+      OMP_NUM_THREADS: "1"
+    volumes:
+      - jobs:/app/data
+    restart: unless-stopped
+    mem_limit: 4g
+    cpus: 2
+volumes:
+  jobs:
