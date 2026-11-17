@@ -287,5 +287,14 @@
       }
     }
   ],
-  "native_namd_tested": false
+  "native_namd_tested": false,
+  "api_tests": {
+    "passed": 5
+  },
+  "browser_test": {
+    "structure_preview": true,
+    "submission": true,
+    "packages_ready": true,
+    "four_download_buttons": true
+  }
 }
