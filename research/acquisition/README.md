@@ -50,3 +50,49 @@ Plans, full requests/responses, model digest, token counts and latency are saved
 ### Completed one-plan comparison
 
 The AWS pilot ran 125 matched trajectories with five Qwen2.5:1.5B planning calls. All plans chose uniform Bayesian acquisition, reproducing pure Bayes exactly. No LLM advantage was demonstrated. See [full report and limitations](results/one-plan/REPORT.md) and [raw requests, responses and curves](results/one-plan/aws-plan-results.zip).
+
+
+### Scaffold-held-out QM benchmark (v1)
+
+The new benchmark uses published QM torsion profiles from the official OpenFF
+Sage 2.2.1 fitting archive, pinned to a source commit and SHA256. It learns
+QM-minus-UFF torsion corrections; it does not claim held-out Sage performance.
+`qm_protocol.json` freezes 60 development and 300 held-out parent molecules,
+five matched seeds, 4–12 labels, and the primary paired comparison against
+Bayes and the chemistry rule. Ring Murcko scaffolds and generic acyclic graph
+scaffolds are disjoint between development and test. The five original pilot
+identities and pilot ring scaffolds are excluded.
+
+Run the chemistry steps with NumPy >=2 and RDKit. Run the MLX inference step
+in a separate environment with `mlx-lm` on Apple Silicon; no model server or
+public inference endpoint is required. The inference script loads local
+safetensors with remote tokenizer code disabled. Download the model named
+`mlx-community/Qwen2.5-7B-Instruct-4bit` using Hugging Face's client; preserve
+its file hashes and revision metadata. Only use public model weights, never
+publish access tokens.
+
+```bash
+curl -fL https://raw.githubusercontent.com/openforcefield/sage-2.2.1/b70c449e3a98e40f0b6e4c6b2f27932fce47be42/04_fit-forcefield/nor4/fb-fit/targets.tar.gz -o targets.tar.gz
+python qm_data.py --archive targets.tar.gz --out qm-data
+python qm_benchmark.py develop --data qm-data --out qm-development
+python qm_planner_mlx.py --data qm-data --frozen qm-development/frozen_planner.json --model /path/to/local/model --out qm-plans
+python qm_benchmark.py run --data qm-data --frozen qm-development/frozen_planner.json --plans qm-plans/plans.json --out qm-runs
+python qm_analyze.py --data qm-data --frozen qm-development/frozen_planner.json --plans-dir qm-plans --runs qm-runs --out qm-report
+```
+
+Dataset creation and evaluation require new output directories. Inference may
+resume only when model, source, split, frozen examples and prompt hashes match.
+Each successful molecule decision is saved immediately. No malformed-response
+fallback or retry is used: decoding is constrained to five one-token choices.
+Planner examples are chosen exclusively from development labels. The planner
+never sees test energies, candidate energies, source record IDs or prior-run
+metrics. Energy centering uses observed training labels only. Every available
+LLM weighting has a fixed non-LLM control; random, the development-global best,
+and a development-frequency chemistry-blind draw are also evaluated.
+
+The main outcome is a molecule-mean baseline-normalized error/query AUC.
+Inference averages seeds first and bootstraps scaffold clusters. Claim benefit
+only if the LLM beats both primary controls under the prespecified intervals.
+Do not change the planner after examining these held-out results and call a
+rerun independent. Absence of these public molecules from LLM pretraining is
+not guaranteed. See the completed results report for experimental outcomes.
