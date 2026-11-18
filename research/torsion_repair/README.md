@@ -104,3 +104,5 @@ python research/torsion_repair/analyze_sage_training.py --aligned /path/to/sage-
 ```
 
 The external300-molecule cohort is not opened by this experiment. Validation intervals are descriptive:12 groups, one training seed, and checkpoint/control selection on the same development data. A validation improvement does not establish fresh chemical or MD accuracy.
+
+The Sage comparison also records a **supplemental training-global constant-plan diagnostic**. It searches the same56 possible answers using only the matched95 training episodes and the unchanged support-only acceptance gate. This was added after partial48-step outputs, so it is explicitly posthoc. The frozen primary controls and their values remain unchanged; their original files are preserved in the reproducibility bundle. Its purpose is to check whether a learned policy improves on a useful constant recipe, rather than to retune the model on validation outcomes.

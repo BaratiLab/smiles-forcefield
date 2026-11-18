@@ -7,7 +7,8 @@ from sklearn.ensemble import ExtraTreesRegressor
 from rdkit import Chem, DataStructs
 from sage_compare import vector
 from sage_runtime import Gaussian, BASE, select, subset, columns
-from program_language import PROGRAMS
+from program_language import PROGRAMS, answers
+from smiles_service.repair.core import semantic_id
 from experiment import dump
 
 FIXED = [
@@ -164,6 +165,46 @@ def proposals(state, learners):
     }
 
 
+def constant_plan(rows):
+    """Posthoc diagnostic; choose solely on matched training episode utilities."""
+    rankings = []
+    for text in answers():
+        programs = json.loads(text)["programs"]
+        costs = []
+        for row in rows:
+            base = row["candidate_utilities"][0]
+            lookup = {
+                (v["program"]["scope"], tuple(v["program"]["harmonics"])): v
+                for v in row["candidate_utilities"][1:]
+            }
+            choices = [base]
+            for p in programs:
+                if p["action"] in ("keep", "abstain"):
+                    continue
+                candidate = lookup[p["scope"], tuple(p["harmonics"])]
+                if candidate["support_loo_rmse"] < 0.98 * base["support_loo_rmse"]:
+                    choices.append(candidate)
+            selected = min(
+                choices,
+                key=lambda r: (
+                    r["support_loo_rmse"],
+                    len(r["program"]["harmonics"]),
+                    semantic_id(r["program"]),
+                ),
+            )
+            costs.append(selected["holdout_centered_rmse"])
+        rankings.append(
+            {"programs": programs, "mean_training_rmse": float(np.mean(costs))}
+        )
+    rankings.sort(
+        key=lambda r: (
+            r["mean_training_rmse"],
+            json.dumps(r["programs"], sort_keys=True),
+        )
+    )
+    return rankings[0]["programs"], rankings
+
+
 def run(aligned, out, plans_path=None, secondary=False):
     aligned = Path(aligned)
     out = Path(out)
@@ -175,6 +216,15 @@ def run(aligned, out, plans_path=None, secondary=False):
         r["molecule"]: r for r in json.loads((aligned / "datasets.json").read_text())
     }
     learners = build_proposers(train, proto)
+    global_programs, global_rankings = constant_plan(matched_rows(train, proto))
+    dump(
+        out / "training-global-plan.json",
+        {
+            "status": "supplemental diagnostic added after partial48-step outputs; recipe selected solely on95training episodes, no validation scores in selection",
+            "selected": global_programs,
+            "rankings": global_rankings,
+        },
+    )
     plans = json.loads(Path(plans_path).read_text()) if plans_path else {}
     rows = []
     audits = {}
@@ -186,6 +236,7 @@ def run(aligned, out, plans_path=None, secondary=False):
         chosen = ep["support_indices"]
         hold = ep["internal_teacher_holdout_indices"]
         policies = proposals(ep["state"], learners)
+        policies["global_matched"] = global_programs
         if plans:
             policies["llm"] = plans[ep["molecule"]]["programs"]
         fixed = list(chosen)
@@ -259,6 +310,10 @@ def run(aligned, out, plans_path=None, secondary=False):
         {
             "summary": summary,
             "strongest_matched_control": best,
+            "strongest_extended_matched_control": min(
+                eligible + ["global_matched"], key=lambda p: (summary[p], p)
+            ),
+            "global_control_status": "supplemental posthoc diagnostic, training-only recipe selection; original primary comparison unchanged",
             "records": rows,
             "status": "development validation only,12scaffolds,8support+8internalpoolholdout",
             "matched_supervision": "95 exact parent/seed episodes in the frozen model schedule; full references285episodes",

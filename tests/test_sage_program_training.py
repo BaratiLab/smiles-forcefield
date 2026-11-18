@@ -73,3 +73,25 @@ def test_summed_feature_selection_ignores_unobserved_labels_and_energy_zero():
     m3, r3 = runtime.select([p], state, observed, poisoned[chosen])
     assert r3 == r
     np.testing.assert_allclose(m3.predict(matrices), m.predict(matrices))
+
+
+def test_training_global_plan_respects_support_gate_before_teacher_utility():
+    controls = module("sage_controls")
+    base = {
+        "program": controls.BASE,
+        "support_loo_rmse": 1.0,
+        "holdout_centered_rmse": 1.0,
+    }
+    costs = []
+    for p in controls.PROGRAMS:
+        score = {"program": p, "support_loo_rmse": 1.0, "holdout_centered_rmse": 1.0}
+        if p["scope"] == "local" and p["harmonics"] == [1, 2]:
+            score.update(support_loo_rmse=0.8, holdout_centered_rmse=0.1)
+        if p["scope"] == "broad" and len(p["harmonics"]) == 6:
+            score.update(support_loo_rmse=1.2, holdout_centered_rmse=0.0)
+        costs.append(score)
+    programs, ranking = controls.constant_plan(
+        [{"candidate_utilities": [base] + costs}]
+    )
+    assert ranking[0]["mean_training_rmse"] == pytest.approx(0.1)
+    assert any(p["scope"] == "local" and p["harmonics"] == [1, 2] for p in programs)
