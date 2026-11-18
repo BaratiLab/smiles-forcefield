@@ -77,7 +77,7 @@ python qm_data.py --archive targets.tar.gz --out qm-data
 python qm_benchmark.py develop --data qm-data --out qm-development
 python qm_planner_mlx.py --data qm-data --frozen qm-development/frozen_planner.json --model /path/to/local/model --out qm-plans
 python qm_benchmark.py run --data qm-data --frozen qm-development/frozen_planner.json --plans qm-plans/plans.json --out qm-runs
-python qm_analyze.py --data qm-data --frozen qm-development/frozen_planner.json --plans-dir qm-plans --runs qm-runs --out qm-report
+python qm_analyze.py --data qm-data --frozen qm-development/frozen_planner.json --plans-dir qm-plans --runs qm-runs --out qm-report --qc-specifications qcarchive-specifications.json
 ```
 
 Dataset creation and evaluation require new output directories. Inference may
@@ -96,3 +96,5 @@ only if the LLM beats both primary controls under the prespecified intervals.
 Do not change the planner after examining these held-out results and call a
 rerun independent. Absence of these public molecules from LLM pretraining is
 not guaranteed. See the completed results report for experimental outcomes.
+
+QC amendment before outcome scoring: QCArchive marks `torsion-1762338` invalid. Preserve the original 300 decisions but exclude this record from primary analysis (299 valid held-out molecules), without replacement. See `qm_qc_amendment.json`; all 360 selected record specifications are saved with the results.
