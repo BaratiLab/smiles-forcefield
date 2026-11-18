@@ -103,3 +103,45 @@ QC amendment before outcome scoring: QCArchive marks `torsion-1762338` invalid. 
 ### Completed QM held-out evaluation
 
 The 7B planner was tested on 300 planned molecules (299 valid after QC), with 60 scaffold-disjoint development molecules and five matched acquisition seeds. It did not demonstrate improvement over Bayes or the chemical rule. Mean normalized error-query AUC: Bayes 0.60552, LLM 0.61402, rule 0.61458. See [the report](results/qm-heldout/REPORT.md) and the companion reproducibility archive.
+
+
+### QM-supervised QLoRA and a fresh test
+
+`finetune_protocol.json` freezes a new experiment. All old test scaffold groups
+are quarantined, including other molecules from those groups. Training uses
+95 parents from old development scaffold groups. Validation (30 parents) and
+fresh test (168 parents) exclude every previous scaffold, and all three splits
+are scaffold-disjoint. `finetune_data.py` verifies public QCArchive status and
+QM method before generating supervision; all 293 selected records are complete.
+
+Supervision consists of the measured acquisition AUC of all five strategies on
+training/validation QM scans. Soft targets reflect cost differences. Query/value
+LoRA adapters in the last two decoder layers are trained with each molecule's
+five cyclic action orders, using 96 AdamW updates. Four nonzero checkpoints are
+selected on validation acquisition AUC. Test labels are scored only after the
+checkpoint and every fresh base/adapted decision have been saved.
+
+Use a chemistry environment with `numpy>=2`, `rdkit`, `scikit-learn` and
+`matplotlib`; use the pinned separate `mlx-lm` environment on Apple Silicon for
+training and inference. The base weights are the same as the prior experiment.
+The previous `qm-heldout-reproducibility.zip` contains the old `data-v2` split
+required for the embargo; preserve that split without modifying it.
+
+```bash
+python qm_data.py --archive targets.tar.gz --out qm-inventory --all
+python finetune_data.py --inventory qm-inventory --previous /path/to/previous/qm-heldout/data-v2 --out qlora-data
+python finetune_prepare.py --data qlora-data --out qlora-supervision
+python finetune_mlx.py --data qlora-data --supervision qlora-supervision --model /path/to/local/model --out qlora-training
+python finetune_infer.py --data qlora-data --supervision qlora-supervision --training qlora-training --model /path/to/local/model --out qlora-plans
+python finetune_replay.py --data qlora-data --supervision qlora-supervision --training qlora-training --plans-dir qlora-plans --out qlora-runs
+python finetune_analyze.py --data qlora-data --supervision qlora-supervision --training qlora-training --plans-dir qlora-plans --runs qlora-runs --out qlora-report
+```
+
+All training/label-generation/evaluation output directories must be new; fresh
+inference can resume only under matching provenance. A small training smoke
+run is available via `--smoke` and must never be used for fresh test claims.
+The source base model is frozen; saved `adapters.safetensors` contains the
+validation-selected LoRA weights and can be loaded with MLX-LM. Report all
+controls, including the same-prompt base model and the cost-regret ExtraTrees
+selector, whether or not fine-tuning helps. A lower training loss alone is not
+evidence of improved acquisition. See the completed report for results.

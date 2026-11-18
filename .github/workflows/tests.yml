@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -e '.[test]' rdkit numpy
+      - run: pip install -e '.[test]' rdkit numpy scikit-learn
       - run: pytest -q
       - name: Acquisition controller integrity tests
         run: python -m unittest discover -s research/acquisition -v
