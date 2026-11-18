@@ -2,12 +2,13 @@
 import hashlib,json,os,sys,time,urllib.request
 
 def acquire(state):
- model=os.getenv('OLLAMA_MODEL','qwen2.5:1.5b')
+ model=os.getenv('OLLAMA_MODEL','qwen2.5:0.5b')
  url=os.getenv('OLLAMA_URL','http://smiles-ollama:11434')
  ids=[r['id'] for r in state['candidates']];batch=state['batch_size']
  schema={'type':'object','properties':{'candidate_ids':{'type':'array','items':{'type':'string','enum':ids},'minItems':batch,'maxItems':batch},'hypothesis':{'type':'string'}},'required':['candidate_ids','hypothesis'],'additionalProperties':False}
  system='You select experiments for fitting molecular torsion energy corrections. Choose only available IDs. Use uncertainty, angular diversity, observations, and chemical context. Avoid redundant points in a batch. You cannot see unqueried labels or test results. Return only the requested JSON. Keep hypothesis under 40 words.'
- prompt=json.dumps(state,separators=(',',':'))
+ compact={'instruction':'Select '+str(batch)+' distinct IDs for informative torsion correction measurements. All angles radian; energies kcal/mol.', 'molecule':state.get('molecule'), 'reference_kind':(state.get('dataset_metadata') or {}).get('kind'), 'basis':'additive harmonics 1-3 cos/sin with intercept', 'observation_columns':['id','angles','observed_correction','fitted_correction'], 'candidate_columns':['id','angles','predicted_correction','variance'], 'observations':[[r['id'],[round(v,4) for v in r['angles_rad']],round(r['correction_kcal_mol'],4),round(r['fitted_correction_kcal_mol'],4)] for r in state.get('observations',[])], 'candidates':[[r['id'],[round(v,4) for v in r.get('angles_rad',[])],round(r.get('predicted_correction_kcal_mol',0),4),round(r.get('variance',0),6)] for r in state['candidates']]}
+ prompt=json.dumps(compact,separators=(',',':'))
  payload={'model':model,'system':system,'prompt':prompt,'stream':False,'format':schema,'keep_alive':0,'options':{'temperature':0,'seed':2026,'num_ctx':8192,'num_predict':256,'num_thread':2}}
  with urllib.request.urlopen(url+'/api/tags',timeout=20) as r:tags=json.load(r)
  digest=next((m['digest'] for m in tags['models'] if m['name']==model),None)
@@ -18,10 +19,11 @@ def acquire(state):
   req=urllib.request.Request(url+'/api/generate',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'})
   with urllib.request.urlopen(req,timeout=600) as r:response=json.load(r)
   records.append({k:response.get(k) for k in ['model','created_at','total_duration','load_duration','prompt_eval_count','eval_count','done_reason','response']})
+  records[-1]['request_sha256']=hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()
   try:
    action=json.loads(response['response']);chosen=action['candidate_ids']
    if len(chosen)!=batch or len(set(chosen))!=batch or not set(chosen)<=set(ids):raise ValueError('Invalid selection')
-   action['controller']={'kind':'ollama_llm','model':model,'model_digest':digest,'prompt_version':'torsion-v1','prompt_sha256':hashlib.sha256((system+prompt).encode()).hexdigest(),'decoding':payload['options'],'attempts':records,'last_call_seconds':time.monotonic()-start}
+   action['controller']={'kind':'ollama_llm','model':model,'model_digest':digest,'prompt_version':'torsion-compact-v2','prompt_sha256':hashlib.sha256((system+prompt).encode()).hexdigest(),'decoding':payload['options'],'attempts':records,'last_call_seconds':time.monotonic()-start}
    return action
   except (ValueError,KeyError,TypeError):
    payload['prompt']=prompt+'\nYour previous response was invalid. Select exactly '+str(batch)+' DISTINCT available IDs.'

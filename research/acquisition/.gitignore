@@ -1,3 +1,6 @@
 data/
 runs/
 __pycache__/
+aws-data/
+aws-runs*/
+*.zip

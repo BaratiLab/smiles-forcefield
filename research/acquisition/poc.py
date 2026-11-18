@@ -85,6 +85,7 @@ def load_dataset(path):
         raise ValueError('Explicit radian and kcal/mol units required')
     nt = len(d['molecule']['torsions'])
     seen = set()
+    geometry_seen = set()
     for split in ('pool', 'test'):
         if not d[split]:
             raise ValueError('Empty split')
@@ -92,6 +93,10 @@ def load_dataset(path):
             if r['id'] in seen:
                 raise ValueError('Duplicate ID across or within splits')
             seen.add(r['id'])
+            if r.get('geometry_sha256'):
+                if r['geometry_sha256'] in geometry_seen:
+                    raise ValueError('Duplicate geometry across or within splits')
+                geometry_seen.add(r['geometry_sha256'])
             if len(r['angles_rad']) != nt:
                 raise ValueError('Incorrect torsion dimension')
             values = r['angles_rad']+[r['qm_energy_kcal_mol'], r['baseline_energy_kcal_mol']]
