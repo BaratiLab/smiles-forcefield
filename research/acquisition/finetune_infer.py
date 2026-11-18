@@ -16,6 +16,8 @@ def infer(data,supervision,training,model_path,out):
  assert min(checkpoints,key=lambda v:(v['mean_validation_normalized_auc'],v['step']))==finished['selected_checkpoint']
  assert finished['adapter_sha256']==hashfile(training/'adapters.safetensors')
  model,tok,_=setup(model_path,20261118);model.eval();initial=dict(tree_flatten(model.trainable_parameters()));adapted=mx.load(str(training/'adapters.safetensors'))
+ assert set(initial)==set(adapted) and all(initial[k].shape==adapted[k].shape for k in initial)
+ assert any(bool(mx.any(adapted[k]!=0).item()) for k in adapted if k.endswith('lora_b'))
  assert provenance['model_files_sha256']['model.safetensors']==hashfile(Path(model_path)/'model.safetensors')
  tokens=[tok.encode(chr(65+i),add_special_tokens=False) for i in range(5)];assert all(len(v)==1 for v in tokens);tokens=[v[0] for v in tokens]
  manifest={'split_sha256':hashfile(data/'split.json'),'inputs_sha256':hashfile(supervision/'inputs.json'),'training_complete_sha256':hashfile(training/'training_complete.json'),
@@ -31,6 +33,8 @@ def infer(data,supervision,training,model_path,out):
    record={}
    for key,weights in [('base',initial),('finetuned',adapted)]:
     model.load_weights(list(weights.items()),strict=False);mx.eval(model.trainable_parameters())
+    if i==1:
+     loaded=dict(tree_flatten(model.trainable_parameters()));assert all(bool(mx.array_equal(loaded[k],weights[k]).item()) for k in weights)
     plan,request=decide(model,tok,inputs[name],tokens);record[key]=plan;(folder/f'{key}-request.json').write_text(json.dumps(request,indent=2));mx.clear_cache()
    assert record['base']['prompt_sha256']==record['finetuned']['prompt_sha256']
    path.write_text(json.dumps(record,indent=2))
