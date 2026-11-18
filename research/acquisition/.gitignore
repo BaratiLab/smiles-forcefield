@@ -4,3 +4,4 @@ __pycache__/
 aws-data/
 aws-runs*/
 *.zip
+aws-plan-runs*/

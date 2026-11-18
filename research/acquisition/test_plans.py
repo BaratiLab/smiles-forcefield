@@ -2,9 +2,24 @@ import unittest,json,tempfile
 from pathlib import Path
 import numpy as np
 from poc import Ridge,features,bayes_batch
-from plan_benchmark import select,evaluate,rule_plan,STRATEGIES
+from plan_benchmark import select,evaluate,rule_plan,STRATEGIES,request_plan
+from unittest.mock import patch
 
 class Plans(unittest.TestCase):
+ def test_exactly_one_label_free_planner_call(self):
+  calls=[]
+  class Reply:
+   def __init__(self,d):self.d=d
+   def __enter__(self):return self
+   def __exit__(self,*args):pass
+   def read(self):return json.dumps(self.d).encode()
+  def respond(req,timeout):
+   if isinstance(req,str):return Reply({'models':[{'name':'test','digest':'digest'}]})
+   calls.append(json.loads(req.data));return Reply({'response':'{"strategy":"uniform","rationale":"Prior coverage"}','prompt_eval_count':10,'eval_count':4})
+  molecule={'id':'a','smiles':'CCCC','torsions':[[1,2,3,4]],'secret_test_energy':999,'reason':'Not passed'}
+  with tempfile.TemporaryDirectory() as t,patch('urllib.request.urlopen',respond):
+   result=request_plan(molecule,Path(t)/'plan','test','http://unused')
+  self.assertEqual(len(calls),1);self.assertNotIn('secret_test_energy',calls[0]['prompt']);self.assertNotIn('Not passed',calls[0]['prompt']);self.assertEqual(result['calls'],1)
  def test_uniform_exactly_matches_bayesian(self):
   a=np.random.default_rng(4).uniform(-np.pi,np.pi,(30,2));x=features(a);m=Ridge(x[:4],np.zeros(4))
   self.assertEqual(select(m,x,a,list(range(4)),list(range(4,30)),4,'uniform'),bayes_batch(m,x,list(range(4,30)),4))

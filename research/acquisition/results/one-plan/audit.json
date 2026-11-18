@@ -1,0 +1,13 @@
+{
+  "trajectories": 125,
+  "metric_rows": 375,
+  "generation_calls": 5,
+  "all_initial_sets_matched": true,
+  "unique_queries_per_run": 12,
+  "all_llm_trajectories_identical_to_bayes": true,
+  "dataset_hashes_match_previous_pilot": true,
+  "planning_seconds": 146.34296951399847,
+  "prompt_tokens": 1364,
+  "output_tokens": 281,
+  "first_option_selections": 0
+}

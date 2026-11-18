@@ -46,3 +46,7 @@ OLLAMA_URL=http://localhost:11434 python plan_benchmark.py \
 ```
 
 Plans, full requests/responses, model digest, token counts and latency are saved. Invalid output fails without fallback or a second model call. The benchmark includes 5 molecules × 5 policies × 5 seeds = 125 trajectories, but only five LLM calls. Fewer calls are an architectural property; runtime must be measured because the planner model differs from the earlier small-model pilot. This remains a small, previously inspected MMFF/UFF development benchmark; improvements are exploratory, not held-out scientific validation.
+
+### Completed one-plan comparison
+
+The AWS pilot ran 125 matched trajectories with five Qwen2.5:1.5B planning calls. All plans chose uniform Bayesian acquisition, reproducing pure Bayes exactly. No LLM advantage was demonstrated. See [full report and limitations](results/one-plan/REPORT.md) and [raw requests, responses and curves](results/one-plan/aws-plan-results.zip).
