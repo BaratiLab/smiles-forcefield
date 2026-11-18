@@ -1,0 +1,59 @@
+{
+  "status": "exploratory, retired data, not a fresh confirmation",
+  "policies": {
+    "bayes_fixed": {
+      "molecules": 168,
+      "scaffolds": 143,
+      "mean_rmse_auc_kcal_mol": 1.0754439701290113,
+      "relative_change_vs_bayes": 0.0,
+      "paired_difference_95pct_scaffold_interval": [
+        0.0,
+        0.0
+      ],
+      "first_step_selected_programs": {
+        "{\"action\": \"keep\", \"harmonics\": [1, 2, 3], \"scope\": \"broad\"}": 168
+      },
+      "rejected_programs_over_all_steps": 0
+    },
+    "cv_library": {
+      "molecules": 168,
+      "scaffolds": 143,
+      "mean_rmse_auc_kcal_mol": 0.9927380749237057,
+      "relative_change_vs_bayes": -0.07690395548489992,
+      "paired_difference_95pct_scaffold_interval": [
+        -0.15175823264573038,
+        -0.018639925230660426
+      ],
+      "first_step_selected_programs": {
+        "{\"action\": \"revise\", \"harmonics\": [1, 2, 3, 4], \"scope\": \"broad\"}": 24,
+        "{\"action\": \"specialize\", \"harmonics\": [1, 2, 3, 4], \"scope\": \"local\"}": 9,
+        "{\"action\": \"specialize\", \"harmonics\": [1, 2], \"scope\": \"local\"}": 37,
+        "{\"action\": \"keep\", \"harmonics\": [1, 2, 3], \"scope\": \"broad\"}": 45,
+        "{\"action\": \"specialize\", \"harmonics\": [1, 2, 3], \"scope\": \"local\"}": 14,
+        "{\"action\": \"specialize\", \"harmonics\": [1], \"scope\": \"local\"}": 9,
+        "{\"action\": \"revise\", \"harmonics\": [1], \"scope\": \"broad\"}": 1,
+        "{\"action\": \"revise\", \"harmonics\": [1, 2], \"scope\": \"broad\"}": 9,
+        "{\"action\": \"specialize\", \"harmonics\": [1, 2, 3, 4, 5, 6], \"scope\": \"local\"}": 14,
+        "{\"action\": \"revise\", \"harmonics\": [1, 2, 3, 4, 5, 6], \"scope\": \"broad\"}": 6
+      },
+      "rejected_programs_over_all_steps": 0
+    },
+    "rules_two": {
+      "molecules": 168,
+      "scaffolds": 143,
+      "mean_rmse_auc_kcal_mol": 0.9795313143592924,
+      "relative_change_vs_bayes": -0.08918424244659917,
+      "paired_difference_95pct_scaffold_interval": [
+        -0.1627114735263735,
+        -0.03852691216930462
+      ],
+      "first_step_selected_programs": {
+        "{\"action\": \"specialize\", \"harmonics\": [1, 2, 3, 4], \"scope\": \"local\"}": 49,
+        "{\"action\": \"revise\", \"harmonics\": [1, 2], \"scope\": \"broad\"}": 58,
+        "{\"action\": \"keep\", \"harmonics\": [1, 2, 3], \"scope\": \"broad\"}": 61
+      },
+      "rejected_programs_over_all_steps": 0
+    }
+  },
+  "caution": "Intervals describe development replay only; one acquisition seed. CV has ten candidates versus at most two rules/LLM candidates. LLM subset must not be compared with full-cohort means."
+}

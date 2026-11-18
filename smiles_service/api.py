@@ -68,5 +68,8 @@ def download(job:str,engine:str,x_api_key:str|None=Header(default=None)):
     if not file.is_file():raise HTTPException(410,'Download unavailable.')
     return FileResponse(file,media_type='application/zip',filename=f'smiles-forcefield-{engine}-{job[:8]}.zip',headers={'Cache-Control':'no-store'})
 
+from .repair.api import router as repair_router
+app.include_router(repair_router)
+
 static=Path(__file__).parent/'static'
 if static.exists():app.mount('/',StaticFiles(directory=static,html=True),name='web')

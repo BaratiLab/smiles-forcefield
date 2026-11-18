@@ -1,0 +1,10 @@
+{
+  "status": "development supervision, no repair fine-tuning executed",
+  "independent_parents": 95,
+  "episodes": 190,
+  "source_split": "train only",
+  "target_parent_excluded_from_prior_library": true,
+  "old_validation_and_test_labels_used": false,
+  "internal_teacher_holdouts": "remaining training-parent pool points; never the dataset test field",
+  "limitation": "190 correlated episodes are not 190 independent molecules; support states use two random seeds, pilot uses fixed Bayes initialization; align episode distribution before paper training"
+}

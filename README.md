@@ -128,3 +128,7 @@ No remote chemistry services or LLM accounts are required. Dependency licenses r
 ## Acquisition research
 
 [The acquisition experiment](research/acquisition/README.md) compares random sampling, greedy Bayesian information gain, and a private Ollama/Qwen controller on the five development molecules. It logs valid/failed model actions and matches initial observations and label budgets. The engineering dataset uses MMFF94 minus UFF at identical real geometries; it is explicitly **not QM data or a learned Sage force field**. The research controller is separate from the production API. Optional private CPU deployment settings are in `deploy/compose.research.yaml`.
+
+## Experimental torsion-repair research
+
+The [torsion-repair module](research/torsion_repair/README.md) implements verified specialization programs, harmonic selection, Bayesian fitting/acquisition and a local open-model proposer. The optional `/api/research/torsion-repair/fit` endpoint requires `SMILES_ENABLE_RESEARCH_REPAIR=1`; it returns research corrections and validation evidence without changing production force-field downloads. Current experiments are development-only QM-minus-UFF residual studies. No repaired Sage accuracy or public deployment claim is implied.

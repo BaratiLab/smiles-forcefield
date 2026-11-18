@@ -1,0 +1,11 @@
+{
+  "engine": "OpenMM 8.6.1",
+  "platform": "Reference",
+  "angles": 7,
+  "relative_energy_max_error_kcal_mol": 8.881784197001252e-16,
+  "cartesian_force_fd_max_error_kj_mol_nm": 5.537543756872765e-08,
+  "energy_tolerance_kcal_mol": 1e-09,
+  "force_tolerance_kj_mol_nm": 0.0001,
+  "scope": "correction term only, not full molecule/package validation",
+  "gromacs_lammps_namd_repair_validation": false
+}
