@@ -155,7 +155,16 @@ def test_research_api_is_gated_and_does_not_apply_to_packages(monkeypatch):
 
 def test_planner_state_hides_unacquired_and_evaluation_labels(tmp_path):
     import json
-    from research.torsion_repair.experiment import prepare
+    import importlib.util
+    from pathlib import Path
+
+    source = (
+        Path(__file__).resolve().parents[1] / "research/torsion_repair/experiment.py"
+    )
+    spec = importlib.util.spec_from_file_location("repair_experiment", source)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    prepare = module.prepare
 
     data = tmp_path / "data"
     (data / "datasets").mkdir(parents=True)
