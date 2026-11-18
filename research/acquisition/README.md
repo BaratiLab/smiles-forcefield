@@ -99,3 +99,7 @@ rerun independent. Absence of these public molecules from LLM pretraining is
 not guaranteed. See the completed results report for experimental outcomes.
 
 QC amendment before outcome scoring: QCArchive marks `torsion-1762338` invalid. Preserve the original 300 decisions but exclude this record from primary analysis (299 valid held-out molecules), without replacement. See `qm_qc_amendment.json`; all 360 selected record specifications are saved with the results.
+
+### Completed QM held-out evaluation
+
+The 7B planner was tested on 300 planned molecules (299 valid after QC), with 60 scaffold-disjoint development molecules and five matched acquisition seeds. It did not demonstrate improvement over Bayes or the chemical rule. Mean normalized error-query AUC: Bayes 0.60552, LLM 0.61402, rule 0.61458. See [the report](results/qm-heldout/REPORT.md) and the companion reproducibility archive.

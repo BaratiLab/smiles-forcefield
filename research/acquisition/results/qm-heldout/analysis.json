@@ -1,0 +1,160 @@
+{
+  "heldout_molecules": 299,
+  "planned_heldout_molecules": 300,
+  "qc_exclusions": {
+    "torsion-1762338": "invalid"
+  },
+  "qc_specifications_sha256": "6d2cc6c2db9bfff42b9a994d60554ddcdf03875011ae6f85cbb14b2705fbee56",
+  "development_molecules": 60,
+  "heldout_scaffolds": 178,
+  "development_scaffolds": 37,
+  "scaffold_overlap": 0,
+  "generation_calls": 300,
+  "trajectories": 15000,
+  "primary_trajectories": 14950,
+  "test_qm_geometries": 2392,
+  "all_input_hashes_match": true,
+  "all_prompt_inputs_label_free_allowlist": true,
+  "all_budgets_initial_sets_and_pool_membership_match": true,
+  "all_llm_actions_reproduce_fixed_strategy_control": true,
+  "strategy_counts": {
+    "sector_balance": 69,
+    "angular_diversity": 183,
+    "orthogonal_focus": 32,
+    "cis_focus": 12,
+    "uniform": 4
+  },
+  "letter_counts": {
+    "C": 63,
+    "E": 29,
+    "D": 28,
+    "B": 146,
+    "A": 34
+  },
+  "planning_seconds": 746.5982599628624,
+  "shared_prefix_cache": {
+    "prefix_tokens": 484,
+    "prefill_seconds": 2.5200795410200953,
+    "resumption_recomputes_prefix": true
+  },
+  "median_planning_seconds": 2.287375312880613,
+  "prompt_tokens": 278744,
+  "output_tokens": 300,
+  "primary_improvement_criterion_passed": false,
+  "comparisons": [
+    {
+      "comparison": "llm_plan minus bayes",
+      "mean_paired_normalized_auc_difference": 0.008495176638886087,
+      "scaffold_cluster_97.5_percent_ci": [
+        -0.002894788526172486,
+        0.01945307372123244
+      ],
+      "molecule_wins": 129,
+      "ties": 5,
+      "losses": 165,
+      "bootstrap_draws": 10000,
+      "scaffold_clusters": 178
+    },
+    {
+      "comparison": "llm_plan minus rule",
+      "mean_paired_normalized_auc_difference": -0.0005612493858309321,
+      "scaffold_cluster_97.5_percent_ci": [
+        -0.010502776924051223,
+        0.010603122048841104
+      ],
+      "molecule_wins": 147,
+      "ties": 17,
+      "losses": 135,
+      "bootstrap_draws": 10000,
+      "scaffold_clusters": 178
+    },
+    {
+      "comparison": "llm_plan minus development_global",
+      "mean_paired_normalized_auc_difference": 0.008495176638886087,
+      "scaffold_cluster_97.5_percent_ci": [
+        -0.0030602614927630737,
+        0.019492695538202376
+      ],
+      "molecule_wins": 129,
+      "ties": 5,
+      "losses": 165,
+      "bootstrap_draws": 10000,
+      "scaffold_clusters": 178
+    },
+    {
+      "comparison": "llm_plan minus chemistry_blind",
+      "mean_paired_normalized_auc_difference": -0.018284739968244,
+      "scaffold_cluster_97.5_percent_ci": [
+        -0.03966802502934175,
+        -0.0016737968373349717
+      ],
+      "molecule_wins": 126,
+      "ties": 83,
+      "losses": 90,
+      "bootstrap_draws": 10000,
+      "scaffold_clusters": 178
+    }
+  ],
+  "means": {
+    "bayes": {
+      "normalized_auc": 0.6055207640529178,
+      "auc": 1.4120936739313132,
+      "final_rmse": 1.0254713494889118,
+      "normalized_final_rmse": 0.4569014069185367
+    },
+    "rule": {
+      "normalized_auc": 0.6145771900776349,
+      "auc": 1.4421099194687437,
+      "final_rmse": 1.0213498823179037,
+      "normalized_final_rmse": 0.45550805136610334
+    },
+    "llm_plan": {
+      "normalized_auc": 0.6140159406918039,
+      "auc": 1.43925745433005,
+      "final_rmse": 1.037172807009012,
+      "normalized_final_rmse": 0.4625013527949301
+    },
+    "random": {
+      "normalized_auc": 0.8459411591795278,
+      "auc": 1.896693416366996,
+      "final_rmse": 1.3026740987053613,
+      "normalized_final_rmse": 0.5971552285596705
+    },
+    "development_global": {
+      "normalized_auc": 0.6055207640529178,
+      "auc": 1.4120936739313132,
+      "final_rmse": 1.0254713494889118,
+      "normalized_final_rmse": 0.4569014069185367
+    },
+    "chemistry_blind": {
+      "normalized_auc": 0.6323006806600479,
+      "auc": 1.4660502290081487,
+      "final_rmse": 1.0524689009304427,
+      "normalized_final_rmse": 0.4729027011345687
+    },
+    "fixed_angular_diversity": {
+      "normalized_auc": 0.6102836127209506,
+      "auc": 1.4190504067574556,
+      "final_rmse": 1.0225401180032845,
+      "normalized_final_rmse": 0.4561055812512652
+    },
+    "fixed_sector_balance": {
+      "normalized_auc": 0.6148128849326991,
+      "auc": 1.4232530447979994,
+      "final_rmse": 1.0276300124974127,
+      "normalized_final_rmse": 0.4600342727765354
+    },
+    "fixed_orthogonal_focus": {
+      "normalized_auc": 0.6399187177943954,
+      "auc": 1.498569818015667,
+      "final_rmse": 1.031989558674754,
+      "normalized_final_rmse": 0.46321159234888565
+    },
+    "fixed_cis_focus": {
+      "normalized_auc": 0.8892605979366243,
+      "auc": 1.9980712338052364,
+      "final_rmse": 1.457810432991871,
+      "normalized_final_rmse": 0.6585235139457941
+    }
+  }
+}

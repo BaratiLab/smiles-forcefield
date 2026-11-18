@@ -1,0 +1,29 @@
+{
+  "version": "qm-heldout-qc-amendment-v1",
+  "recorded_at_utc": "2026-11-18T04:30:41.455537+00:00",
+  "original_planned_heldout_molecules": 300,
+  "primary_valid_heldout_molecules": 299,
+  "exclusions": [
+    {
+      "molecule": "torsion-1762338",
+      "qcarchive_record_id": 1762338,
+      "reason": "QCArchive status invalid in independent record metadata query; no performance metrics inspected"
+    }
+  ],
+  "replacement": false,
+  "unchanged": [
+    "planner",
+    "development examples",
+    "acquisition strategies",
+    "initializations",
+    "query budgets",
+    "primary metric",
+    "comparisons",
+    "bootstrap method"
+  ],
+  "analysis": "Audit and retain all 300 frozen trajectories; primary statistical analysis excludes invalid reference record; archive all original results",
+  "method_aliases": [
+    "b3lyp-d3bj",
+    "b3lyp-d3(bj)"
+  ]
+}
