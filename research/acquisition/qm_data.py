@@ -38,7 +38,7 @@ def chemistry(m,torsion):
   'heavy_neighbor_counts':[sum(n.GetAtomicNum()>1 for n in v.GetNeighbors()) for v in ends],
   'formal_charge':Chem.GetFormalCharge(m)}
 
-def prepare(archive,out,dev_n=60,test_n=300):
+def prepare(archive,out,dev_n=60,test_n=300,export_all=False):
  out=Path(out);out.mkdir(parents=True,exist_ok=False);(out/'datasets').mkdir()
  prior=json.loads((Path(__file__).parent/'molecules.json').read_text())
  excluded_ids={identity(Chem.MolFromSmiles(m['smiles'])) for m in prior}
@@ -99,6 +99,7 @@ def prepare(archive,out,dev_n=60,test_n=300):
  # Scaffold assignment by salted hash. Freeze identities before scoring any policy.
  dev=[d for d in datasets if int(digest('qm-holdout-v1:'+d['scaffold'])[:8],16)%5==0]
  test=[d for d in datasets if int(digest('qm-holdout-v1:'+d['scaffold'])[:8],16)%5!=0]
+ if export_all:dev_n=len(dev);test_n=len(test)
  key=lambda d:digest('select-v1:'+d['parent_smiles'])
  dev=sorted(dev,key=key)[:dev_n];test=sorted(test,key=key)[:test_n]
  if len(dev)<dev_n or len(test)<test_n:raise ValueError(f'Insufficient eligible molecules: dev={len(dev)}, test={len(test)}, rejects={dict(rejects)}')
@@ -115,4 +116,4 @@ def prepare(archive,out,dev_n=60,test_n=300):
  (out/'split.json').write_text(json.dumps(manifest,indent=2));print(json.dumps({k:v for k,v in manifest.items() if k not in ['splits','dataset_hashes']},indent=2),flush=True)
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--archive',required=True);p.add_argument('--out',required=True);p.add_argument('--development',type=int,default=60);p.add_argument('--heldout',type=int,default=300);a=p.parse_args();prepare(a.archive,a.out,a.development,a.heldout)
+ p=argparse.ArgumentParser();p.add_argument('--archive',required=True);p.add_argument('--out',required=True);p.add_argument('--development',type=int,default=60);p.add_argument('--heldout',type=int,default=300);p.add_argument('--all',action='store_true',dest='export_all');a=p.parse_args();prepare(a.archive,a.out,a.development,a.heldout,a.export_all)
