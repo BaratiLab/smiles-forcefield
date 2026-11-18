@@ -1,0 +1,39 @@
+name: Publish website
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['web/**', 'smiles-forcefield-source.zip', '.github/workflows/pages.yml']
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare static website
+        run: |
+          if [ ! -f web/index.html ]; then
+            python - <<'PY'
+          import pathlib, zipfile
+          with zipfile.ZipFile('smiles-forcefield-source.zip') as z:
+              for name in ['index.html', 'style.css', 'app.js']:
+                  target = pathlib.Path('web') / name
+                  target.parent.mkdir(exist_ok=True)
+                  target.write_bytes(z.read('smiles-forcefield/web/' + name))
+          PY
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - uses: actions/deploy-pages@v4
+        id: deployment
