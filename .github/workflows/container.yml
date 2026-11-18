@@ -1,0 +1,18 @@
+name: Linux container validation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build deployment container
+        run: docker build --progress=plain -t smiles-forcefield:verify .
+      - name: API and queue tests inside Linux container
+        run: docker run --rm smiles-forcefield:verify python -m pytest -q
+      - name: Real Linux chemistry smoke test
+        run: |
+          docker run --rm smiles-forcefield:verify python -c "from smiles_service.store import Store; from smiles_service.worker import process; s=Store(); j=s.create('CCCC'); j=s.claim(); process(s,j); r=s.get(j['id']); print(r['status'],r['error']); assert r['status']=='succeeded', r['error']"
