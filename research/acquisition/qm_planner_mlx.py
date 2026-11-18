@@ -1,5 +1,5 @@
 """Local one-token constrained LLM planner. No remote code or model server needed."""
-import argparse,hashlib,importlib.metadata,json,time
+import argparse,copy,hashlib,importlib.metadata,json,time
 from pathlib import Path
 import numpy as np
 from qm_benchmark import planner_input,build_messages,hashfile
@@ -8,6 +8,7 @@ def infer(data,frozen_path,model_path,out,limit=None):
  import mlx.core as mx
  from mlx_lm import load
  from mlx_lm.generate import generate_step
+ from mlx_lm.models.cache import make_prompt_cache
  data=Path(data);out=Path(out);out.mkdir(parents=True,exist_ok=True)
  split=json.loads((data/'split.json').read_text());frozen=json.loads(Path(frozen_path).read_text())
  assert frozen['split_sha256']==hashfile(data/'split.json')
@@ -21,6 +22,19 @@ def infer(data,frozen_path,model_path,out,limit=None):
  if provpath.exists():assert json.loads(provpath.read_text())==provenance,'Cannot resume changed model or experiment'
  else:provpath.write_text(json.dumps(provenance,indent=2))
  names=split['splits']['heldout'];names=names[:limit] if limit else names
+ # Reuse only an exact common token prefix. Per-molecule caches are independent.
+ prepared={}
+ for name in names:
+  d=json.loads((data/'datasets'/f'{name}.json').read_text());item=planner_input(d);messages,order=build_messages(item,frozen)
+  prompt=tokenizer.apply_chat_template(messages,tokenize=False,add_generation_prompt=True)
+  prepared[name]=(item,messages,order,prompt,tokenizer.encode(prompt,add_special_tokens=False))
+ prefix=prepared[names[0]][4][:512]
+ for value in prepared.values():
+  ids=value[4];n=next((i for i,(a,b) in enumerate(zip(prefix,ids)) if a!=b),min(len(prefix),len(ids)-1));prefix=prefix[:n]
+ cache=make_prompt_cache(model);started=time.monotonic()
+ if prefix:
+  model(mx.array(prefix)[None],cache=cache);mx.eval([c.state for c in cache])
+ (out/'prefix-cache-runtime.json').write_text(json.dumps({'prefix_tokens':len(prefix),'prefill_seconds':time.monotonic()-started,'resumption_recomputes_prefix':True},indent=2))
  plans={}
  letters=['A','B','C','D','E'];tokens=[tokenizer.encode(s,add_special_tokens=False) for s in letters]
  assert all(len(t)==1 for t in tokens)
@@ -35,17 +49,17 @@ def infer(data,frozen_path,model_path,out,limit=None):
    plan=json.loads(planpath.read_text());assert plan['input_sha256']==itemhash and plan['prompt_sha256']==phash
   else:
    (folder/'request.json').write_text(json.dumps({'messages':messages,'prompt':prompt,'strategy_order':order,'allowed_tokens':tokens},indent=2))
-   ids=tokenizer.encode(prompt,add_special_tokens=False)
+   ids=prepared[name][4]
    started=time.monotonic()
    # Constrain only decoding; log all five unrestricted token log probabilities too.
    def constrained(logits):
     allowed=mx.array([t[0] for t in tokens]);scores=logits[:,allowed];return allowed[mx.argmax(scores,axis=-1)]
-   gen=generate_step(mx.array(ids),model,max_tokens=1,sampler=constrained,prefill_step_size=512)
+   gen=generate_step(mx.array(ids[len(prefix):]),model,max_tokens=1,sampler=constrained,prefill_step_size=512,prompt_cache=copy.deepcopy(cache))
    token,logprobs=next(gen);mx.eval(logprobs);elapsed=time.monotonic()-started
    raw=logprobs.tolist();chosen=letters.index(tokenizer.decode([int(token)]));scores=[float(raw[t[0]]) for t in tokens]
    probabilities=np.exp(np.array(scores)-max(scores));probabilities/=probabilities.sum()
    plan={'strategy':order[chosen],'chosen_letter':letters[chosen],'input_sha256':itemhash,'prompt_sha256':phash,
-    'seconds':elapsed,'prompt_tokens':len(ids),'output_tokens':1,'calls':1,'strategy_order':order,
+    'seconds':elapsed,'cached_prefix_tokens':len(prefix),'prompt_tokens':len(ids),'output_tokens':1,'calls':1,'strategy_order':order,
     'option_log_probabilities':dict(zip(order,scores)),'conditional_option_probabilities':dict(zip(order,probabilities.tolist()))}
    planpath.write_text(json.dumps(plan,indent=2));del gen;mx.clear_cache()
   plans[name]=plan;(out/'plans.json').write_text(json.dumps(plans,indent=2))
