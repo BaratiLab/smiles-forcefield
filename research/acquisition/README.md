@@ -74,10 +74,11 @@ publish access tokens.
 ```bash
 curl -fL https://raw.githubusercontent.com/openforcefield/sage-2.2.1/b70c449e3a98e40f0b6e4c6b2f27932fce47be42/04_fit-forcefield/nor4/fb-fit/targets.tar.gz -o targets.tar.gz
 python qm_data.py --archive targets.tar.gz --out qm-data
+python qm_verify.py --data qm-data --archive targets.tar.gz --out qm-qc
 python qm_benchmark.py develop --data qm-data --out qm-development
 python qm_planner_mlx.py --data qm-data --frozen qm-development/frozen_planner.json --model /path/to/local/model --out qm-plans
 python qm_benchmark.py run --data qm-data --frozen qm-development/frozen_planner.json --plans qm-plans/plans.json --out qm-runs
-python qm_analyze.py --data qm-data --frozen qm-development/frozen_planner.json --plans-dir qm-plans --runs qm-runs --out qm-report --qc-specifications qcarchive-specifications.json
+python qm_analyze.py --data qm-data --frozen qm-development/frozen_planner.json --plans-dir qm-plans --runs qm-runs --out qm-report --qc-specifications qm-qc/qcarchive-specifications.json
 ```
 
 Dataset creation and evaluation require new output directories. Inference may
