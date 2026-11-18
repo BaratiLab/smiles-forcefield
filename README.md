@@ -136,3 +136,4 @@ The [torsion-repair module](research/torsion_repair/README.md) implements verifi
 The [next-stage research report](research/torsion_repair/results/next-milestones/REPORT.md) includes real program-adapter training, stronger controls, geometry-complete Sage datasets, corrected example exports and an outcome-blind new QM cohort. Validation retained the unchanged model, so experimental refinements have not been enabled on the live website.
 
 The [actual-Sage fine-tuning experiment](research/torsion_repair/results/sage-program-finetune/REPORT.md) is complete. It matched Bayes on initial validation error but did not beat it; stronger numerical controls performed better on the validation learning curve. The external held-out cohort remains sealed, and the experimental adapter is not a live accuracy upgrade.
+

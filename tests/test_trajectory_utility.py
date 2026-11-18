@@ -54,3 +54,35 @@ def test_fast_teacher_controller_matches_deployment_selection():
     np.testing.assert_allclose(
         fast.predict(matrices), reference.predict(matrices), atol=1e-10
     )
+
+
+def test_full_horizon_rewards_late_benefit_over_initial_fit():
+    class Model:
+        def __init__(self, error):
+            self.error = error
+
+        def predict(self, matrices):
+            return np.array([-self.error, self.error])
+
+        def acquire(self, matrices, available, batch):
+            return available[:batch]
+
+    class ToyController:
+        matrices = {}
+
+        def select(self, programs, indices):
+            # Early winner overfits later; late winner starts worse but learns.
+            early = programs[0] == "early"
+            error = (
+                (0.2 if early else 1.0)
+                if len(indices) == 8
+                else (2.0 if early else 0.1)
+            )
+            return Model(error), {}, 0.0
+
+    ctrl = ToyController()
+    early = rollout(ctrl, ["early"], list(range(8)), list(range(16)), {}, np.zeros(2))
+    late = rollout(ctrl, ["late"], list(range(8)), list(range(16)), {}, np.zeros(2))
+    assert early["errors"][0] < late["errors"][0]
+    assert late["auc"] < early["auc"]
+    np.testing.assert_allclose(late["auc"], 0.2125)
