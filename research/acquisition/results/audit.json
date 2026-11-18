@@ -1,0 +1,19 @@
+{
+  "completed_pairs": 15,
+  "failed_pairs": 0,
+  "rounds": 10,
+  "first_available_rounds": 10,
+  "attempts": 10,
+  "prompt_tokens": 13039,
+  "output_tokens": 613,
+  "inference_seconds": 551.09631281,
+  "models": [
+    {
+      "model": "qwen2.5:0.5b",
+      "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
+      "prompt_version": "torsion-compact-v2"
+    }
+  ],
+  "matched_budgets": true,
+  "warning": "All choices match first-available control; no demonstrated data-sensitive acquisition."
+}

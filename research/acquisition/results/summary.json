@@ -1,0 +1,122 @@
+[
+  {
+    "molecule": "anisole",
+    "policy": "bayes",
+    "seeds": 1,
+    "final_rmse_mean": 0.06268818543262746,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 0.48834026545642517
+  },
+  {
+    "molecule": "anisole",
+    "policy": "llm",
+    "seeds": 1,
+    "final_rmse_mean": 0.07641613331325015,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 0.5836511440762635
+  },
+  {
+    "molecule": "anisole",
+    "policy": "random",
+    "seeds": 1,
+    "final_rmse_mean": 0.11000906995189065,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 0.6759690596897305
+  },
+  {
+    "molecule": "biphenyl",
+    "policy": "bayes",
+    "seeds": 1,
+    "final_rmse_mean": 0.7737944383186837,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 1.330992658977347
+  },
+  {
+    "molecule": "biphenyl",
+    "policy": "llm",
+    "seeds": 1,
+    "final_rmse_mean": 0.5982479206001595,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 1.9504355153065709
+  },
+  {
+    "molecule": "biphenyl",
+    "policy": "random",
+    "seeds": 1,
+    "final_rmse_mean": 0.8279804337441804,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 1.3174580414999664
+  },
+  {
+    "molecule": "butane",
+    "policy": "bayes",
+    "seeds": 1,
+    "final_rmse_mean": 0.01263907975831934,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 0.6163212390667421
+  },
+  {
+    "molecule": "butane",
+    "policy": "llm",
+    "seeds": 1,
+    "final_rmse_mean": 0.01556213248531655,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 0.6196768490291827
+  },
+  {
+    "molecule": "butane",
+    "policy": "random",
+    "seeds": 1,
+    "final_rmse_mean": 0.014881903576257146,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 0.6175156174579302
+  },
+  {
+    "molecule": "nma",
+    "policy": "bayes",
+    "seeds": 1,
+    "final_rmse_mean": 0.8703369263312362,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 3.5947097705774578
+  },
+  {
+    "molecule": "nma",
+    "policy": "llm",
+    "seeds": 1,
+    "final_rmse_mean": 1.434802947505404,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 3.987845271736628
+  },
+  {
+    "molecule": "nma",
+    "policy": "random",
+    "seeds": 1,
+    "final_rmse_mean": 1.0126168508878315,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 5.2324676433135835
+  },
+  {
+    "molecule": "phenylethanol",
+    "policy": "bayes",
+    "seeds": 1,
+    "final_rmse_mean": 1.9886408767852057,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 3.576526280356223
+  },
+  {
+    "molecule": "phenylethanol",
+    "policy": "llm",
+    "seeds": 1,
+    "final_rmse_mean": 5.672120735550399,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 4.034418809759207
+  },
+  {
+    "molecule": "phenylethanol",
+    "policy": "random",
+    "seeds": 1,
+    "final_rmse_mean": 4.612172630105144,
+    "final_rmse_sd": null,
+    "normalized_error_auc": 3.870299708309541
+  }
+]

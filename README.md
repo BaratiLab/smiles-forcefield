@@ -124,3 +124,7 @@ The first release was tested on macOS ARM64 with the existing chemistry environm
 - Back up SQLite and job volume together. SQLite is intended for one host, not a distributed network filesystem.
 
 No remote chemistry services or LLM accounts are required. Dependency licenses remain their upstream licenses; inspect them for your deployment and redistribution needs. NAMD is not distributed.
+
+## Acquisition research
+
+[The acquisition experiment](research/acquisition/README.md) compares random sampling, greedy Bayesian information gain, and a private Ollama/Qwen controller on the five development molecules. It logs valid/failed model actions and matches initial observations and label budgets. The engineering dataset uses MMFF94 minus UFF at identical real geometries; it is explicitly **not QM data or a learned Sage force field**. The research controller is separate from the production API. Optional private CPU deployment settings are in `deploy/compose.research.yaml`.

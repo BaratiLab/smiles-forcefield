@@ -6,7 +6,8 @@ root=Path(__file__).resolve().parent
 runs=root/a.runs
 if runs.parent!=root or not (runs/'status.json').is_file():raise ValueError('Expected a completed/failed suite directory directly under research root')
 status=json.loads((runs/'status.json').read_text())
-if len(status)!=15:raise ValueError('Suite has not finished all five molecules and three policies')
+required={(m,p) for m in ['butane','biphenyl','anisole','nma','phenylethanol'] for p in ['random','bayes','llm']}
+if not required<={(r['molecule'],r['policy']) for r in status}:raise ValueError('Suite has not finished all five molecules and three policies')
 out=root/'aws-acquisition-results.zip'
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
  for folder in [root/'aws-data',runs]:

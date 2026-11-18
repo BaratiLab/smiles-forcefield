@@ -159,6 +159,8 @@ def run(args):
                 batch = min(args.batch, args.budget-len(selected))
                 if policy == 'random':
                     chosen = rng.choice(available, batch, replace=False).tolist()
+                elif policy == 'ordered':
+                    chosen = available[:batch]
                 elif policy == 'bayes':
                     chosen = bayes_batch(model, x, available, batch)
                 else:
@@ -204,7 +206,7 @@ if __name__ == '__main__':
     s = sub.add_parser('synthetic'); s.add_argument('--out', required=True); s.set_defaults(func=synthetic)
     r = sub.add_parser('run')
     r.add_argument('--data', required=True); r.add_argument('--out', required=True)
-    r.add_argument('--policies', nargs='+', choices=['random','bayes','llm'], default=['random','bayes'])
+    r.add_argument('--policies', nargs='+', choices=['random','bayes','llm','ordered'], default=['random','bayes'])
     r.add_argument('--seeds', nargs='+', type=int, default=[0,1,2])
     r.add_argument('--initial', type=int, default=8); r.add_argument('--budget', type=int, default=64)
     r.add_argument('--batch', type=int, default=8); r.add_argument('--harmonics', type=int, default=3)

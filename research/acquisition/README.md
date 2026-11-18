@@ -29,3 +29,7 @@ For real QM replay, substitute datasets with `kind: qm_replay`, protocol/basis/p
 Sources: https://ollama.com/library/qwen2.5:1.5b ; https://docs.ollama.com/api/generate ; https://www.rdkit.org/docs/source/rdkit.ForceField.rdForceField.html
 
 Results are kept outside Git by default (`data/`, `runs/`, `aws-data/`, `aws-runs*`). `export_results.py --runs aws-runs-compact` bundles only the fixed benchmark data, acquisition logs and reports after all 15 molecule/policy pairs finish. No production website submissions are used. The experiment records selected queries, posterior coefficients, baseline/full-pool reference errors, per-step test metrics, adapter time, original states, model outputs and model digests.
+
+## Observed first pilot
+
+[Results and limitations](results/REPORT.md): the 0.5B model returned valid IDs but selected the first available candidates in every round. The ordered-selection control reproduces its learning curves. Add `--ordered-control` to `suite.py` for this fourth ablation; it is never labeled an LLM. Run `python audit.py --runs PATH --out audit.json` to verify matched budgets and flag first-available choices. This is a negative controller-quality finding, not evidence that LLM reasoning improves acquisition.

@@ -5,10 +5,10 @@ import numpy as np
 ROOT=Path(__file__).resolve().parent
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--data',required=True);p.add_argument('--out',required=True);p.add_argument('--seeds',nargs='+',type=int,default=[0,1,2]);p.add_argument('--budget',type=int,default=12);p.add_argument('--initial',type=int,default=4);p.add_argument('--batch',type=int,default=4);p.add_argument('--llm',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--data',required=True);p.add_argument('--out',required=True);p.add_argument('--seeds',nargs='+',type=int,default=[0,1,2]);p.add_argument('--budget',type=int,default=12);p.add_argument('--initial',type=int,default=4);p.add_argument('--batch',type=int,default=4);p.add_argument('--llm',action='store_true');p.add_argument('--ordered-control',action='store_true');a=p.parse_args()
  out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=False);status=[]
  for m in json.loads((ROOT/'molecules.json').read_text()):
-  for policy in ['random','bayes']+(['llm'] if a.llm else []):
+  for policy in ['random','bayes']+(['llm'] if a.llm else [])+(['ordered'] if a.ordered_control else []):
    target=out/m['id']/policy
    cmd=[sys.executable,str(ROOT/'poc.py'),'run','--data',str(Path(a.data).resolve()/(m['id']+'.json')),'--out',str(target),'--policies',policy,'--initial',str(a.initial),'--budget',str(a.budget),'--batch',str(a.batch),'--seeds',*map(str,a.seeds)]
    if policy=='llm':cmd+=['--controller-kind','ollama_llm','--llm-command',json.dumps([sys.executable,str(ROOT/'ollama_adapter.py')])]
