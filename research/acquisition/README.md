@@ -147,3 +147,36 @@ selector, whether or not fine-tuning helps. A lower training loss alone is not
 evidence of improved acquisition. See the completed report for results.
 
 Numerical amendment recorded before fresh testing: the initial fine-tuning run stopped at update 84 on a nonfinite loss/gradient check, after 83 finite updates. The unchanged validation rule selects checkpoint 24 from the completed checkpoints 24/48/72. See `finetune_numerical_amendment.json`; all failed logs are retained. This recovered pilot is not described as completion of the planned 96-update schedule.
+
+For the archived numerical-stop case only, the explicit recovery command is:
+
+```bash
+python finetune_recover.py --training qlora-training --failure-log training-failure.log --amendment finetune_numerical_amendment.json
+```
+
+It requires the exact 83-update history, completed validation checkpoints and
+recorded failure, preserves the log, verifies nonzero selected adapter weights,
+and refuses to overwrite an existing completion marker. It does not silently
+convert an arbitrary failed run into a completed training run.
+
+
+#### Primary stable BF16 retry
+
+Before fresh QM outcomes were scored, the initial FP16 numerical failure was
+addressed in `finetune_protocol_stable.json`. The primary retry casts floating
+base tensors to BF16 before freezing them, retains FP32 LoRA tensors, checks
+every gradient before updating, and saves optimizer states alongside adapters.
+The original 96-update schedule and scientific settings remain unchanged.
+The failed run and 55 pairs of unscored diagnostic predictions remain archived.
+Use the `*_stable.py` entry points for the primary result:
+
+```bash
+python finetune_mlx_stable.py --data qlora-data --supervision qlora-supervision --model /path/to/local/model --out qlora-training-bf16
+python finetune_infer_stable.py --data qlora-data --supervision qlora-supervision --training qlora-training-bf16 --model /path/to/local/model --out qlora-plans-bf16
+python finetune_replay_stable.py --data qlora-data --supervision qlora-supervision --training qlora-training-bf16 --plans-dir qlora-plans-bf16 --out qlora-runs-bf16
+python finetune_analyze_stable.py --data qlora-data --supervision qlora-supervision --training qlora-training-bf16 --plans-dir qlora-plans-bf16 --runs qlora-runs-bf16 --out qlora-report-bf16
+```
+
+Both the untuned and adapted primary models use the same BF16 base
+representation, so numeric conversion is not counted as a fine-tuning benefit.
+The old early-stop diagnostic is deliberately blocked from fresh QM scoring.
