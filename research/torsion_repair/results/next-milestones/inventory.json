@@ -1,0 +1,28 @@
+{
+  "status": "structure-only inventory, outcomes untouched; confirmation protocol not yet frozen",
+  "source": "QCArchive dataset472 TorsionNet500 Re-optimization TorsionDrives v4.0",
+  "source_entries": 500,
+  "eligible_unique_parents": 353,
+  "eligible_scaffold_groups": 308,
+  "previously_inspected_parents": 758,
+  "previously_inspected_scaffolds": 385,
+  "archive_fitting_parents": 919,
+  "exclusion_counts": {
+    "Sage_2_2_1_archive_fitting_parent": 4,
+    "duplicate_parent_in_candidate_source": 1,
+    "not_complete_at_inventory_freeze": 3,
+    "previously_inspected_parent": 1,
+    "previously_inspected_scaffold": 142
+  },
+  "candidate_membership_sha256": "41f77b77b4786548ff4fd30764d78cf08c6f58db8ada67c6697d2705bd01306d",
+  "structure_entries_sha256": "a965e6008a12536a64c2857fe55303ebfa74ef27c4cf604c844af2a31a88f753",
+  "fitting_archive_sha256": "db388881c1626dfcdd5b6d5c2c355849802a7cb1d4cc55de115cb149b9e55472",
+  "qm_outcome_records_retrieved": false,
+  "limitations": [
+    "Not an audit of every charge/nonbonded fitting source",
+    "Pretrained LLM exposure to original TorsionNet is unknown",
+    "Entry count is not number of complete converged 24-frame scans",
+    "Acyclic scaffold grouping follows the prior development convention",
+    "No claim that this reaches the proposed 300-parent/150-scaffold target"
+  ]
+}

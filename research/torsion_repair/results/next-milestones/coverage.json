@@ -1,0 +1,2134 @@
+{
+  "status": "structure and topology coverage only; no charge assignment or QM outcome retrieval",
+  "forcefield": "openff_unconstrained-2.2.1.offxml",
+  "forcefield_sha256": "1df9134490de8ac19099394168d36972339b2cc11a120e4146a42039aae3c38e",
+  "candidate_source_sha256": "bbe5735dfcb21ed7afef3551982f5afbfa1551b14c5f067ad9e8cb969df8f805",
+  "input_parents": 353,
+  "coverage_passed_parents": 353,
+  "coverage_failed_parents": 0,
+  "limitations": [
+    "Improper assignment multiplicity is not audited by this simple topological count",
+    "Successful labels do not guarantee AM1-BCC convergence",
+    "QM scan completeness and chemical-state consistency still need fixed-rule checks after model/protocol freeze"
+  ],
+  "results": [
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[C:3]2=C(N(c3c(c(c(c(c3[C:4]2=O)[H])[H])[H])[H])C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 82
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=C(N3C(=C(SC3=[N:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c([n:1][c:2](nc1[H])[N:3]([H])[C:4]([H])([H])C2=C(C(=NN2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=NOC(=[N:1]2)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 35
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=C(C(=O)Oc3[c:1]2c(c(c(c3[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C@:2]2(C(=O)N(C(N2[H])([H])[H])C([H])([H])[H])[C:1]([H])([H])[H])Cl)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 73
+    },
+    {
+      "entry": "[H][C:1]1=[C:2](N2C(=C(C(=N2)[H])[H])N=C1[H])[C:3]([F:4])(F)F",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 38
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[C:2]2=[N:1]N=C(O2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 39
+    },
+    {
+      "entry": "[H]c1c(nc(c(c1[c:1]2c(nc(n[c:2]2[C:3]3=C(C(=C([O:4]3)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[N:1]([H])[C:2](=O)[C:3]([H])([H])[C:4]([H])([H])N2C(C(OC(C2([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 35,
+      "proper_torsion_instances": 89
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:4]([H])([H])[O:3][c:2]2[c:1](c(nc(n2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 51
+    },
+    {
+      "entry": "[H]c1[c:1]([c:2](c(nc1[H])C([H])([H])[H])[N:3]2C(=C(C(=[N:4]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 46
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[N:1]N=C(N2N([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]c1c(c([c:2]([c:1](c1[H])N2C(=NC(=N2)[H])[H])[O:3][C:4]([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[N:3]([H])[C:2]([H])([H])[c:1]2c(c(c(c(c2OC([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 69
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]([H])([H])[N:1]2c3c(c(c(c(c3N=C2C([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c([c:1]([c:2](c1[H])[C:3]2=Nc3c(c(c(c(c3[O:4]2)[H])[H])[H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 65
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[C:2]([H])([H])[C:1](=O)N2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 84
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:1](c1[H])[c:2](c(c(n2)[H])[H])[C:3]3=NC(=N[O:4]3)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 53
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[O:3][C:4]2=NC(=C(S2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2]([H])([H])[O:3][c:4]2c(c(c(c3c2c(c(c(c3[H])[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 79
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[c:2]2c(c(c(c3[c:1]2OC(C3([H])[H])([H])[H])[H])[H])[H])F)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H][C@@:2](C(=O)N(C([H])([H])[H])C([H])([H])[H])([C:3]([H])([H])[C:4]([H])([H])C([H])([H])[H])[N:1]([H])C(=O)C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 65
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[O:2][C:1]2=C(C(=NN2C([H])([H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1]2=NN(C(=[C:2]2[c:3]3c(c(nc([n:4]3)[H])[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[c:2]2[n:1]c(c3c(n2)C(C([N@](C3([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 83
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[N:3]([H])[c:4]2c(c(nc(n2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 52
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[O:3][c:4]2c(c(c(c(c2[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1nc(n[c:2]([n:1]1)[O:3][C:4]([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 13,
+      "proper_torsion_instances": 17
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2]([H])([H])[N:3]2c3c(c(c(c(c3O[C:4]2=O)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2[C:4](=NN=C2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 41
+    },
+    {
+      "entry": "[H]c1nc(n[c:3]([n:4]1)[N:2]([H])[N:1]([H])C(=O)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 30
+    },
+    {
+      "entry": "[H]C(=[C:2]([C:3](=[O:4])N([H])C([H])([H])[H])[N:1]([H])C(=O)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c(n[c:3]([n:4]c1[H])[c:2]2c(nc(c([n:1]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[O:3][c:4]2c(c(c3c(c(c(c(c3n2)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]2=NOC(=[N:1]2)N([H])C([H])([H])[H])F)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 47
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=NN=C([N:1]2C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 47
+    },
+    {
+      "entry": "[H]C([H])([H])[C:1]([H])([H])[N:2]([C:3](=[S:4])N([H])C([H])([H])[H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 35
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[C:2]2=[N:1]C(=C(N2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(n[c:1](nc1[H])[N:2]([H])[C@:3]2([C:4](=O)N(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])C([H])([H])[H])[C:2]([H])([H])[N:1]2C(=C(C(=N2)[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 64
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])c(c(c([c:1]2[C:2]([H])([H])[C:3]3=NN=C([N:4]3N([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 73
+    },
+    {
+      "entry": "[H]c1c2c(c([c:4]([c:3]1[O:2][C:1]([H])([H])[H])OC([H])([H])[H])[H])N(C(C(=C2[H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H]c1c([c:3]([c:4](nc1[H])[H])[C:2]([H])([H])[N:1](c2c(c(nc(n2)[H])[H])[H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[O:3][C:2]([H])([H])[C:1]2=NN=C(N2C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]c1c(nc([n:4][c:3]1[N:2]([H])[C:1]2=C(C(=NN2[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]C1(C(=[C:3]([C:4]1=O)[O:2][C:1]([H])([H])C([H])([H])[H])N([H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]2=NN(c3[c:1]2c(c(c(n3)[H])[H])[H])C([H])([H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 71
+    },
+    {
+      "entry": "[H][c:4]1c(nc(c([c:3]1[C:2]2=[N:1]N=C(N2C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 43
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[N:3]2[c:4]3c(c(c(c(c3C(C2([H])[H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 81
+    },
+    {
+      "entry": "[H]C1=C([N:2]([N:1]=C1[H])[C:3]([H])([H])[C:4](=O)N2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 80
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])/[N:1]=[C:2](\\[H])/[C:3]2=C(C(=C([O:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2](c2c(c(c(c(c2[H])[H])[H])[H])[H])[c:1]3nc(nc(n3)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]c1c(n[c:3]([n:4]c1[H])[N:2]2c3c(c(nc(n3)[H])[H])C(=[N:1]2)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1](C(=C(S2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[C:2]2=[N:1]C(=NO2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 33
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[C:1]3C(=NN2[H])N=C(C(C3([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 61
+    },
+    {
+      "entry": "[H]C([H])([H])C(=O)N([H])[C:1]([H])([H])[C:2]([H])([H])[O:3][C:4]([H])([H])C([H])([H])OC([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 46
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C@@:2]2([C:1](=C(C([N@]2C([H])([H])[H])([H])[H])[H])C(=O)C([H])([H])[H])[H])F)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]C1=[C:3]([N:4]=C(N(C1([H])[H])[H])[H])[C:2]([H])([H])[C:1]2=NN=C(N2C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 55
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]N(C(=C2[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H][C@:3]1(C(SC([N@:4]1C([H])([H])[H])([H])[H])([H])[H])[C:2](=O)[N:1]([H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c(n[c:3]([n:4]c1[H])[c:2]2[n:1]c(c(c(n2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1](N=C(O2)[H])C(=O)N(C([H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[N:1]N=C(O2)SC([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 34
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=NN=C([N:4]2N([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=NC(C([O:1]2)([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 39
+    },
+    {
+      "entry": "[H]C([H])([H])C1=N[C:3](=[N:4]O1)[C:2]([H])([H])[S:1]C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 27
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[C:3]2=C(C(=C([S:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c(n[c:1](c1[H])[N:2]([H])[c:3]2c(c(nc([n:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]c1c(c([n:1][c:2](c1[H])[C:3]2=C(C(=C([S:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2[c:1]3c(nc4c(c(c(c(c4n3)[H])[H])[H])[H])C(=C2N([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 84
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[N:1]2C(=NN=[C:2]2[C:3]3=C(C(=C([O:4]3)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 61
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]2=NOC(=[N:1]2)C([H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]2=C(C(=N[N:1]2C([H])([H])[H])[H])[H])F)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]C1=C(OC(=C1[H])[C:1]2=[C:2](OC(=C2[H])N([H])C([H])([H])[H])[C:3]3=C(C(=C([O:4]3)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 66
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[N:1]C(=NO2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]C1(C(C([C:4](C1([H])[H])([H])[N:3]([H])[C:2](=O)[N:1]2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 34,
+      "proper_torsion_instances": 107
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]N3C(=N2)SC(C3([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=NN(C(=[N:1]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 15,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c(c2c(c(c(n[c:1]2[c:2](c1[H])[c:3]3c(nc(c([n:4]3)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]C([H])([H])N([H])[C:1](=O)[C:2]([H])([H])[O:3][C:4]([H])([H])C(=O)N([H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 38
+    },
+    {
+      "entry": "[H]c1c(n[c:3]([n:4]c1[H])[C:2]2=[N:1]C(=NN2[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[c:3]2[n:4]c(c3c(c(c(c(c3n2)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 64
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:4](c1[H])[c:3](c(c(n2)[H])[H])[N:2]([H])[c:1]3c(c(c(c(c3C([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c([n:1][c:2](c1[H])[C:3]2=[N:4]OC(=C2[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 43
+    },
+    {
+      "entry": "[H]c1c([c:4]([c:3](c(c1[H])[H])[N:2]2C(=O)c3c(c(c(c(c3N=[C:1]2C([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[N:2]([H])[c:3]2c(c(c(c([n:4]2)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 52
+    },
+    {
+      "entry": "[H]c1c(c([c:1]([c:2](c1[H])[N:3]2C(=NC(=[N:4]2)[H])[H])N([H])C(=O)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])N=[N:4][N:3]2[O:2][C:1]([H])([H])C(=O)N([H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2C(=O)C(=C([N@:1]2C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2[C:1](=C(C(=C(C2=O)[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H][c:4]1c(nc(c([c:3]1[C:2]2=C(C(=NC3=C(C(=N[N:1]23)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]C1=N[O:4][C@@:3](C1([H])[H])([H])[C:2](=O)[N:1]([H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])c([n:1][c:2](n2)[C:3]3=C(C(=C([S:4]3)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]C1(C([C:4]1([H])[N:3](C(=O)C([H])([H])[H])[C:2]([H])([H])[C:1]2=NN=C(O2)C([H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 67
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=N[N@@](C(C(=[C:1]2C3=C(C(=NO3)[H])[H])[H])([H])[H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 67
+    },
+    {
+      "entry": "[H]c1c(nc([n:4][c:3]1[N:2]2[C:1](=NC(=N2)[H])N([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c([n:1][c:2](nc1[H])[N:3]2[C@@:4]3([C@](C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])(C(C(C2([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 35,
+      "proper_torsion_instances": 113
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C@@:2]([H])(C2=NC(=NO2)[H])[C:1]([H])([H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 63
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]2([N@@](C(C([N@@:1]2C([H])([H])[H])([H])[H])([H])[H])C([H])([H])[H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 80
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[c:2]2[n:1]c(c3c(n2)C(C([N@](C3([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 75
+    },
+    {
+      "entry": "[H]C1=[N:4][N:3](C(C1([H])[H])([H])[H])[C:2](=O)[C:1]([H])([H])N2C(=O)C(N(C2=O)[H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 65
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]N(C(=C2[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c(c([c:4](c1[H])[C:3]([H])([H])[N:2]2[C:1](=C(C(=N2)[H])[H])C([H])([H])[H])Cl)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[c:2]2c(c(nc([n:1]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]2=[C:1](C(=NN2[H])[H])[H])Cl)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:1](c1[H])[N:2](C(C(O2)([H])[H])([H])[H])[C:3](=[O:4])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H][c:1]1c(nc(n[c:2]1[O:3][C:4]2(C(N(C2([H])[H])C([H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 57
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])c(c([c:3]([n:4]2)[C:2]3=[N:1]C(C(N3[H])([H])[H])([H])[H])C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])C([H])([H])[H])[O:3][C:2]([H])([H])[C:1]2=NN=C(N2C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]C1=[C:3]([O:4]N=C1[H])[C:2]2=C(SC(=[N:1]2)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 14,
+      "proper_torsion_instances": 29
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[O:3][C:2]2=[C:1](N(N=C2[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[O:2][C:3]([H])([H])[C:4](=O)N2[C@](C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 36,
+      "proper_torsion_instances": 96
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[C:2]([H])([H])[N:1]2C(=C(C(=N2)[H])[H])[H])Cl)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 52
+    },
+    {
+      "entry": "[H]C([H])([H])N([H])[C:4](=O)[N:3]([H])[C:2]([H])([H])[C:1]([H])([H])C(=O)OC([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([c:4]2c(c1[H])N=C([N:3]2[c:2]3[n:1]c(c(c(n3)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2C(=C(C(=[C:4]2[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c([c:1]2c(c1[H])C(C([N:2]2[C:3](=[O:4])C3(C(C3([H])[H])([H])[H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 83
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=C(Sc3[c:4]2c(nc(n3)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=NN=C3[N:1]2N=C(S3)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=NC(=N[N:4]2c3c(c(c(c(c3[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1]3N=C(C(=C(N3N=C2[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(n[c:1](nc1[H])[N:2]([H])[C:3]2=NC(=N[N:4]2[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])[N:1]=[C:2](N2C([H])([H])[H])[C:3]3=C(C(=C([S:4]3)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 62
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[C:2]2=C(SC(=[N:1]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])N=[C:4](N2[H])[C:3]([H])([H])[C:2]([H])([H])[N:1](C(=O)C([H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 73
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=NOC(=[N:1]2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 43
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2(C(C2([H])[H])([H])[H])[C:1](=O)N3C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 103
+    },
+    {
+      "entry": "[H]C1=[C:2]([N:1]=C(N1[H])[H])[C:3]2=C(SC(=[N:4]2)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 15,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](nc1[H])[C:2]2=C(SC(=[N:1]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]([H])[c:1]2c3c(nc(n2)[H])N(N=C3[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 66
+    },
+    {
+      "entry": "[H]c1c(c(c([c:4](c1[H])[C:3]([H])([H])[N:2]2[C:1](=C(N=N2)[H])[H])F)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H][C@@:3]1(C(C(C([O:4]1)([H])[H])([H])[H])([H])[H])[C:2](=O)[N:1]2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 91
+    },
+    {
+      "entry": "[H]C1=C([S:1][C:2](=N1)[C:3]2=C(SC(=[N:4]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 14,
+      "proper_torsion_instances": 28
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]N(C(=C2C([H])([H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c([c:1]([c:2](c1[H])[C:3]2=[N:4]C(=C(C(N2[H])([H])[H])[H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 57
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[N:2]([H])[c:1]2c(c(c(c(c2C([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c(c([c:2]([c:1](c1[H])C2=Nc3c(c(c(c(c3N2[H])[H])[H])[H])[H])[C:3]4=[N:4]C(=C(N4[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 84
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[N:4]2C(=NN=[C:3]2[c:2]3c(c(c(c([c:1]3Cl)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 69
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[N:1]N=C(O2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 43
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[c:3]2c(c(c3c([c:4]2[H])N=C(O3)C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 66
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:1](c1[H])[c:2](c(c(n2)[H])C([H])([H])[H])[N:3]([H])[c:4]3c(c(c(c(c3Cl)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c([c:1]2c(c1[H])c(c(c([c:2]2[N:3]3C(=C(C(=[N:4]3)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 64
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]([H])([H])[N:1]2C(=C(C(=C2C([H])([H])[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]C([H])([H])C(=O)N([H])[C:1]([H])([H])[C:2]([H])([H])[C:3](=[O:4])N(C([H])([H])[H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 47
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[N:1]C(=C(S2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([c:4]([c:3](c1[H])[c:2]2[c:1](c(nc(n2)[H])[H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[N:3]([H])[C:2]2=[C:1](C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])C(=O)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 85
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2](=O)[C:1]2=C(N(C(N(C2([H])[H])[H])([H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c(c([n:1][c:2](c1[H])[N:3]2C(=C(C3=[C:4]2N=C(N4C3=NC(=N4)[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]C1=[C:3]([O:4]N=C1[H])[C:2]2=[N:1]C(=NO2)[H]",
+      "coverage_passed": true,
+      "atoms": 13,
+      "proper_torsion_instances": 26
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2[N:1]=C(C(=N2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])C(C(=[C:3]([O:4]2)[N:2]([H])[C:1](=O)C([H])([H])[H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H]C1(C([C:1]([C:2](C(C1([H])[H])([H])[H])([H])[C:3]([H])([H])[C:4]2(C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 37,
+      "proper_torsion_instances": 126
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]([H])[c:1]2c3c(c(c(c(c3nc(c2C([H])([H])[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])/[N:4]=[C:3](\\[H])/[C:2]2=C(N(N=[C:1]2C([H])([H])[H])C([H])([H])[H])Cl)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]C1=C(O[C:2](=[C:1](C1([H])[H])[H])[C:3]([H])([H])[O:4][H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 39
+    },
+    {
+      "entry": "[H]c1c(c([c:1]([c:2](c1[H])[C:3]([H])([H])[N:4](C(=O)C([H])([H])[H])C2(C(C2([H])[H])([H])[H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 81
+    },
+    {
+      "entry": "[H]C1=C(N=[C:3]([N:4](C1([H])[H])[H])[C:2]2=C(SC(=[N:1]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H][c:4]1c(nc(c([c:3]1[C:2]2=NOC(=[N:1]2)C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 39
+    },
+    {
+      "entry": "[H]c1c(n[c:2]([c:1](n1)[H])[N:3]2C(C(C(C([C:4]2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[C:1]3C(=NN2[H])N(C(C(C3([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=NN(C(=[N:1]2)[H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 38
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2c3c(c(nc(n3)[H])[H])C(=[N:4]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1](C(=NO2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 41
+    },
+    {
+      "entry": "[H]C1=C(ON=C1[H])[C:1]2=C(C(N(N=[C:2]2[C:3]3([C:4](C(N(C(C3([H])[H])([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 36,
+      "proper_torsion_instances": 101
+    },
+    {
+      "entry": "[H]c1c(c(c2=NN([C:2](=[c:1]2c1[H])[c:3]3c(c(c(c([n:4]3)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]C([H])([H])C(=O)[N:1]([H])[N:2]([H])[C:3](=[S:4])N([H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 28
+    },
+    {
+      "entry": "[H]c1c([n:1][c:2](nc1[H])[N:3]2C(=C(C(=[N:4]2)[H])[H])N([H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 46
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=[N:1]C(=C(N2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[N:2]2C(=O)N(C([C:1]2([H])[H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 71
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1](=C([H])[H])[N:2]([H])[c:3]2c(c(c(c([c:4]2[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 64
+    },
+    {
+      "entry": "[H]/[C:4](=[C:3](\\[H])/[C:2]([H])([H])[C@:1]1(C(=O)C(C([C@]1([H])C([H])([H])[H])([H])[H])([H])[H])[H])/C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 73
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]([H])([H])[N:1]2c3c(c(c(c(n3)[H])[H])[H])N=C2C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])C([H])([H])[H])[C:2]([H])([H])[N:3]2C(=C(N=[N:4]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 55
+    },
+    {
+      "entry": "[H]c1[c:3]([c:4](nc(n1)[H])C2(C(C(N(C(C2([H])[H])([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[C:2]3=[C:1](C(=NO3)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 34,
+      "proper_torsion_instances": 93
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:4]2=C(c3c(c(c(c(c3[N:3]2[O:2][C:1]([H])([H])[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 73
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])/[C:4](=[N:3]/[N:2]2C(=O)c3c(c(c(c(c3N=[C:1]2C([H])([H])[H])[H])[H])[H])[H])/[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2c3c(c(nc(n3)[H])[H])C(=[C:1]2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2]([H])([H])[N:3]2C(=NC(=[N:4]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]C1=[C:1]([N:2](C(=O)N=C1[H])[C@:3]2(C(C(C([O:4]2)([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 59
+    },
+    {
+      "entry": "[H]c1c(c(c([c:4](c1[H])[C:3]([H])([H])[N:2]2[C:1](=C(C(=N2)[H])[H])C([H])([H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 63
+    },
+    {
+      "entry": "[H]c1c(c2c(nc(c(c2[c:1](c1[H])[O:2][C:3]([H])([H])[C:4]3=NC(=C(O3)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 63
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[N:1]N=C(O2)SC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 42
+    },
+    {
+      "entry": "[H]c1c([c:3]([n:4]c(n1)[H])[N:2]2[C:1](C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])Cl",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]C(=[C:4]([H])[C:3]([H])([H])[N@@:2]([C:1]([H])([H])C([H])([H])[H])S(=O)(=O)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 46
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[N:3]([H])[C:4]2=C(C(=NO2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2[C:1](=O)c3c(c(c(c(c3N(C2=O)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]C1=C(C(N([N:4]=[C:3]1[C:2]([H])([H])[C:1]([H])([H])C(=O)N(C([H])([H])[H])C([H])([H])[H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 61
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[S:2][C:3]2=C(C(=C([S:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]C1(C(C(N(C(C1([H])[H])([H])[H])[C:1](=O)[C:2]([H])([H])[N:3]2C(C(C(C([C:4]2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 37,
+      "proper_torsion_instances": 112
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])[N:1]=[C:2](N2C([H])([H])[H])[c:3]3c(c(c(c([n:4]3)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 66
+    },
+    {
+      "entry": "[H]C([H])([H])N([H])[C:4](=O)[N:3](C([H])([H])[H])[C:2]([H])([H])[C:1]([H])([H])OC(=O)N([H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]([H])([H])[C:1]2=C(N=C(N(C2=O)[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 62
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2](c2c(c(nc(n2)[H])[H])[H])[C:1]([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H][C:1]([H])([H])[C:2]([H])([H])[N:3]([C:4]([H])([H])C([H])([H])[H])S(=O)(=O)C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=NN=C([N:1]2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 41
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]([H])[C:1]2=C(N=C3N2C(=C(N=C3[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 64
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[N:2]2[C:1](=Nc3c(c(c(c(c3C2=O)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 76
+    },
+    {
+      "entry": "[H]c1c(nc([n:4][c:3]1[N:2]2[C:1](C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1]2=[C:2](OC(=N2)C([H])([H])[H])[c:3]3c(c(c(c([c:4]3[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]C1(C([C:1]([C:2](C(C1([H])[H])([H])[H])([H])[C:3]2(OC(C([O:4]2)([H])[H])([H])[H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 84
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[O:2][c:3]2[n:4]c(nc(n2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[c:2]2[n:1]c(c3c(n2)C(C([N@](C3([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 79
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[O:2][c:1]2c(c(c(c(n2)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 55
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2C3=C(C(=C([C:4]2=O)[H])[H])C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 91
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[N:2]2[C:1]3=C(C(=N2)[H])C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 79
+    },
+    {
+      "entry": "[H]C1=[C:3]([O:4]N=C1[H])[C:2]2=C(N(N=[C:1]2C3(C(C(N(C(C3([H])[H])([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 93
+    },
+    {
+      "entry": "[H]c1c([n:1][c:2](nc1[H])[N:3]2C(=NC(=[N:4]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:1](c1[H])[c:2](c(c(n2)[H])C([H])([H])[H])[N:3]3[C:4](C(OC(C3([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 86
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[N:3]([H])[C:4]2=NN=C(O2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 51
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1]2=[C:2](N(C(=N2)[H])C([H])([H])[H])[c:3]3c(c(nc([n:4]3)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:4](=O)[N:3]([H])[C:2]2=C(C(c3c(c(c(c(c3[O:1]2)[H])[H])[H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 80
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]SC(=N2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2C3=C(C(=[N:4]2)[H])C(C(c4c3c(c(c(c4[H])[H])[H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 93
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[C:2]2=[N:1]N=C(N2C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 39
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])c(n[c:2]([n:1]2)[N:3]([H])[c:4]3nc(c(c(n3)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[c:3]2c(c(nc([n:4]2)[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=NOC(=[C:1]2C(=O)OC([H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])N=[C:1]([N:2]2[c:3]3c(c(c(c([c:4]3OC([H])([H])[H])[H])[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 75
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2C(=C(N=[N:4]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 41
+    },
+    {
+      "entry": "[H]c1c(c(n[c:4](c1[H])[N:3]([H])[c:2]2[c:1](nc(c(n2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])[c:3]([n:4]c(n2)[H])[N:2]([H])[C:1]3(C(C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 34,
+      "proper_torsion_instances": 100
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2](=O)[N:1]([H])C2=NN=C(S2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[O:2][C:3]2=C(C(=C([O:4]2)C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[N:2]2[C:1](=C(N=N2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[O:3][C:2]([H])([H])[C:1]2=C(OC(=N2)C([H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 59
+    },
+    {
+      "entry": "[H]c1c([c:2]([c:1](c2c1N(C(C(=C2[H])[H])([H])[H])[H])[H])[O:3][C:4]([H])([H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 62
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2N=c3c(c(c(c(c3=[N:4]2)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[c:3]2c(c(c(n[c:4]2[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=NN=C([S:4]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]OC(=C2[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 47
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[O:2][c:1]2c(c(c(nn2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1nc(n[c:3]([n:4]1)[O:2][C:1]([H])([H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 26
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[O:3][C:2]([H])([H])[C:1]2=C(C(=NN2C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 57
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])C([H])([H])[H])[N:2]([H])[c:3]2c(c(c(c([c:4]2C([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2]([H])([H])[C:3]2=NN=C([O:4]2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 51
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[c:2]2[c:1](c(c(nn2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1n[c:1]([c:2](nn1)[C:3]2=C(C(=C([O:4]2)[H])[H])[H])C3=C(C(=C(O3)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 53
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[O:3][c:2]2[c:1](c(c(c(n2)[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=[N:1]C3=C(C(=NN3C(=C2[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 52
+    },
+    {
+      "entry": "[H]c1c(c([c:2]([c:1](c1[H])[H])[O:3][c:4]2c(c(c(c(n2)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])C(=O)[N:1](N=N2)[C:2]([H])([H])[O:3][C:4](=O)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](nc1[H])[C:3]2=[N:4]C(C(N2[H])([H])[H])([H])[H])C(=O)OC([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 57
+    },
+    {
+      "entry": "[H]c1c(c(c([c:2]([c:1]1[H])[C:3]2=C(N(C(=[N:4]2)[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])/[N:4]=[C:3](\\[H])/[c:2]2c(c(c(c([c:1]2OC([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 61
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=C(N=C(N([C:4]2=O)[H])[H])N([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 52
+    },
+    {
+      "entry": "[H]C1=[C:1]([N:2](C(=O)N(C1([H])[H])[H])[C@:3]2(C(C(C([O:4]2)([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 67
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:3](=[O:4])[C:2]2=[C:1](N(c3c2c(c(c(c3[H])[H])[H])[H])C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c([n:1][c:2](nc1[H])[N:3]2C(=C(C(=[N:4]2)[H])[H])N([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([c:2]([c:1](c1[H])C([H])([H])[H])[N:3]2N=C(C(=[N:4]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 46
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[C:1](C(=NO2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 15,
+      "proper_torsion_instances": 33
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])[N:1](C(=O)C(C(O2)([H])[H])([H])[H])[C:2]([H])([H])[C:3](=[O:4])N([H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]([H])([H])[N:1]2c3c(c(c(nc3N(C2=O)C([H])([H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 78
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=NC(=C([N:1]2C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H][c:1]1c(nc(n[c:2]1[N:3]2C(=C(N=[C:4]2[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(n[c:1](c(n1)[H])[N:2]([H])[C:3]([H])([H])[C:4]2=C(C(=C(O2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])[C:4](=O)[C:3](=C(O2)[H])/[C:2](=[C:1]\\3/C(=O)OC(=N3)[H])/[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1]2=C(C(=N[N:2]2[c:3]3c(c(c(c([c:4]3F)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])C([H])([H])[H])[O:2][c:3]2c(c(c(c([n:4]2)[H])[H])[H])C([H])([H])[H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 66
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1]2=C(C(=N[N:2]2[c:3]3c(c(c(c([c:4]3Cl)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[N:2]2C(=NC3=[C:1]2C([N@@](C([N@@]3C([H])([H])[H])([H])[H])C([H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 36,
+      "proper_torsion_instances": 92
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[C:2]2=[N:1]N=C(O2)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 35
+    },
+    {
+      "entry": "[H][C:1]1=[C:2](N2C(=NC(=N2)[H])N=C1[H])[C:3]([F:4])(F)F",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 34
+    },
+    {
+      "entry": "[H]C1=[C:1]([N:2](N=N1)[C:3]2=[N:4]ON=C2N([H])[H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]c1c(c(n[c:1](c1[H])[N:2]([H])[c:3]2[n:4]c(c(c(n2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 44
+    },
+    {
+      "entry": "[H]C1=[C:4](ON=C1[H])[C:3]([H])([H])[C:2](=O)[N:1]2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 77
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])C([H])([H])[H])[O:2][c:1]2c(c(c(nc2[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 54
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[S:3][C:4]2=C(C(=C(O2)C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c(c2=NN([C:2](=[c:1]2c1[H])[C:3]3=[N:4]c4c(c(c(c(c4N3[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 76
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])Cl)[C:2]2=NOC(=[N:1]2)C([H])([H])[H])F)[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 43
+    },
+    {
+      "entry": "[H]c1c(c([c:1]2c(c1[H])N=C([N:2]2[c:3]3c(c(c(c([n:4]3)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c([c:3]([c:4](nc1[H])[H])[N:2]2[C:1](=C(N=C2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1]3N(C(=C(C(N3N=C2C([H])([H])[H])([H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=C(N=C(N([C:4]2=O)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(nc([n:4][c:3]1[C:2]([H])([H])[C:1]2=NN=C(N2C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 47
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[c:2]2[n:1]c(c3c(n2)N(N=C3[H])C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=C(N=N[N:4]2c3c(c(c(c(c3[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 69
+    },
+    {
+      "entry": "[H]C1(C(=O)[N:4](C(=O)C1([H])[H])[O:3][C:2](=O)[C:1]([H])([H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[C:2]2=NOC(=[N:1]2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 51
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2C(=O)C(=C(C(=[N:1]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c([c:3]([c:4](nc1[H])[H])[C:2]2=[N:1]N=C(N2C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 43
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[N:1]C3=C(C(=NN3C(=C2[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 52
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[c:2]2[n:1]c(c3c(n2)C(C(C(C3([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 75
+    },
+    {
+      "entry": "[H]c1c(c([n:1][c:2](c1[H])[C:3]2=NN=C3[N:4]2N=C(C(=C3[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 53
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=[N:1]N=C(O2)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 35
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])N=[C:3]([N:4]2[H])[N:2]3[C:1]4=C(C(=N3)[H])C(C(C(C4([H])[H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 95
+    },
+    {
+      "entry": "[H][c:1]1c(nc(n[c:2]1[N:3]([H])[C:4]([H])([H])[C@@]2(C(C([N@](C2([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 80
+    },
+    {
+      "entry": "[H]c1c2c(nc(nc2c([c:2]([c:1]1OC([H])([H])[H])[O:3][C:4]([H])([H])[H])OC([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 51
+    },
+    {
+      "entry": "[H]c1c(c(c([c:1](c1[H])[O:2][c:3]2c(c(c(c([n:4]2)[H])[H])[H])[H])Cl)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])n[c:1]([c:2](n2)[C:3]3=C(C(=C([O:4]3)[H])[H])[H])C4=C(C(=C(O4)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 76
+    },
+    {
+      "entry": "[H]C1=C([N:3]([N:4]=C1[H])[C:2]2=[N:1]N=C(N2N([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])/[C:2](=[C:1]\\2/C(=O)N3C(=NC(=N3)[H])S2)/[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2[C:1](=C(c3c(c(c(c(c3C2=O)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[N:2]2[c:1]3c(c(c(c(c3N=C2[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[C:2]2=NOC(=[C:1]2C(=O)N(C([H])([H])[H])C([H])([H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 63
+    },
+    {
+      "entry": "[H]C1=NN=[C:2]([N:1]1[H])[C:3]([H])([H])[C:4]([H])([H])C(=O)N(C([H])([H])[H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:4](c1[H])[C:3](=C(N2[H])[H])[C:2]([H])([H])[C@:1]3(C(=O)N(C(N3[H])([H])[H])C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 89
+    },
+    {
+      "entry": "[H]c1c(c2c([c:4]([c:3]1[C:2]3=NOC(=[N:1]3)C([H])([H])[H])[H])OC(O2)([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 53
+    },
+    {
+      "entry": "[H]c1c(c([c:2]([c:1](c1[H])c2c(c(c(nc2[H])[H])[H])[H])[O:3][C:4](F)(F)F)[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 53
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[N:4]2[C:3](=C(C(=N2)[H])[H])[C:2](=O)[N:1]([H])c3c(c(c(c(c3[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 80
+    },
+    {
+      "entry": "[H]C1=C(N([C:3](=[N:4]1)[C:2]2=C(SC(=[N:1]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 15,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]C1=C(C([N:4]([C:3](=C1[H])[C:2]([H])([H])[N:1]([H])C(=O)C([H])([H])[H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1]([N@@](C(N2[H])([H])[H])C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]2C(=O)c3c(c(c(c(c3N4[C:1]2=NN=C4[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 81
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2]2=[C:1](N=C(O2)C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 46
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])C(C([C@@]([N:1]2[C:2](=O)[O:3][C:4]([H])([H])C([H])([H])[H])([H])C([H])([H])[H])([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 85
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]([H])([H])[N:4](c2c(c(c(c(n2)[H])[H])[H])[H])C(=O)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 31,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[c:3]2c(c(c3c(c(c(c(c3[n:4]2)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]C1=C([N:3]([C:4](=N1)[H])[C:2](=O)[N:1]2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 72
+    },
+    {
+      "entry": "[H]C1=C([O:4][C:3](=C1[H])[C:2]2=NN3C(=NC4=C(C3=[N:1]2)C(=C(N4C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 70
+    },
+    {
+      "entry": "[H]c1c(c(n[c:2]([c:1]1[H])[N:3]2C(=C(N=[C:4]2[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 40
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=C(SC(=[N:1]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 15,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=C(C(=NC3=C(C(=N[N:4]23)[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(c([n:4][c:3](c1[H])[C:2]2=NN(C(=[N:1]2)[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 42
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2](=O)[N:3]([H])[C:4]2=C(N=C(N(C2=O)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[C:2]([H])([H])[N:1]2C(=C(C(=N2)[H])[H])N([H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 71
+    },
+    {
+      "entry": "[H]c1c(nc([n:1][c:2]1[C:3]2=C(C(=C([O:4]2)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[O:3][C:2]([H])([H])[C:1]2=NC(=C(C(N2C([H])([H])[H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 29,
+      "proper_torsion_instances": 65
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[N:2]([H])[c:1]2c(c(c(c(c2C([H])([H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 62
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[N:1]2[C:2](=C(C(=N2)[H])C([H])([H])[H])[N:3]3C(=C(C(=[C:4]3[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 74
+    },
+    {
+      "entry": "[H]c1c(nc(nc1[c:1]2c(nc(n[c:2]2[C:3]3=C(C(=C([O:4]3)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=[N:1]N=C(O2)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 35
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]([H])[C:4]2=C(N=C3N2C(=C(C(=C3[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 27,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]2=[N:4]N(C(=C2C([H])([H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 50
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[N:3]2[c:4]3c(c(c(c(c3N=C2[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 64
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])[H])[C:2](=O)[C@@:1]([H])(c2c(c(c(c(c2[H])[H])[H])[H])[H])N([H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 32,
+      "proper_torsion_instances": 76
+    },
+    {
+      "entry": "[H]C([H])([H])[N:1]([H])[C:2](=O)[C:3]([H])([H])[C:4](=O)N([H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]C1=[C:1]([N:2](C(=C1[H])C([H])([H])[H])[C:3]2=[N:4]C(=NN2[H])[H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 22,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c(c2c(c1[H])N=[C:3]([N:4]2[H])/[N:2]=[C:1]\\3/N=C(C(=C(N3[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(c([c:1](c(c1[H])[H])[C:2]([H])([H])[C:3]2=NN=C([S:4]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 20,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1c([c:1]([c:2](c(c1[H])[H])[C:3]([H])([H])[c:4]2c(c(nc(c2[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 56
+    },
+    {
+      "entry": "[H]c1c(c2[c:4]([c:3](c1[H])[O:2][C:1]([H])([H])[H])OC(C2([H])[H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 49
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[C:2]2=NC(=C([S:1]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 32
+    },
+    {
+      "entry": "[H]C1=C([N:1](C(=O)C(=N1)[H])[C:2]([H])([H])[C:3](=[O:4])N([H])C([H])([H])[H])C([H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]c1c(c(c2[c:4](c1[H])[C:3](=C(N2[H])[H])[c:2]3[n:1]c(c(c(n3)[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c([n:1][c:2](nc1[H])[C:3]2=C(C(=C([S:4]2)[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 17,
+      "proper_torsion_instances": 36
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])(c2c(c(c(c(c2[H])[H])[H])[H])[H])[C:2]3=NOC(=[N:1]3)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 81
+    },
+    {
+      "entry": "[H]C1=C([S:4][C:3](=C1[H])[C:2]2=[C:1]3C(=NN2[H])N=C(C(C3([H])[H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 23,
+      "proper_torsion_instances": 61
+    },
+    {
+      "entry": "[H]c1c(c(c(c(c1[H])[H])[C:1]2=C(C(=N[N:2]2[c:3]3c(c(c(c([n:4]3)[H])[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 68
+    },
+    {
+      "entry": "[H]c1c([n:4][c:3](c(n1)[H])[C:2]2=NOC(=[N:1]2)C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 18,
+      "proper_torsion_instances": 35
+    },
+    {
+      "entry": "[H]c1c(c([c:4](c(c1[H])[H])[C:3]([H])([H])[C:2]2=[N:1]C(=NN2[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 48
+    },
+    {
+      "entry": "[H]C1=C(O[C:1](=[C:2]1[C:3]2=NN=C([N:4]2C([H])([H])[H])[H])C([H])([H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 21,
+      "proper_torsion_instances": 45
+    },
+    {
+      "entry": "[H]c1c(c([n:1][c:2](c1[H])[N:3]2C(=NN=[N:4]2)[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 16,
+      "proper_torsion_instances": 34
+    },
+    {
+      "entry": "[H]c1c2c(n[c:3]([n:4]1)[N:2]([C:1]([H])([H])[H])C([H])([H])[H])C([N@@](C(C2([H])[H])([H])[H])C([H])([H])[H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 30,
+      "proper_torsion_instances": 71
+    },
+    {
+      "entry": "[H]c1c(c([n:1][c:2](c1[H])[C:3]2=[N:4]OC(=N2)C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 39
+    },
+    {
+      "entry": "[H]c1c(c([c:4]2c(c1[H])N=C([N:3]2[c:2]3[n:1]c(c(c(n3)[H])[H])[H])C([H])([H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 26,
+      "proper_torsion_instances": 62
+    },
+    {
+      "entry": "[H]C1=C(N2C(=N[C:3](=[N:4]2)[C:2](=O)[O:1]C([H])([H])[H])N=C1[H])[H]",
+      "coverage_passed": true,
+      "atoms": 19,
+      "proper_torsion_instances": 37
+    },
+    {
+      "entry": "[H]C1=C(C(=O)[N:4](C(=C1[H])[H])[C:3]([H])([H])[C:2]2=[C:1](C(=C(O2)C([H])([H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 25,
+      "proper_torsion_instances": 58
+    },
+    {
+      "entry": "[H][C@:2]1(C(=O)N(C([C:1]1([H])[H])([H])[H])C([H])([H])[H])[C:3](=[O:4])N2C(C(C(C(C2([H])[H])([H])[H])([H])[H])([H])[H])([H])[H]",
+      "coverage_passed": true,
+      "atoms": 33,
+      "proper_torsion_instances": 98
+    },
+    {
+      "entry": "[H]c1c(c([c:1]2c(c1[H])c(c(c([c:2]2[C:3]3=C(SC(=[N:4]3)[H])[H])[H])[H])[H])[H])[H]",
+      "coverage_passed": true,
+      "atoms": 24,
+      "proper_torsion_instances": 60
+    },
+    {
+      "entry": "[H]c1c(c([c:3]([c:4](c1[H])F)[O:2][C@:1]2(C(C([N@@](C2([H])[H])C([H])([H])[H])([H])[H])([H])[H])[H])F)[H]",
+      "coverage_passed": true,
+      "atoms": 28,
+      "proper_torsion_instances": 74
+    }
+  ]
+}

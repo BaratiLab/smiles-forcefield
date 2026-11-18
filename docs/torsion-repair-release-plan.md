@@ -26,3 +26,9 @@ Keep the baseline package route usable independently. A future repair job needs 
 Expose research/validated status, source references, scope, error measurements and exact per-engine validation status on every job. Only release repaired downloads after geometry-complete term assignment, independent physical validation, native-engine energy/force parity and regression tests. Require authentication/rate limits, retention controls, dependency/security review and a verified deployment before enabling a public compute endpoint. New QM/cloud campaigns need a concrete cost specification and authorized budget.
 
 This release plan does not claim the current web deployment was upgraded, that NAMD was executed, or that a new cloud server was provisioned.
+
+## Implemented next-stage milestones
+
+Aligned program-SFT, stronger controls, geometry-complete Sage data preparation and topology-specific corrected exports are now implemented. Their reports distinguish the UFF adapter experiment from the new Sage corpus. A selected unchanged model is a valid negative validation outcome; an updated adapter is not promoted merely because it was trained.
+
+For community use, keep the current SMILES-to-baseline download path independent of optional QM-assisted repair. A refinement job must identify its QM observations and fixed chemical state. Reuse a verified cache where available; otherwise any new QM work is a separate queued computation with explicit resource accounting. SMILES alone do not supply residual evidence. Release an experimental correction only with its exact term assignments, background and validation provenance. The current research CLI can create corrected examples; it does not enable a public, unrestricted QM or LLM service.

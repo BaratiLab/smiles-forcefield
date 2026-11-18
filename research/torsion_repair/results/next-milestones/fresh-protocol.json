@@ -1,0 +1,44 @@
+{
+  "status": "outcome-blind candidate selection and draft confirmation gates; not an externally registered study",
+  "created_utc": "2026-11-18T15:32:09.769975+00:00",
+  "source_dataset_id": 472,
+  "qm_specification": "Psi4 B3LYP-D3BJ/DZVP; geometric optimizations; torsiondrive15deg",
+  "source_status_at_freeze": {
+    "complete": 497,
+    "error": 2,
+    "running": 1
+  },
+  "eligible_parents": 353,
+  "selected_test_parents": 300,
+  "selected_test_scaffold_groups": 262,
+  "reserve_parents": 53,
+  "selection": "first300 sorted by SHA256(repair-new-source-v1:+nonstereo_parent), after previous-parent/scaffold, fitting-parent and completion exclusions; no energy values inspected",
+  "eligible_sha256": "bbe5735dfcb21ed7afef3551982f5afbfa1551b14c5f067ad9e8cb969df8f805",
+  "test_membership_sha256": "367020b2e63003c6be8db8d032a56b570c44884af5c74b1cbd98235114b98220",
+  "outcome_access": "No QM outcome record, energy or gradient retrieval yet",
+  "missing_data": "Before scoring, require complete valid 24 geometries, same chemical state and valid MM parameterization using fixed eligibility rules. Exclusions are reported; reserve is NOT substituted based on outcomes. Fewer than300 valid parents reduces effective power.",
+  "validation_gate": "Do not spend the untouched test to rescue a model that fails to improve validation versus fixed Bayes and strongest matched-budget non-LLM control. Candidate pool stays sealed if this gate fails.",
+  "two_distinct_tracks": {
+    "algorithm_external_replay": "Current adapter is trained on QM-minus-UFF driven-instance corrections. An external test of it must keep that baseline and be described as acquisition/model-selection replay, not complete Sage repair.",
+    "geometry_complete_Sage_paper": "Rebuild training/validation residual states using the same Sage2.2.1/AM1-BCC background, summed affected torsion instances and full Cartesian geometries; train/select adapters before the new test. Two-molecule implementation/export checks are not a substitute."
+  },
+  "planned_primary": "Centered held-out relative-energy RMSE AUC vs actualQMframebudget; 8 initial then10,12,14,16 for24-point replay. Protocol for larger32-frame/prospective campaign requires additional conformers, not fabricated from a24-point scan.",
+  "planned_controls": [
+    "fixed Bayes",
+    "fixed_two matched2 proposals",
+    "learned_two",
+    "retrieval_two",
+    "BMA_two",
+    "larger-library CV/BMA references",
+    "fixed-query versus adaptive factor"
+  ],
+  "uncertainty": "Parent/scaffold clustered intervals and independent training seeds; 3trainingseeds/5acqseeds planned for paper, currentone-seedpilot insufficient",
+  "pretraining_exposure": "New reoptimization dates do not prove unseen molecular identities or original TorsionNet examples in the pretrained LLM",
+  "public_release_gate": "Independent physical validation and full-system export parity, including exact native-engine status; keep experimental patches separate until then",
+  "structure_coverage_audit": {
+    "passed": 353,
+    "checked": 353,
+    "definition": "Sage vdW,bond,angle,proper-torsion assignment; no partial-charge or QM outcome check",
+    "coverage_sha256": "9ce153f0a5cb709f07fc629dd3f407959047fcada263211eb15f13bba0cf7612"
+  }
+}

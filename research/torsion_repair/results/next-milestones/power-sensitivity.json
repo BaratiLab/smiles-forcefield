@@ -1,0 +1,35 @@
+{
+  "status": "planning sensitivity only, not achieved effect or guaranteed power",
+  "hypothetical_delta_kcal_mol": 0.10754439701290114,
+  "critical_z": 2.241402727604947,
+  "source": "retired168, unweighted scaffold-average paired differences; one acquisition seed",
+  "assumptions": [
+    "Future LLM paired-contrast variability resembles the numerical control contrasts",
+    "Normal approximation and scaffold-independent sampling; actual primary is molecule-weighted so final power should use full planned cluster allocation",
+    "New QM source may have larger variance/domain shift",
+    "Two primary comparisons use97.5%paired intervals; predeclare all tests and confirm once",
+    "No new-test labels used"
+  ],
+  "controls": {
+    "fixed_two": {
+      "empirical_cluster_sd": 0.4264868650964038,
+      "approx_clusters_for_80pct_power_at_10pct_effect": 149.48222138435406,
+      "approx_power_at262clusters": 0.9671319687088983
+    },
+    "learned_two": {
+      "empirical_cluster_sd": 0.3015754567492275,
+      "approx_clusters_for_80pct_power_at_10pct_effect": 74.74294587493331,
+      "approx_power_at262clusters": 0.9997928565543622
+    },
+    "retrieval_two": {
+      "empirical_cluster_sd": 0.22478904923480472,
+      "approx_clusters_for_80pct_power_at_10pct_effect": 41.526805450280214,
+      "approx_power_at262clusters": 0.9999999812842681
+    },
+    "bma_two": {
+      "empirical_cluster_sd": 0.5720133913891444,
+      "approx_clusters_for_80pct_power_at_10pct_effect": 268.8998838982912,
+      "approx_power_at262clusters": 0.7886684149468551
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "python": "3.11.18",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "rdkit": "2026.9.2",
+    "openmm": "8.6.1",
+    "openff-toolkit": "0.18.0",
+    "openff-interchange": "0.5.2",
+    "openff-units": "0.3.2"
+  },
+  "conda_components": {
+    "ambertools": [
+      "26.0"
+    ],
+    "gromacs": [
+      "2026.3"
+    ],
+    "lammps": [
+      "2025.07.22"
+    ]
+  }
+}

@@ -132,3 +132,5 @@ No remote chemistry services or LLM accounts are required. Dependency licenses r
 ## Experimental torsion-repair research
 
 The [torsion-repair module](research/torsion_repair/README.md) implements verified specialization programs, harmonic selection, Bayesian fitting/acquisition and a local open-model proposer. The optional `/api/research/torsion-repair/fit` endpoint requires `SMILES_ENABLE_RESEARCH_REPAIR=1`; it returns research corrections and validation evidence without changing production force-field downloads. Current experiments are development-only QM-minus-UFF residual studies. No repaired Sage accuracy or public deployment claim is implied.
+
+The [next-stage research report](research/torsion_repair/results/next-milestones/REPORT.md) includes real program-adapter training, stronger controls, geometry-complete Sage datasets, corrected example exports and an outcome-blind new QM cohort. Validation retained the unchanged model, so experimental refinements have not been enabled on the live website.

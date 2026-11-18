@@ -1,0 +1,917 @@
+{
+  "status": "actual Sage geometry-complete development validation, not fresh chemistry and not LLM performance",
+  "train_parents": 95,
+  "train_episodes": 285,
+  "validation_parents": 12,
+  "summary": {
+    "bayes_parent_H3": 0.6373741325001022,
+    "cv_harmonics": 0.6774070633959918,
+    "cv_library": 0.6557567689152096,
+    "fixed_two": 0.6671381219098406,
+    "learned_two": 0.6466535191084999
+  },
+  "records": [
+    {
+      "molecule": "torsion-1762745",
+      "scaffold": "murcko:c1ccc(NC2(c3ccccc3)CC2)cc1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.23903502599675705,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-1762745",
+      "scaffold": "murcko:c1ccc(NC2(c3ccccc3)CC2)cc1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.23903502599675705,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-1762745",
+      "scaffold": "murcko:c1ccc(NC2(c3ccccc3)CC2)cc1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.23903502599675705,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-1762745",
+      "scaffold": "murcko:c1ccc(NC2(c3ccccc3)CC2)cc1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.23903502599675705,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-1762745",
+      "scaffold": "murcko:c1ccc(NC2(c3ccccc3)CC2)cc1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.23903502599675705,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-17889916",
+      "scaffold": "acyclic:CC(C)CCCCC(C)C",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.9505838239656315,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-17889916",
+      "scaffold": "acyclic:CC(C)CCCCC(C)C",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.9505838239656315,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-17889916",
+      "scaffold": "acyclic:CC(C)CCCCC(C)C",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.9505838239656315,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-17889916",
+      "scaffold": "acyclic:CC(C)CCCCC(C)C",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.9505838239656315,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-17889916",
+      "scaffold": "acyclic:CC(C)CCCCC(C)C",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.9505838239656315,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18045656",
+      "scaffold": "murcko:O=C(Nc1ccccc1)c1cccnc1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.5951653173291643,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18045656",
+      "scaffold": "murcko:O=C(Nc1ccccc1)c1cccnc1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.5951653173291643,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18045656",
+      "scaffold": "murcko:O=C(Nc1ccccc1)c1cccnc1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.5951653173291643,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18045656",
+      "scaffold": "murcko:O=C(Nc1ccccc1)c1cccnc1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.5951653173291643,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18045656",
+      "scaffold": "murcko:O=C(Nc1ccccc1)c1cccnc1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.5951653173291643,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18537054",
+      "scaffold": "murcko:c1ccc(N=Nc2[nH]c3ccccc3[nH+]2)cc1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.08696219589007202,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18537054",
+      "scaffold": "murcko:c1ccc(N=Nc2[nH]c3ccccc3[nH+]2)cc1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.08185055871058404,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18537054",
+      "scaffold": "murcko:c1ccc(N=Nc2[nH]c3ccccc3[nH+]2)cc1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.08696219589007202,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18537054",
+      "scaffold": "murcko:c1ccc(N=Nc2[nH]c3ccccc3[nH+]2)cc1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.08185055871058404,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18537054",
+      "scaffold": "murcko:c1ccc(N=Nc2[nH]c3ccccc3[nH+]2)cc1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.08185055871058404,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886188",
+      "scaffold": "murcko:O=C(C1CCCc2nn(CC3(c4ccccc4)CC3)c(=O)n21)N1CCCC1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 1.7399395716619535,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886188",
+      "scaffold": "murcko:O=C(C1CCCc2nn(CC3(c4ccccc4)CC3)c(=O)n21)N1CCCC1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 1.4635682459549042,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886188",
+      "scaffold": "murcko:O=C(C1CCCc2nn(CC3(c4ccccc4)CC3)c(=O)n21)N1CCCC1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 1.7399395716619535,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886188",
+      "scaffold": "murcko:O=C(C1CCCc2nn(CC3(c4ccccc4)CC3)c(=O)n21)N1CCCC1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 1.7399395716619535,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886188",
+      "scaffold": "murcko:O=C(C1CCCc2nn(CC3(c4ccccc4)CC3)c(=O)n21)N1CCCC1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 1.4635682459549042,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886260",
+      "scaffold": "murcko:c1ccc(CNC2CC2)nc1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.5366791415242423,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886260",
+      "scaffold": "murcko:c1ccc(CNC2CC2)nc1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.5366791415242423,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886260",
+      "scaffold": "murcko:c1ccc(CNC2CC2)nc1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.5366791415242423,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886260",
+      "scaffold": "murcko:c1ccc(CNC2CC2)nc1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.5366791415242423,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886260",
+      "scaffold": "murcko:c1ccc(CNC2CC2)nc1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.5366791415242423,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886515",
+      "scaffold": "murcko:O=S(=O)(NCC(Oc1ccc2[nH]ncc2c1)c1ccccc1)C1CC1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 1.1702840735834814,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886515",
+      "scaffold": "murcko:O=S(=O)(NCC(Oc1ccc2[nH]ncc2c1)c1ccccc1)C1CC1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 1.1702840735834814,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886515",
+      "scaffold": "murcko:O=S(=O)(NCC(Oc1ccc2[nH]ncc2c1)c1ccccc1)C1CC1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 1.1702840735834814,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886515",
+      "scaffold": "murcko:O=S(=O)(NCC(Oc1ccc2[nH]ncc2c1)c1ccccc1)C1CC1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 1.1702840735834814,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-18886515",
+      "scaffold": "murcko:O=S(=O)(NCC(Oc1ccc2[nH]ncc2c1)c1ccccc1)C1CC1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 1.1702840735834814,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703603",
+      "scaffold": "murcko:C1NCC2CC12",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.08799146601334873,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703603",
+      "scaffold": "murcko:C1NCC2CC12",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.06639144653758543,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703603",
+      "scaffold": "murcko:C1NCC2CC12",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.08799146601334873,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703603",
+      "scaffold": "murcko:C1NCC2CC12",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.06639144653758543,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703603",
+      "scaffold": "murcko:C1NCC2CC12",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.06639144653758543,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703604",
+      "scaffold": "murcko:C1[NH2+]CC2CC12",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.6640403672725732,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703604",
+      "scaffold": "murcko:C1[NH2+]CC2CC12",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.7426154585020202,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703604",
+      "scaffold": "murcko:C1[NH2+]CC2CC12",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.6640403672725732,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703604",
+      "scaffold": "murcko:C1[NH2+]CC2CC12",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.7426154585020202,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-2703604",
+      "scaffold": "murcko:C1[NH2+]CC2CC12",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.7426154585020202,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025005",
+      "scaffold": "murcko:O=C1CCC(C2CC2)=NN1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.46399283470444913,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025005",
+      "scaffold": "murcko:O=C1CCC(C2CC2)=NN1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.785287258095818,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025005",
+      "scaffold": "murcko:O=C1CCC(C2CC2)=NN1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.46399283470444913,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025005",
+      "scaffold": "murcko:O=C1CCC(C2CC2)=NN1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.6487110221602455,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025005",
+      "scaffold": "murcko:O=C1CCC(C2CC2)=NN1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.6487110221602455,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025278",
+      "scaffold": "murcko:O=C1CCC=NN1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 0.05799595386818075,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025278",
+      "scaffold": "murcko:O=C1CCC=NN1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 0.16934859316895354,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025278",
+      "scaffold": "murcko:O=C1CCC=NN1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 0.16934859316895354,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025278",
+      "scaffold": "murcko:O=C1CCC=NN1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 0.15278080123129228,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-37025278",
+      "scaffold": "murcko:O=C1CCC=NN1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 0.16934859316895354,
+      "selected": {
+        "action": "specialize",
+        "scope": "local",
+        "harmonics": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-6098536",
+      "scaffold": "murcko:c1ccc(-n2cccn2)cc1",
+      "policy": "bayes_parent_H3",
+      "internal_holdout_rmse": 1.055819818191372,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-6098536",
+      "scaffold": "murcko:c1ccc(-n2cccn2)cc1",
+      "policy": "fixed_two",
+      "internal_holdout_rmse": 1.2048485195489453,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-6098536",
+      "scaffold": "murcko:c1ccc(-n2cccn2)cc1",
+      "policy": "learned_two",
+      "internal_holdout_rmse": 1.055819818191372,
+      "selected": {
+        "action": "keep",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-6098536",
+      "scaffold": "murcko:c1ccc(-n2cccn2)cc1",
+      "policy": "cv_harmonics",
+      "internal_holdout_rmse": 1.2048485195489453,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "molecule": "torsion-6098536",
+      "scaffold": "murcko:c1ccc(-n2cccn2)cc1",
+      "policy": "cv_library",
+      "internal_holdout_rmse": 1.2048485195489453,
+      "selected": {
+        "action": "revise",
+        "scope": "broad",
+        "harmonics": [
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "scope": "same8support+8internalpoolholdout; program acceptance uses observed-onlyLOO; coefficients fitted to sums over all affected torsions; all targetQM alreadyretired",
+  "fitting_archive_overlap": "These molecules belong to the published Sage fitting archive; this validates mechanics/headroom rather than new chemical accuracy"
+}
