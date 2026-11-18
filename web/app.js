@@ -4,6 +4,7 @@ const headers=()=>({'Content-Type':'application/json',...($('key').value?{'X-API
 let pollTimer=null,previewURL=null,submissionBase='';
 const message=(text,error=false)=>{$('message').textContent=text;$('message').className=error?'error':'';};
 async function request(path,options={}){
+ if(location.hostname.endsWith('github.io')&&!base())throw new Error('Set your chemistry API URL in Connection settings. This website is hosted separately from the simulation server.');
  const response=await fetch(base()+path,{...options,headers:headers()});
  if(!response.ok){const body=await response.json().catch(()=>({}));throw new Error(typeof body.detail==='string'?body.detail:`Server returned ${response.status}.`);}
  return response;
@@ -64,3 +65,5 @@ function renderValidation(result){
  for(const r of result.validation.results){const row=table.insertRow();for(const text of [r.route,Number(r.energy_abs_error).toPrecision(3),Number(r.force_max_abs_error).toPrecision(3)]){const td=row.insertCell();td.textContent=text;}}
  box.append(table);$('validation').append(box);
 }
+
+if(location.hostname.endsWith('github.io')&&!base())message('Website ready. Set the chemistry API URL in Connection settings to generate packages.');
