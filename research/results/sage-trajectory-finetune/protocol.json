@@ -1,0 +1,47 @@
+{
+  "status": "frozen trajectory-utility development experiment; external held-out cohort forbidden",
+  "baseline": "Sage2.2.1 unconstrained, fixed AM1-BCC, geometry-complete parent/local Fourier sums",
+  "system_prompt": "Propose at most two valid torsion repair programs as JSON {\"programs\":[...]}. Each program has EXACT action, scope, harmonics. action is revise/specialize/keep/abstain. scope broad means sum the correction over all verified instances of the Sage parent parameter in this molecule; scope local means the verified narrower environment subset and requires specialize. Harmonics is sorted unique integers in1..6. keep/abstain use broad and [1,2,3]. You never predict force constants. The background Sage force field and AM1-BCC charges are fixed. Tools fit numerical coefficients and support-only validation may reject your hypothesis. Fourier sums account for every affected torsion instance, not just the driven angle. Do not change chemical state or invent QM observations. Observations are E_QM minus E_Sage, centered on the observed support mean; they are not absolute QM torsion profiles. Choose a plan to minimize the entire error-versus-QM-budget curve from8 to16 observations. A hypothesis can be valuable later even when it is not accepted at8points. Keep plausible alternatives for later Bayesian selection. Abstain only when no alternative plan is useful across the full trajectory.",
+  "seed": 20261121,
+  "updates": 95,
+  "checkpoints": [
+    0,
+    48,
+    95
+  ],
+  "adapter": {
+    "num_layers": 2,
+    "rank": 8,
+    "scale": 8.0,
+    "dropout": 0.0,
+    "keys": [
+      "self_attn.q_proj",
+      "self_attn.v_proj"
+    ]
+  },
+  "learning_rate": 5e-05,
+  "weight_decay": 0.01,
+  "clip_norm": 1.0,
+  "dtype": "BF16 base floats; FP32 adapter/loss",
+  "episode_schedule": "one shuffled pass of95distinct parents; seed=stepmod3; all285episodes available",
+  "supervision": "all56 plan AUCs per training episode; true training-molecule8conformers outside16point acquisition pool evaluate complete adaptive rollout at8/10/12/14/16; no validation outcomes in teacher",
+  "target": "best full-trajectory AUC plan, abstain if gain<=1%; ties fewer programs then fewer terms then canonical identity; no initial-fit benefit filter",
+  "loss": "Utility-weighted mean full-vocabulary completion-token cross entropy, weight=1+min(2,relativegain/.1). Utility-supervised imitation, not RL. Architecture, decoder, optimizer unchanged from initial-fit study.",
+  "decoder": "Existing deterministic greedy constrained token decoding over identical 56 canonical plans; same decoder for zero update and all trained checkpoints.",
+  "selection": "lowest mean whole-trajectory adaptive error-budgetAUC on12validation parents, include zero update, tieearliest",
+  "controls": "Bayes; samebudget fixed_two/BMA_two; matched95trajectory-utility regressor and answer classifier; retrieval; training-global best constant plan; full285references; largerCV/BMA10references",
+  "primary_comparisons": "Bayes and strongest matched-budget non-LLM selected on validation; paired descriptive97.5%scaffold intervals, not confirmatory",
+  "ablation": "Prior initial-fit Sage study is historical reference; changed prompt, seed, targets and weighting prevent isolated causal attribution.",
+  "held_out_access": "No external300molecule energy/force or outcome-record access, regardless of result",
+  "single_seed_limit": "one seed; all validation data previously inspected and development-only",
+  "budgets": [
+    8,
+    10,
+    12,
+    14,
+    16
+  ],
+  "source_train_sha256": "2f5a94d1de9b8a7b601c81ee8fbd404133da590cac745d3db792bef7041c89b3",
+  "train_sha256": "db562a23fcad919be2d3f9b83a541774f39a302aa492f8b93a65d3d79b293466",
+  "validation_sha256": "8dee056db248e359a57e0bd1c459cb4b2c5e4e71a4fd1813c472cdb5fc988147"
+}
