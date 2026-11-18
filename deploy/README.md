@@ -4,7 +4,7 @@ This deployment preserves the API/worker shared SQLite queue and artifact volume
 
 ## Server choice
 
-Start with Ubuntu 24.04 LTS on x86-64, 4 vCPUs, 8 GB RAM, and at least 40 GB disk. These are starting resources to measure, not a load-tested capacity guarantee. Keep one chemistry worker. Native packages and the Docker build still need verification on the selected Linux host.
+Start with Ubuntu 24.04 LTS on x86-64, 2–4 vCPUs, 8 GB RAM, and at least 40 GB disk. These are starting resources to measure, not a load-tested capacity guarantee. Keep one chemistry worker. The Linux container build, API tests, and a real butane generation/export check pass in GitHub Actions. Repeat the smoke tests on the selected host.
 
 DigitalOcean, Hetzner, AWS EC2/Lightsail, and a lab-owned Linux server can all run this Compose stack. A server already administered by the lab avoids opening a new paid account. GitHub Pages remains suitable for the static website, not the chemistry jobs. Providers with separate ephemeral API/worker filesystems need a different queue/storage design before deployment.
 
@@ -22,7 +22,21 @@ nano deploy/cloud.env
 docker compose --env-file deploy/cloud.env -f deploy/compose.cloud.yaml up --build -d
 ```
 
+For a static public IPv4 without buying a domain, copy `deploy/Caddyfile.ip` over `deploy/Caddyfile` and set `API_DOMAIN` to that address. This explicitly requests a publicly trusted Let's Encrypt short-lived IP certificate. Keep the Caddy data volume and ports 80/443 available for automatic renewal. Do not use a changing public IP.
+
 Allow inbound TCP 80/443 and SSH from the administrator's address. UDP 443 is optional HTTP/3. Do not expose port 8000. Review the actual provider invoice before creating the server: VM fees can be supplemented by tax, backups, IPv4, storage, or transfer fees.
+
+On an 8-GB host, the first conda dependency solve can require more memory than the running service. If the kernel reports an out-of-memory kill during the build, add temporary swap from existing disk before retrying:
+
+```bash
+sudo fallocate -l 8G /swap-smiles
+sudo chmod 600 /swap-smiles
+sudo mkswap /swap-smiles
+sudo swapon /swap-smiles
+# After the build finishes and memory is free:
+# sudo swapoff /swap-smiles
+# sudo rm /swap-smiles
+```
 
 ## Verify before sharing
 
