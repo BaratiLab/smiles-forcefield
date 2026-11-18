@@ -5,3 +5,6 @@ data
 __pycache__
 .pytest_cache
 *.egg-info
+research/acquisition/data
+research/acquisition/runs
+research/acquisition/aws-*

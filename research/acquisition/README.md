@@ -11,7 +11,7 @@ The inexpensive engineering oracle is MMFF94 minus UFF at identical real coordin
 ```sh
 python build_proxy.py --out data --size 32
 python suite.py --data data --out runs/proxy --seeds 0 1 2 --budget 12
-OLLAMA_URL=http://localhost:11434 OLLAMA_MODEL=qwen2.5:1.5b \
+OLLAMA_URL=http://localhost:11434 OLLAMA_MODEL=qwen2.5:0.5b \
  python suite.py --data data --out runs/llm-proxy --seeds 0 1 2 --budget 12 --llm
 python -m unittest -v test_poc.py test_acquisition.py
 ```
@@ -20,10 +20,12 @@ Defaults: 4 shared seed observations, 12 total observations including initial po
 
 ## Private AWS CPU deployment
 
-Ollama serves Qwen2.5 1.5B Q4_K_M (~986 MB weights), Apache 2.0. No vendor API keys or GPU are required. The model runs on the existing VM inside `deploy_default`; **no port is published**, and no website route reaches it. Use a 2500-MB memory limit, one CPU, one loaded model, one concurrent request. The adapter unloads weights after each call. Run benchmarks with `--cpus 0.5 --memory 1g` to leave capacity for the public API. This is a small-model feasibility benchmark, not a recommendation to run many concurrent LLM users on a 2-vCPU VM.
+Ollama serves Qwen2.5 0.5B for the compact CPU pilot; Qwen2.5 1.5B Q4_K_M (~986 MB weights) is also supported. Both use Apache 2.0. The first 1.5B full-precision-JSON prompt was too slow for a quick pilot and was stopped; do not mix that partial run with the compact 0.5B experiment. No vendor API keys or GPU are required. The model runs on the existing VM inside `deploy_default`; **no port is published**, and no website route reaches it. Use a 2500-MB memory limit, one CPU, one loaded model, one concurrent request. The adapter unloads weights after each call. Run benchmarks with `--cpus 0.5 --memory 1g` to leave capacity for the public API. This is a small-model feasibility benchmark, not a recommendation to run many concurrent LLM users on a 2-vCPU VM.
 
-The adapter pins temperature/seed/context, uses a JSON schema with an available-ID enum, validates distinct IDs, allows one repair attempt, and fails without silently switching policies. Request/response files record model digest, token counts, timing and decisions. Record the Ollama image digest in the experiment environment. Treat model tag alone as mutable. Invalid actions count as failed runs; never report the mock adapter as an LLM.
+The compact-v2 adapter rounds input angles/energies to 4 decimals and variances to 6 decimals, and uses row arrays to reduce prompt cost. Full precision stays in the fitter and original saved state. The adapter pins temperature/seed/context, uses a JSON schema with an available-ID enum, validates distinct IDs, allows one repair attempt, and fails without silently switching policies. Request/response files record model digest, token counts, timing and decisions. Record the Ollama image digest in the experiment environment. Treat model tag alone as mutable. Invalid actions count as failed runs; never report the mock adapter as an LLM.
 
 For real QM replay, substitute datasets with `kind: qm_replay`, protocol/basis/program, matching baseline energies, converged geometries and atom mapping. `poc.py` accepts the same energy fields. First establish full-pool model capacity and freeze hyperparameters on development data; then evaluate acquisition under a fixed QM budget. Fitted sine terms and independent molecular coefficients are research fits, not exportable physical force-field corrections; symmetry constraints and prospective QM validation remain required.
 
 Sources: https://ollama.com/library/qwen2.5:1.5b ; https://docs.ollama.com/api/generate ; https://www.rdkit.org/docs/source/rdkit.ForceField.rdForceField.html
+
+Results are kept outside Git by default (`data/`, `runs/`, `aws-data/`, `aws-runs*`). `export_results.py --runs aws-runs-compact` bundles only the fixed benchmark data, acquisition logs and reports after all 15 molecule/policy pairs finish. No production website submissions are used. The experiment records selected queries, posterior coefficients, baseline/full-pool reference errors, per-step test metrics, adapter time, original states, model outputs and model digests.
