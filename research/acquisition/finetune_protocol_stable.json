@@ -1,0 +1,80 @@
+{
+  "version": "qm-acquisition-qlora-bf16-v2",
+  "frozen_before": "training, validation checkpoint scoring and fresh test acquisition scoring",
+  "source": "Same pinned OpenFF Sage 2.2.1 QM archive; one complete 24-point 1D scan per nonstereo parent",
+  "training": "All eligible molecules sharing only the previous development scaffolds (95 planned parents)",
+  "quarantine": "All previous test scaffolds excluded from training, validation and fresh test",
+  "fresh": "Exclude ALL previous development and test scaffolds; SHA256(qlora-split-v1 + scaffold) modulo 5 = 0 validation, otherwise fresh test (30/168 planned parents)",
+  "qc": "Query public QCArchive metadata before teacher scoring. Exclude all non-complete records without replacement; verify Psi4 B3LYP-D3BJ/DZVP including synonymous b3lyp-d3(bj)",
+  "teacher": "For train and validation parents only, replay each of five existing strategies across five matched seeds, score mean normalized error-query AUC; no fresh test performance in training/checkpoint selection",
+  "loss": "Soft cross entropy on A-E option logits against softmax(-strategy AUC / 0.05). One update averages all five cyclic option permutations for one molecule",
+  "model": "Existing pinned Qwen2.5-7B-Instruct 4-bit MLX base; freeze all original weights",
+  "adapter": {
+    "num_layers": 2,
+    "rank": 8,
+    "scale": 8.0,
+    "dropout": 0.0,
+    "keys": [
+      "self_attn.q_proj",
+      "self_attn.v_proj"
+    ]
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0
+  },
+  "seed": 20261118,
+  "updates": 96,
+  "validation_checkpoints": [
+    24,
+    48,
+    72,
+    96
+  ],
+  "selection": "Lowest validation molecule-mean normalized acquisition AUC among nonzero checkpoints; tie chooses earliest. Base model evaluated as an independent matched-prompt control",
+  "prompt": "Compact graph, mapped driven dihedral graph context, bond descriptors, unlabeled pool angles and five action formulas. No few-shot examples or energies; exactly one A-E decision",
+  "test": "One decision each for base and selected fine-tuned model; five acquisition initial seeds; same Fourier model/4 initial/12 budget/2 batch/16 pool/8 evaluation points as previous experiment",
+  "baselines": [
+    "pure Bayes",
+    "original chemistry rule",
+    "base LLM same prompt",
+    "training-global best strategy",
+    "all five fixed strategies",
+    "random",
+    "ExtraTrees multioutput strategy-regret predictor with Morgan and chemical/coverage features"
+  ],
+  "ExtraTrees": {
+    "n_estimators": 256,
+    "min_samples_leaf": 3,
+    "max_features": 0.5,
+    "random_state": 20261118,
+    "n_jobs": 2
+  },
+  "primary": "Fine-tuned LLM minus Bayes mean normalized error-query AUC, averaging five seeds within each parent, scaffold-cluster bootstrap 10000 draws, two-sided 95% CI; beat Bayes only if upper bound below 0",
+  "secondary": "Comparisons with rule, matched base LLM, learned non-LLM selector, training-global strategy; final centered residual RMSE and latency. Descriptive intervals, no independent benefit claim without primary success",
+  "test_sealed_until": "Adapter checkpoint selected using validation only; no retraining or prompt changes after fresh test scoring",
+  "limitations": [
+    "Only 37 training scaffold groups in existing corpus; this is a small fine-tuning pilot",
+    "Existing public QM data may have been seen during LLM pretraining",
+    "Acquisition replay at QM-optimized geometries does not establish prospective QM wall-time savings or MD force-field accuracy"
+  ],
+  "supersedes": "qm-acquisition-qlora-v1",
+  "numerical_repair": {
+    "reason": "Original FP16 run failed its nonfinite check at update84. The checkpoint24 diagnostic produced unlabeled fresh decisions only; no fresh QM acquisition outcomes were scored before the repair.",
+    "compute_dtype": "Cast floating base tensors to BF16 before freezing/attaching FP32 LoRA; quantized integer weights remain unchanged. Matched untuned baseline uses the same BF16 representation.",
+    "finite_guards": "Check loss and every gradient tensor before optimizer update; save optimizer states with model checkpoints.",
+    "scientific_settings_unchanged": [
+      "molecular splits",
+      "teacher costs",
+      "soft-target temperature",
+      "adapter rank/layers",
+      "learning rate and optimizer",
+      "96 updates and validation checkpoints",
+      "primary metric and baselines"
+    ],
+    "recorded_at_utc": "2026-11-18T12:18:17.951792+00:00",
+    "new_test_labels_unseen": true
+  }
+}

@@ -17,7 +17,9 @@ def replay(data,supervision,training,plans_dir,out):
  split=json.loads((data/'split.json').read_text());inputs=json.loads((supervision/'inputs.json').read_text());teacher=json.loads((supervision/'teacher.json').read_text());plans=json.loads((plans_dir/'plans.json').read_text())
  datasets={n:json.loads((data/'datasets'/f'{n}.json').read_text()) for names in split['splits'].values() for n in names};split_checks(datasets,split)
  assert set(plans)==set(split['splits']['test']) and set(teacher)==set(split['splits']['train']+split['splits']['validation'])
- selected=json.loads((training/'training_complete.json').read_text());assert json.loads((plans_dir/'manifest.json').read_text())['adapter_sha256']==selected['adapter_sha256']==hashfile(training/'adapters.safetensors')
+ selected=json.loads((training/'training_complete.json').read_text())
+ if selected.get('status')=='technical_early_stop':raise RuntimeError('Early-stop diagnostic is sealed: complete BF16 repair before scoring fresh QM outcomes')
+ assert json.loads((plans_dir/'manifest.json').read_text())['adapter_sha256']==selected['adapter_sha256']==hashfile(training/'adapters.safetensors')
  protocol=json.loads(Path(__file__).with_name('finetune_protocol.json').read_text());train=split['splits']['train']
  estimator=fit_regret_selector(inputs,teacher,train,protocol['ExtraTrees'])
  global_strategy=json.loads((supervision/'manifest.json').read_text())['global_strategy'];allrows=[];allstats=[];predictions={}
