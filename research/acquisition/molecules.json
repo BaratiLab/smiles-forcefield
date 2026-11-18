@@ -1,0 +1,78 @@
+[
+  {
+    "id": "butane",
+    "name": "n-Butane",
+    "smiles": "[CH3:1][CH2:2][CH2:3][CH3:4]",
+    "torsions": [
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "reason": "Simple one-dimensional control; anti/gauche conformations."
+  },
+  {
+    "id": "biphenyl",
+    "name": "Biphenyl",
+    "smiles": "[cH:1]1[cH:2][cH:3][c:4](-[c:7]2[cH:8][cH:9][cH:10][cH:11][cH:12]2)[cH:5][cH:6]1",
+    "torsions": [
+      [
+        3,
+        4,
+        7,
+        8
+      ]
+    ],
+    "reason": "Inter-ring rotation; symmetry and steric/conjugation competition."
+  },
+  {
+    "id": "anisole",
+    "name": "Anisole",
+    "smiles": "[CH3:1][O:2][c:3]1[cH:4][cH:5][cH:6][cH:7][cH:8]1",
+    "torsions": [
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "reason": "Aryl ether rotation; conjugation-sensitive torsion."
+  },
+  {
+    "id": "nma",
+    "name": "N-Methylacetamide",
+    "smiles": "[CH3:1][C:2](=[O:3])[NH:4][CH3:5]",
+    "torsions": [
+      [
+        1,
+        2,
+        4,
+        5
+      ]
+    ],
+    "reason": "Restricted amide rotation; high-energy scan and non-torsional residual stress test."
+  },
+  {
+    "id": "phenylethanol",
+    "name": "2-Phenylethanol",
+    "smiles": "[OH:1][CH2:2][CH2:3][c:4]1[cH:5][cH:6][cH:7][cH:8][cH:9]1",
+    "torsions": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "reason": "Two-dimensional flexibility; additive-model capacity stress test. OH rotation remains a nuisance coordinate requiring sampling."
+  }
+]

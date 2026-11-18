@@ -1,0 +1,29 @@
+# LLM-guided torsion acquisition
+
+Research experiment, separate from the production website. It does not alter downloadable Sage parameters.
+
+## First real-model experiment
+
+Five molecules: butane, biphenyl, anisole, N-methylacetamide, 2-phenylethanol. All methods fit the same Gaussian linear model with an intercept and harmonics 1–3 (cosine and sine) for each mapped torsion. Random samples without replacement. Bayesian experimental design greedily maximizes conditional information gain with within-batch covariance updates. The LLM sees chemical identity, queried energy residuals, predictions and candidate variances, and returns exact candidate IDs. It sees no held-out energies or unqueried labels.
+
+The inexpensive engineering oracle is MMFF94 minus UFF at identical real coordinates, in kcal/mol. Pool and test target angles use independent RNGs; constrained MMFF minimization relaxes nuisance coordinates, then **unconstrained single-point** MMFF and UFF energies are evaluated. Phenylethanol also samples OH rotation. SDFs and geometry hashes are retained. This is not QM, not Sage improvement, and not evidence of physical accuracy. Legacy `qm_energy_kcal_mol` fields contain MMFF energies and are explicitly identified in dataset metadata and LLM prompts. Both splits derive from one embedded seed; independently embedded conformer families and invariant geometric deduplication are still needed for scientific evaluation. Rounded Cartesian hashes only catch exact coordinate duplicates.
+
+```sh
+python build_proxy.py --out data --size 32
+python suite.py --data data --out runs/proxy --seeds 0 1 2 --budget 12
+OLLAMA_URL=http://localhost:11434 OLLAMA_MODEL=qwen2.5:1.5b \
+ python suite.py --data data --out runs/llm-proxy --seeds 0 1 2 --budget 12 --llm
+python -m unittest -v test_poc.py test_acquisition.py
+```
+
+Defaults: 4 shared seed observations, 12 total observations including initial points, batches of 4; 32 pool and 32 test geometries per molecule. Every policy has identical initial observations per seed. A full-pool fit is a capacity reference, not a lower bound. Metrics are centered residual RMSE and query-normalized error AUC; seed SD measures acquisition variation only. Five development molecules cannot establish generalization or statistical superiority.
+
+## Private AWS CPU deployment
+
+Ollama serves Qwen2.5 1.5B Q4_K_M (~986 MB weights), Apache 2.0. No vendor API keys or GPU are required. The model runs on the existing VM inside `deploy_default`; **no port is published**, and no website route reaches it. Use a 2500-MB memory limit, one CPU, one loaded model, one concurrent request. The adapter unloads weights after each call. Run benchmarks with `--cpus 0.5 --memory 1g` to leave capacity for the public API. This is a small-model feasibility benchmark, not a recommendation to run many concurrent LLM users on a 2-vCPU VM.
+
+The adapter pins temperature/seed/context, uses a JSON schema with an available-ID enum, validates distinct IDs, allows one repair attempt, and fails without silently switching policies. Request/response files record model digest, token counts, timing and decisions. Record the Ollama image digest in the experiment environment. Treat model tag alone as mutable. Invalid actions count as failed runs; never report the mock adapter as an LLM.
+
+For real QM replay, substitute datasets with `kind: qm_replay`, protocol/basis/program, matching baseline energies, converged geometries and atom mapping. `poc.py` accepts the same energy fields. First establish full-pool model capacity and freeze hyperparameters on development data; then evaluate acquisition under a fixed QM budget. Fitted sine terms and independent molecular coefficients are research fits, not exportable physical force-field corrections; symmetry constraints and prospective QM validation remain required.
+
+Sources: https://ollama.com/library/qwen2.5:1.5b ; https://docs.ollama.com/api/generate ; https://www.rdkit.org/docs/source/rdkit.ForceField.rdForceField.html
