@@ -86,3 +86,21 @@ See the next-stage results and model card under `results/next-milestones/`. Pass
 The [next-stage report](results/next-milestones/REPORT.md) and [adapter model card](results/next-milestones/MODEL_CARD.md) document the64-update program-SFT experiment, matched64-episode controls, full168-molecule ablations,95-parent actual-Sage training corpus and12-parent Sage validation corpus. Checkpoint selection kept the unchanged model. The300-molecule candidate test remains outcome-blind. [Corrected research example packages](results/next-milestones/corrected-sage-examples.zip) passed18 full-system engine/readback checks; native NAMD remains untested. The [reproducibility archive](results/next-milestones/next-milestones-reproducibility.zip) includes trained adapters, optimizer states, derived data and audit logs, excluding base-model weights. No model has yet been trained on the new Sage corpus.
 
 For matched supervision controls, pass `--history /path/to/training/training.jsonl` to `controls.py`. Full-data controls consume all285 teacher episodes; matched controls consume exactly the64 actual model episodes. `labels_matched_two` uses only the teacher answer labels, while the regret predictor uses the full utility vector computed from the same QM data.
+
+## Sage-only adapter experiment
+
+`prepare_sage_training.py` freezes a separate actual-Sage run. `train_sage_mlx.py` initializes a new adapter on the original base model and trains canonical JSON programs. It does not load the older UFF adapter. The numerical layer in `sage_runtime.py` fits summed parent/local features; model acceptance sees observed support labels only.
+
+Both the untuned and trained policies use the same `program_language.py` decoder: 56 canonical answers consisting of one/two programs from ten shared parent/local harmonic representations, or abstention. This avoids option-letter positions and enforces schema validity. It is a bounded library, not unrestricted SMIRKS discovery. A tested absorbing EOS state handles MLX's one-token lookahead. Validity enforcement is shared with the untuned control and must not be counted as a fine-tuning benefit.
+
+The [frozen development protocol](sage_training_protocol.json) specifies one shuffled pass over all95 parents,95 updates, checkpoints0/48/95, and12 separate validation scaffolds. Checkpoint selection uses accepted-program centered relative-energy RMSE at8support+8internalpoolholdout and includes the zero-update model. Descriptor, answer-label and retrieval comparators use the exact same95 parent/seed episodes;285-episode versions and larger CV/BMA libraries are references. Gaussian fitting and priors are shared. Secondary fixed/adaptive error-budget curves on old validation conformers are scored after checkpoint selection and do not select the checkpoint.
+
+```bash
+python research/torsion_repair/prepare_sage_training.py --train /path/to/sage-supervision95 --validation /path/to/sage-supervision-validation12 --out /path/to/sage-aligned
+python research/torsion_repair/sage_controls.py --aligned /path/to/sage-aligned --out /path/to/sage-controls
+python research/torsion_repair/train_sage_mlx.py --aligned /path/to/sage-aligned --model /path/to/local/model --chem-python /path/to/chemistry/python --out /path/to/sage-training
+python research/torsion_repair/sage_controls.py --aligned /path/to/sage-aligned --out /path/to/selected-validation --plans /path/to/sage-training/validation-NNN/plans.json --secondary
+python research/torsion_repair/analyze_sage_training.py --aligned /path/to/sage-aligned --training /path/to/sage-training --controls /path/to/sage-controls --out /path/to/sage-report
+```
+
+The external300-molecule cohort is not opened by this experiment. Validation intervals are descriptive:12 groups, one training seed, and checkpoint/control selection on the same development data. A validation improvement does not establish fresh chemical or MD accuracy.
