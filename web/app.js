@@ -22,7 +22,7 @@ async function preview(){
 }
 $('preview').addEventListener('click',preview);
 document.querySelectorAll('[data-smiles]').forEach(button=>button.addEventListener('click',()=>{$('smiles').value=button.dataset.smiles;preview();}));
-$('endpoint').value=new URLSearchParams(location.search).get('api')||'';
+$('endpoint').value=new URLSearchParams(location.search).get('api')||(location.hostname.endsWith('github.io')?'https://3.139.215.116':'');
 $('endpoint').addEventListener('change',()=>{$('docs').href=base()+'/docs';});
 $('docs').href=base()+'/docs';
 $('generate').addEventListener('submit',async event=>{
