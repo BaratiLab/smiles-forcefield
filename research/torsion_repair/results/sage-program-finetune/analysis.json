@@ -1,0 +1,720 @@
+{
+  "status": "development validation only; selected checkpoint and control comparisons are exploratory, not confirmatory inference",
+  "training": {
+    "selected": {
+      "step": 95,
+      "mean_validation_rmse": 0.6373741325001022
+    },
+    "best_nonzero": {
+      "step": 95,
+      "mean_validation_rmse": 0.6373741325001022
+    },
+    "trained_updates": 95,
+    "nonzero_lora_b_norm": 0.7506687168291283,
+    "seconds": 2874.455110250041,
+    "selected_adapter_sha256": "565f97236c244354f6005bee8f20091113980d87aff1ec477897990be5046353",
+    "trained_adapter_sha256": "565f97236c244354f6005bee8f20091113980d87aff1ec477897990be5046353",
+    "fresh_test_evaluated": false
+  },
+  "actual_training_parents": 95,
+  "available_training_episodes": 285,
+  "validation_parents": 12,
+  "validation_scaffolds": 12,
+  "controls": {
+    "bayes": 0.6373741325001022,
+    "bma_library": 0.8173738406056179,
+    "bma_two": 0.7617137042909047,
+    "cv_harmonics": 0.6774070633959918,
+    "cv_library": 0.6557567689152096,
+    "fixed_two": 0.6671381219098406,
+    "global_matched": 0.6406839720623668,
+    "labels_matched": 0.6373741325001022,
+    "learned_full": 0.6499633586707645,
+    "learned_matched": 0.6373741325001022,
+    "retrieval_full": 0.7447535075248869,
+    "retrieval_matched": 0.6727992635519543
+  },
+  "strongest_matched_control": "labels_matched",
+  "checkpoints": {
+    "0": {
+      "mean_validation_rmse": 0.731504654884243,
+      "comparisons": {
+        "bayes": {
+          "mean_difference_kcal_mol": 0.09413052238414077,
+          "relative_change": 0.147684880173774,
+          "paired_descriptive_97_5pct_interval": [
+            -0.003368074601548216,
+            0.3455689499978154
+          ]
+        },
+        "bma_library": {
+          "mean_difference_kcal_mol": -0.08586918572137499,
+          "relative_change": -0.10505497173453915,
+          "paired_descriptive_97_5pct_interval": [
+            -0.3567274743148825,
+            0.13275071355950988
+          ]
+        },
+        "bma_two": {
+          "mean_difference_kcal_mol": -0.03020904940666178,
+          "relative_change": -0.039659322441604083,
+          "paired_descriptive_97_5pct_interval": [
+            -0.15119831795189229,
+            0.08368092729832548
+          ]
+        },
+        "cv_harmonics": {
+          "mean_difference_kcal_mol": 0.05409759148825103,
+          "relative_change": 0.07985979835676349,
+          "paired_descriptive_97_5pct_interval": [
+            -0.05535734229993846,
+            0.2688421609632135
+          ]
+        },
+        "cv_library": {
+          "mean_difference_kcal_mol": 0.07574788596903335,
+          "relative_change": 0.1155121678642217,
+          "paired_descriptive_97_5pct_interval": [
+            -0.05545893347234681,
+            0.28259507907893305
+          ]
+        },
+        "fixed_two": {
+          "mean_difference_kcal_mol": 0.06436653297440231,
+          "relative_change": 0.09648156934899488,
+          "paired_descriptive_97_5pct_interval": [
+            -0.08138723039042134,
+            0.27492058122505697
+          ]
+        },
+        "global_matched": {
+          "mean_difference_kcal_mol": 0.09082068282187616,
+          "relative_change": 0.14175582156288957,
+          "paired_descriptive_97_5pct_interval": [
+            -0.005303882305789878,
+            0.3437689483748351
+          ]
+        },
+        "labels_matched": {
+          "mean_difference_kcal_mol": 0.09413052238414077,
+          "relative_change": 0.147684880173774,
+          "paired_descriptive_97_5pct_interval": [
+            -0.003368074601548216,
+            0.3455689499978154
+          ]
+        },
+        "learned_full": {
+          "mean_difference_kcal_mol": 0.08154129621347843,
+          "relative_change": 0.12545522009154175,
+          "paired_descriptive_97_5pct_interval": [
+            -0.028264129590150528,
+            0.3344895617664374
+          ]
+        },
+        "learned_matched": {
+          "mean_difference_kcal_mol": 0.09413052238414077,
+          "relative_change": 0.147684880173774,
+          "paired_descriptive_97_5pct_interval": [
+            -0.003368074601548216,
+            0.3455689499978154
+          ]
+        },
+        "retrieval_full": {
+          "mean_difference_kcal_mol": -0.01324885264064396,
+          "relative_change": -0.01778958072272141,
+          "paired_descriptive_97_5pct_interval": [
+            -0.10979366012193333,
+            0.0828188543159301
+          ]
+        },
+        "retrieval_matched": {
+          "mean_difference_kcal_mol": 0.05870539133228873,
+          "relative_change": 0.08725543339979502,
+          "paired_descriptive_97_5pct_interval": [
+            -0.034883699948688195,
+            0.18513531895002547
+          ]
+        }
+      },
+      "parse_errors": 0,
+      "compiler_rejections": 0,
+      "calls": 12,
+      "mean_seconds": 22.262077079639614,
+      "selected_programs": {
+        "torsion-1762745": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-17889916": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18045656": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18537054": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "scope": "local"
+        },
+        "torsion-18886188": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2,
+            3
+          ],
+          "scope": "local"
+        },
+        "torsion-18886260": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18886515": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-2703603": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2
+          ],
+          "scope": "local"
+        },
+        "torsion-2703604": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2
+          ],
+          "scope": "local"
+        },
+        "torsion-37025005": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-37025278": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-6098536": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "scope": "local"
+        }
+      },
+      "versus_untuned": {
+        "mean_difference": 0.0,
+        "paired_descriptive_97_5pct_interval": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "48": {
+      "mean_validation_rmse": 0.7319306246492002,
+      "comparisons": {
+        "bayes": {
+          "mean_difference_kcal_mol": 0.0945564921490981,
+          "relative_change": 0.1483531999929144,
+          "paired_descriptive_97_5pct_interval": [
+            -0.0020901653066762206,
+            0.34599491976277275
+          ]
+        },
+        "bma_library": {
+          "mean_difference_kcal_mol": -0.08544321595641767,
+          "relative_change": -0.10453382737709116,
+          "paired_descriptive_97_5pct_interval": [
+            -0.35630150454992515,
+            0.13284270403971102
+          ]
+        },
+        "bma_two": {
+          "mean_difference_kcal_mol": -0.029783079641704447,
+          "relative_change": -0.03910009689195515,
+          "paired_descriptive_97_5pct_interval": [
+            -0.15119831795189229,
+            0.08399700287866266
+          ]
+        },
+        "cv_harmonics": {
+          "mean_difference_kcal_mol": 0.05452356125320836,
+          "relative_change": 0.08048862227664078,
+          "paired_descriptive_97_5pct_interval": [
+            -0.05495783271215431,
+            0.2688688921090423
+          ]
+        },
+        "cv_library": {
+          "mean_difference_kcal_mol": 0.0761738557339907,
+          "relative_change": 0.11616175287065933,
+          "paired_descriptive_97_5pct_interval": [
+            -0.054181024177474814,
+            0.28270259137944687
+          ]
+        },
+        "fixed_two": {
+          "mean_difference_kcal_mol": 0.06479250273935964,
+          "relative_change": 0.09712007245797283,
+          "paired_descriptive_97_5pct_interval": [
+            -0.08138723039042134,
+            0.2753518756120766
+          ]
+        },
+        "global_matched": {
+          "mean_difference_kcal_mol": 0.0912466525868335,
+          "relative_change": 0.14242068877282765,
+          "paired_descriptive_97_5pct_interval": [
+            -0.00360000324596055,
+            0.34419491813979247
+          ]
+        },
+        "labels_matched": {
+          "mean_difference_kcal_mol": 0.0945564921490981,
+          "relative_change": 0.1483531999929144,
+          "paired_descriptive_97_5pct_interval": [
+            -0.0020901653066762206,
+            0.34599491976277275
+          ]
+        },
+        "learned_full": {
+          "mean_difference_kcal_mol": 0.08196726597843576,
+          "relative_change": 0.12611059513580347,
+          "paired_descriptive_97_5pct_interval": [
+            -0.027838159825193196,
+            0.3349155315313947
+          ]
+        },
+        "learned_matched": {
+          "mean_difference_kcal_mol": 0.0945564921490981,
+          "relative_change": 0.1483531999929144,
+          "paired_descriptive_97_5pct_interval": [
+            -0.0020901653066762206,
+            0.34599491976277275
+          ]
+        },
+        "retrieval_full": {
+          "mean_difference_kcal_mol": -0.012822882875686628,
+          "relative_change": -0.01721761998584237,
+          "paired_descriptive_97_5pct_interval": [
+            -0.10970332538484046,
+            0.0833926511488328
+          ]
+        },
+        "retrieval_matched": {
+          "mean_difference_kcal_mol": 0.059131361097246066,
+          "relative_change": 0.08788856394561106,
+          "paired_descriptive_97_5pct_interval": [
+            -0.034386367821926604,
+            0.18514064357208773
+          ]
+        }
+      },
+      "parse_errors": 0,
+      "compiler_rejections": 0,
+      "calls": 12,
+      "mean_seconds": 25.21098911455677,
+      "selected_programs": {
+        "torsion-1762745": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-17889916": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18045656": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18537054": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18886188": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2,
+            3
+          ],
+          "scope": "local"
+        },
+        "torsion-18886260": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18886515": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-2703603": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2
+          ],
+          "scope": "local"
+        },
+        "torsion-2703604": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2
+          ],
+          "scope": "local"
+        },
+        "torsion-37025005": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-37025278": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-6098536": {
+          "action": "specialize",
+          "harmonics": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "scope": "local"
+        }
+      },
+      "versus_untuned": {
+        "mean_difference": 0.00042596976495733185,
+        "paired_descriptive_97_5pct_interval": [
+          0.0,
+          0.0017038790598293274
+        ]
+      }
+    },
+    "95": {
+      "mean_validation_rmse": 0.6373741325001022,
+      "comparisons": {
+        "bayes": {
+          "mean_difference_kcal_mol": 0.0,
+          "relative_change": 0.0,
+          "paired_descriptive_97_5pct_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "bma_library": {
+          "mean_difference_kcal_mol": -0.17999970810551577,
+          "relative_change": -0.2202171138388137,
+          "paired_descriptive_97_5pct_interval": [
+            -0.4325047993204509,
+            0.019363088282500513
+          ]
+        },
+        "bma_two": {
+          "mean_difference_kcal_mol": -0.12433957179080253,
+          "relative_change": -0.163236621699688,
+          "paired_descriptive_97_5pct_interval": [
+            -0.3760961125021238,
+            0.0575105810096108
+          ]
+        },
+        "cv_harmonics": {
+          "mean_difference_kcal_mol": -0.04003293089588974,
+          "relative_change": -0.0590973036141601,
+          "paired_descriptive_97_5pct_interval": [
+            -0.08733941094395739,
+            -0.0025219512582026968
+          ]
+        },
+        "cv_library": {
+          "mean_difference_kcal_mol": -0.0183826364151074,
+          "relative_change": -0.028032705549524084,
+          "paired_descriptive_97_5pct_interval": [
+            -0.08471493929764387,
+            0.058899744368235474
+          ]
+        },
+        "fixed_two": {
+          "mean_difference_kcal_mol": -0.029763989409738446,
+          "relative_change": -0.04461443355167871,
+          "paired_descriptive_97_5pct_interval": [
+            -0.11792937215803186,
+            0.055913880593151104
+          ]
+        },
+        "global_matched": {
+          "mean_difference_kcal_mol": -0.003309839562264605,
+          "relative_change": -0.005166103268683608,
+          "paired_descriptive_97_5pct_interval": [
+            -0.01323935824905842,
+            0.0
+          ]
+        },
+        "labels_matched": {
+          "mean_difference_kcal_mol": 0.0,
+          "relative_change": 0.0,
+          "paired_descriptive_97_5pct_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "learned_full": {
+          "mean_difference_kcal_mol": -0.012589226170662335,
+          "relative_change": -0.01936913212524538,
+          "paired_descriptive_97_5pct_interval": [
+            -0.03711754643359093,
+            0.0
+          ]
+        },
+        "learned_matched": {
+          "mean_difference_kcal_mol": 0.0,
+          "relative_change": 0.0,
+          "paired_descriptive_97_5pct_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "retrieval_full": {
+          "mean_difference_kcal_mol": -0.10737937502478473,
+          "relative_change": -0.1441810933951143,
+          "paired_descriptive_97_5pct_interval": [
+            -0.43703760237396905,
+            0.06909283142676231
+          ]
+        },
+        "retrieval_matched": {
+          "mean_difference_kcal_mol": -0.03542513105185203,
+          "relative_change": -0.052653343977860256,
+          "paired_descriptive_97_5pct_interval": [
+            -0.16125295158920738,
+            0.06909283142676231
+          ]
+        }
+      },
+      "parse_errors": 0,
+      "compiler_rejections": 0,
+      "calls": 12,
+      "mean_seconds": 19.461988413279567,
+      "selected_programs": {
+        "torsion-1762745": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-17889916": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18045656": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18537054": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18886188": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18886260": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-18886515": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-2703603": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-2703604": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-37025005": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-37025278": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        },
+        "torsion-6098536": {
+          "action": "keep",
+          "scope": "broad",
+          "harmonics": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "versus_untuned": {
+        "mean_difference": -0.09413052238414077,
+        "paired_descriptive_97_5pct_interval": [
+          -0.3455689499978154,
+          0.003368074601548216
+        ]
+      }
+    }
+  },
+  "best_trained_mean_better_than_bayes": false,
+  "best_trained_mean_better_than_strongest_control": false,
+  "selected_mean_better_than_bayes": false,
+  "selected_mean_better_than_strongest_control": false,
+  "held_out_access": "External300-molecule energy/force outcomes were never loaded or scored",
+  "uncertainty_caution": "Scaffold bootstrap12groups, one training seed. Intervals do not adjust for checkpoint/control selection on the same validation data and do not prove generalization.",
+  "loss_and_optimization": {
+    "initial_example_loss": 0.9387618899345398,
+    "final_example_loss": 0.07079870253801346,
+    "max_preclip_gradient_norm": 4711005696.0,
+    "clipped_updates": 95,
+    "mean_prompt_tokens": 2700.0,
+    "statement": "Different examples at each step; endpoint losses are not a controlled learning curve. Large finite gradients are clipped, not evidence of robust optimization."
+  },
+  "protocol_sha256": "87a667348a6c9705ff8ff31ad9768200a51b8cf078f01ddff5075a6777b95698"
+}

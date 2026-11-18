@@ -1,0 +1,41 @@
+{
+  "status": "frozen development validation experiment; external held-out cohort forbidden",
+  "baseline": "Sage2.2.1 unconstrained, fixed AM1-BCC, geometry-complete parent/local Fourier sums",
+  "system_prompt": "Propose at most two valid torsion repair programs as JSON {\"programs\":[...]}. Each program has EXACT action, scope, harmonics. action is revise/specialize/keep/abstain. scope broad means sum the correction over all verified instances of the Sage parent parameter in this molecule; scope local means the verified narrower environment subset and requires specialize. Harmonics is sorted unique integers in1..6. keep/abstain use broad and [1,2,3]. You never predict force constants. The background Sage force field and AM1-BCC charges are fixed. Tools fit numerical coefficients and support-only validation may reject your hypothesis. Fourier sums account for every affected torsion instance, not just the driven angle. Do not change chemical state or invent QM observations.",
+  "model": "existing Qwen2.5-7B-Instruct4bit, newly initialized LoRA; no UFF adapter reused",
+  "seed": 20261120,
+  "updates": 95,
+  "checkpoints": [
+    0,
+    48,
+    95
+  ],
+  "episode_schedule": "one shuffled full pass over95 distinct parents; choose seed=stepmod3; retain285 available episodes",
+  "adapter": {
+    "num_layers": 2,
+    "rank": 8,
+    "scale": 8.0,
+    "dropout": 0.0,
+    "keys": [
+      "self_attn.q_proj",
+      "self_attn.v_proj"
+    ]
+  },
+  "learning_rate": 5e-05,
+  "weight_decay": 0.01,
+  "clip_norm": 1.0,
+  "dtype": "BF16 base floats; FP32 adapter/loss",
+  "loss": "completion-only canonical JSON program SFT, equally weighted parents",
+  "decoder": "same finite-program trie for base and all fine-tuned checkpoints; no option labels;56 legal canonical one/two-program answers",
+  "selection": "lowest molecule-mean accepted-program centered RMSE on12 validation parents,8support+8internalpoolholdout; include zero-update, earliest exact tie",
+  "primary_controls": "fixed Bayes parent H3, fixed_two, learned_two, retrieval_two, BMA_two; exact-used-episode matched variants plus285-episode references; larger-libraryCV/BMA separately",
+  "primary_win": "report point mean improvement versus Bayes and strongest matched non-LLM selected on validation, plus paired scaffold bootstrap97.5%intervals; validation alone is not confirmatory generalization",
+  "secondary": "retired validation conformer error-budgetAUC8/10/12/14/16, fixed versus adaptive queries after checkpoint freeze",
+  "held_out_access": "No reads from QCArchive outcome endpoints, no300-cohort energy/force access, even if validation improves",
+  "single_seed_limit": "one fine-tuning seed; paper requires additional independent seeds",
+  "source_train_sha256": "2f5a94d1de9b8a7b601c81ee8fbd404133da590cac745d3db792bef7041c89b3",
+  "source_validation_sha256": "8dee056db248e359a57e0bd1c459cb4b2c5e4e71a4fd1813c472cdb5fc988147",
+  "train_sha256": "2f5a94d1de9b8a7b601c81ee8fbd404133da590cac745d3db792bef7041c89b3",
+  "validation_sha256": "8dee056db248e359a57e0bd1c459cb4b2c5e4e71a4fd1813c472cdb5fc988147",
+  "program_language_size": 56
+}

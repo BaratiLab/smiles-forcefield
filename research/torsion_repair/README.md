@@ -106,3 +106,11 @@ python research/torsion_repair/analyze_sage_training.py --aligned /path/to/sage-
 The external300-molecule cohort is not opened by this experiment. Validation intervals are descriptive:12 groups, one training seed, and checkpoint/control selection on the same development data. A validation improvement does not establish fresh chemical or MD accuracy.
 
 The Sage comparison also records a **supplemental training-global constant-plan diagnostic**. It searches the same56 possible answers using only the matched95 training episodes and the unchanged support-only acceptance gate. This was added after partial48-step outputs, so it is explicitly posthoc. The frozen primary controls and their values remain unchanged; their original files are preserved in the reproducibility bundle. Its purpose is to check whether a learned policy improves on a useful constant recipe, rather than to retune the model on validation outcomes.
+
+### Completed actual-Sage fine-tuning
+
+The [Sage-only report](results/sage-program-finetune/REPORT.md) and [model card](results/sage-program-finetune/MODEL_CARD.md) document the completed95-update run on95 parents. Initial validation RMSE fell from0.7315 for the untuned constrained LLM to0.6374, exactly matching Bayes. The trained planner abstained on all12 validation molecules and retained the default fitted parent-H3 correction. It did not outperform Bayes or the stronger controls.
+
+The secondary learning-curve result is also negative: fine-tuned and Bayes both score0.6602, compared with0.6383 for the untuned LLM and0.5998 for the matched two-proposal Bayesian model-averaging control. The teacher/selection objective focused on the initial8-point repair, while a useful acquisition plan needs complete-trajectory utility. No checkpoint was reselected using the secondary metric, and the external300-molecule cohort was not accessed.
+
+[Checkpoint/optimizer/data reproducibility bundle](results/sage-program-finetune/sage-program-finetune-reproducibility.zip). Base7B weights are excluded and identified by hash. `analyze_sage_trajectory.py` reproduces the secondary descriptive comparisons; the12-group intervals do not establish external chemical or MD accuracy. No experimental model was deployed to the live website.

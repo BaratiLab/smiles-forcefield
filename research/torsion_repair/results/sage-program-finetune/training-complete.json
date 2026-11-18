@@ -1,0 +1,16 @@
+{
+  "selected": {
+    "step": 95,
+    "mean_validation_rmse": 0.6373741325001022
+  },
+  "best_nonzero": {
+    "step": 95,
+    "mean_validation_rmse": 0.6373741325001022
+  },
+  "trained_updates": 95,
+  "nonzero_lora_b_norm": 0.7506687168291283,
+  "seconds": 2874.455110250041,
+  "selected_adapter_sha256": "565f97236c244354f6005bee8f20091113980d87aff1ec477897990be5046353",
+  "trained_adapter_sha256": "565f97236c244354f6005bee8f20091113980d87aff1ec477897990be5046353",
+  "fresh_test_evaluated": false
+}

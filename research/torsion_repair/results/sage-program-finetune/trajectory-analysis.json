@@ -1,0 +1,276 @@
+{
+  "status": "secondary development validation, never used for checkpoint selection; no external held-out outcomes",
+  "molecules": 12,
+  "scaffolds": 12,
+  "metric": "centered energy RMSE averaged over budgets8/10/12/14/16 on the other8old validation conformers",
+  "modes": {
+    "adaptive": {
+      "summary": {
+        "bayes": 0.6601758024166041,
+        "bma_library": 0.7004372865694183,
+        "bma_two": 0.5997860336686913,
+        "cv_harmonics": 0.6714922242405529,
+        "cv_library": 0.56509487860731,
+        "fixed_two": 0.6057983400599208,
+        "global_matched": 0.5849666110076542,
+        "labels_matched": 0.6601758024166041,
+        "learned_full": 0.591677657888423,
+        "learned_matched": 0.6035949388044926,
+        "llm": 0.6601758024166041,
+        "retrieval_full": 0.6320770876204823,
+        "retrieval_matched": 0.6486969317197461,
+        "untuned_llm": 0.6383489340206486
+      },
+      "strongest_frozen_matched_control": "bma_two",
+      "comparisons": {
+        "bayes": {
+          "mean_difference": 0.0,
+          "relative_change": 0.0,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "bma_library": {
+          "mean_difference": -0.04026148415281403,
+          "relative_change": -0.05748049814710143,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.27087248973108813,
+            0.2075303356383956
+          ]
+        },
+        "bma_two": {
+          "mean_difference": 0.06038976874791274,
+          "relative_change": 0.10068552009877374,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.090336657686332,
+            0.2825566590222656
+          ]
+        },
+        "cv_harmonics": {
+          "mean_difference": -0.011316421823948751,
+          "relative_change": -0.016852647603994853,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.060510630365641284,
+            0.03837275732349813
+          ]
+        },
+        "cv_library": {
+          "mean_difference": 0.09508092380929413,
+          "relative_change": 0.16825656612500772,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.03463934485283266,
+            0.32531857736996134
+          ]
+        },
+        "fixed_two": {
+          "mean_difference": 0.05437746235668328,
+          "relative_change": 0.08976165624901622,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.033811541231694456,
+            0.20946416481368896
+          ]
+        },
+        "global_matched": {
+          "mean_difference": 0.0752091914089499,
+          "relative_change": 0.12857005851905923,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.0019840623166535593,
+            0.26554761061392224
+          ]
+        },
+        "labels_matched": {
+          "mean_difference": 0.0,
+          "relative_change": 0.0,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "learned_full": {
+          "mean_difference": 0.06849814452818125,
+          "relative_change": 0.11576936126443749,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.26620896471947336
+          ]
+        },
+        "learned_matched": {
+          "mean_difference": 0.056580863612111565,
+          "relative_change": 0.09373979133121657,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.2166120236094858
+          ]
+        },
+        "llm": {
+          "mean_difference": 0.0,
+          "relative_change": 0.0,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "retrieval_full": {
+          "mean_difference": 0.0280987147961219,
+          "relative_change": 0.044454569460668614,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.06742500616386173,
+            0.18980798703332505
+          ]
+        },
+        "retrieval_matched": {
+          "mean_difference": 0.011478870696858004,
+          "relative_change": 0.01769527515172098,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.12160231983838779,
+            0.16940664902025285
+          ]
+        },
+        "untuned_llm": {
+          "mean_difference": 0.021826868395955448,
+          "relative_change": 0.034192691853464297,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.150506118476434,
+            0.2652465101729568
+          ]
+        }
+      }
+    },
+    "fixed_queries": {
+      "summary": {
+        "bayes": 0.6601758024166041,
+        "bma_library": 0.6840235145833399,
+        "bma_two": 0.6419075570559611,
+        "cv_harmonics": 0.6684754629095387,
+        "cv_library": 0.6044127541299801,
+        "fixed_two": 0.6132469461757282,
+        "global_matched": 0.5858747476652647,
+        "labels_matched": 0.6601758024166041,
+        "learned_full": 0.5919866671324122,
+        "learned_matched": 0.6072981979283244,
+        "llm": 0.6601758024166041,
+        "retrieval_full": 0.6497120748888675,
+        "retrieval_matched": 0.6598170621632998,
+        "untuned_llm": 0.6401498844669414
+      },
+      "strongest_frozen_matched_control": "learned_matched",
+      "comparisons": {
+        "bayes": {
+          "mean_difference": 0.0,
+          "relative_change": 0.0,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "bma_library": {
+          "mean_difference": -0.023847712166735712,
+          "relative_change": -0.034863877715172076,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.18332460514089718,
+            0.19397394039397384
+          ]
+        },
+        "bma_two": {
+          "mean_difference": 0.01826824536064298,
+          "relative_change": 0.028459308758457924,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.14699342340228044,
+            0.23314813190135614
+          ]
+        },
+        "cv_harmonics": {
+          "mean_difference": -0.008299660492934654,
+          "relative_change": -0.012415804249284457,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.058757784603838965,
+            0.03945711554267968
+          ]
+        },
+        "cv_library": {
+          "mean_difference": 0.055763048286624185,
+          "relative_change": 0.09225988019874265,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.05320501171571748,
+            0.24070468131896536
+          ]
+        },
+        "fixed_two": {
+          "mean_difference": 0.04692885624087593,
+          "relative_change": 0.07652521799501688,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.050637844631480314,
+            0.2218965605599603
+          ]
+        },
+        "global_matched": {
+          "mean_difference": 0.07430105475133945,
+          "relative_change": 0.126820715600787,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.0019840623166535593,
+            0.26191506398348036
+          ]
+        },
+        "labels_matched": {
+          "mean_difference": 0.0,
+          "relative_change": 0.0,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "learned_full": {
+          "mean_difference": 0.06818913528419189,
+          "relative_change": 0.11518694435214316,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.26257641808903154
+          ]
+        },
+        "learned_matched": {
+          "mean_difference": 0.05287760448827968,
+          "relative_change": 0.0870702476454912,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.20179898711415825
+          ]
+        },
+        "llm": {
+          "mean_difference": 0.0,
+          "relative_change": 0.0,
+          "descriptive_97_5pct_scaffold_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "retrieval_full": {
+          "mean_difference": 0.010463727527736574,
+          "relative_change": 0.01610517632680053,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.13746637878886328,
+            0.18271957221622476
+          ]
+        },
+        "retrieval_matched": {
+          "mean_difference": 0.0003587402533040962,
+          "relative_change": 0.0005436965393530446,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.16589988915884535,
+            0.17945296315657608
+          ]
+        },
+        "untuned_llm": {
+          "mean_difference": 0.02002591794966269,
+          "relative_change": 0.03128317045052409,
+          "descriptive_97_5pct_scaffold_interval": [
+            -0.14253810182592758,
+            0.25275641948532357
+          ]
+        }
+      }
+    }
+  },
+  "interpretation": "Fine-tuned proposals generated once at8points. Abstention retains Bayes representation at later budgets. Primary teacher/selection target was initial8point fit, not full-trajectory utility; this is an objective mismatch to investigate, not a causal ablation.",
+  "uncertainty": "One fine-tuning seed and12scaffolds; descriptive intervals after model selection. Supplemental global constant-plan control is posthoc and training-only selected."
+}
