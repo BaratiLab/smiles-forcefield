@@ -39,6 +39,20 @@ class QMTests(unittest.TestCase):
   for s in ['pool','test']:
    for r in changed[s]:r['qm_energy_kcal_mol']+=100000.
   after,_=evaluate(changed,{'a':'uniform'});np.testing.assert_allclose([x['rmse'] for x in before],[x['rmse'] for x in after],atol=1e-9)
+ def test_unobserved_pool_labels_do_not_change_initial_fit(self):
+  d=self.fixture();before,_=evaluate(d,{'a':'uniform'});changed=copy.deepcopy(d)
+  initial=set(np.random.default_rng(0).choice(16,4,replace=False).tolist())
+  for i,r in enumerate(changed['pool']):
+   if i not in initial:r['qm_energy_kcal_mol']+=10000.*(i+1)
+  after,_=evaluate(changed,{'a':'uniform'})
+  a=next(r['rmse'] for r in before if r['seed']==0 and r['queries']==4)
+  b=next(r['rmse'] for r in after if r['seed']==0 and r['queries']==4)
+  self.assertEqual(a,b)
+ def test_cluster_bootstrap_equal_policies(self):
+  from qm_analyze import paired_bootstrap
+  stats=[{'molecule':str(i),'scaffold':str(i//2),'policy':p,'normalized_auc':float(i+1)} for i in range(8) for p in ['llm_plan','bayes']]
+  result=paired_bootstrap(stats,'bayes',np.random.default_rng(0))
+  self.assertEqual(result['scaffold_cluster_97.5_percent_ci'],[0.,0.]);self.assertEqual(result['ties'],8);self.assertEqual(result['scaffold_clusters'],4)
  def test_prompt_options_unique_and_reproducible(self):
   d=self.fixture();f={'examples':[]};a,order=build_messages(planner_input(d),f);b,order2=build_messages(planner_input(d),f)
   self.assertEqual(a,b);self.assertEqual(set(order),set(STRATEGIES));self.assertEqual(order,order2)
