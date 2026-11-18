@@ -33,3 +33,16 @@ Results are kept outside Git by default (`data/`, `runs/`, `aws-data/`, `aws-run
 ## Observed first pilot
 
 [Results and limitations](results/REPORT.md): the 0.5B model returned valid IDs but selected the first available candidates in every round. The ordered-selection control reproduces its learning curves. Add `--ordered-control` to `suite.py` for this fourth ablation; it is never labeled an LLM. Run `python audit.py --runs PATH --out audit.json` to verify matched budgets and flag first-available choices. This is a negative controller-quality finding, not evidence that LLM reasoning improves acquisition.
+
+## One-plan experiment
+
+`plan_benchmark.py` calls the LLM exactly once per molecule, before any labels are observed. The valid choices are uniform conditional information gain, information gain multiplied by a periodic angular-diversity weight, and information gain divided by angular-sector occupancy. Bayesian covariance and coverage are updated within each batch. All methods retain the same additive Fourier fitter and parameter priors. No new QM geometries or functional forms are introduced by the plan.
+
+The fixed rule is frozen: multiple fitted torsions → angular diversity; otherwise an amide SMARTS match → sector balancing; otherwise uniform. All three fixed strategies are represented as controls (uniform is pure Bayesian selection). The model sees molecular SMILES and mapped torsions, not candidate IDs, energies, test labels or prior experiment results. Strategy presentation is deterministically shuffled and logged. A single plan is reused across all five acquisition seeds. The candidate pool and label budget are unchanged.
+
+```sh
+OLLAMA_URL=http://localhost:11434 python plan_benchmark.py \
+ --data aws-data --out aws-plan-runs --model qwen2.5:1.5b --seeds 0 1 2 3 4
+```
+
+Plans, full requests/responses, model digest, token counts and latency are saved. Invalid output fails without fallback or a second model call. The benchmark includes 5 molecules × 5 policies × 5 seeds = 125 trajectories, but only five LLM calls. Fewer calls are an architectural property; runtime must be measured because the planner model differs from the earlier small-model pilot. This remains a small, previously inspected MMFF/UFF development benchmark; improvements are exploratory, not held-out scientific validation.
