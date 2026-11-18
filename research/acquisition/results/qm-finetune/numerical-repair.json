@@ -1,0 +1,18 @@
+{
+  "reason": "Original FP16 run failed its nonfinite check at update84. The checkpoint24 diagnostic produced unlabeled fresh decisions only; no fresh QM acquisition outcomes were scored before the repair.",
+  "compute_dtype": "Cast floating base tensors to BF16 before freezing/attaching FP32 LoRA; quantized integer weights remain unchanged. Matched untuned baseline uses the same BF16 representation.",
+  "finite_guards": "Check loss and every gradient tensor before optimizer update; save optimizer states with model checkpoints.",
+  "scientific_settings_unchanged": [
+    "molecular splits",
+    "teacher costs",
+    "soft-target temperature",
+    "adapter rank/layers",
+    "learning rate and optimizer",
+    "96 updates and validation checkpoints",
+    "primary metric and baselines"
+  ],
+  "recorded_at_utc": "2026-11-18T12:18:17.951792+00:00",
+  "new_test_labels_unseen": true,
+  "discarded_diagnostic_fresh_molecule_pairs": 55,
+  "fresh_QM_outcomes_scored_before_repair": false
+}

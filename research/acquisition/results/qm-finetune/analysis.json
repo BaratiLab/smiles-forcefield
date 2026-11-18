@@ -1,0 +1,222 @@
+{
+  "valid_counts": {
+    "train": 95,
+    "validation": 30,
+    "test": 168
+  },
+  "scaffold_counts": {
+    "train": 37,
+    "validation": 25,
+    "test": 143
+  },
+  "fresh_test_overlap_with_any_previous_scaffold": 0,
+  "all_split_scaffold_overlaps": 0,
+  "previous_test_scaffold_molecules_quarantined": 460,
+  "trainable_parameters": 180224,
+  "adapter_selection_precedes_planning_and_label_scoring": true,
+  "teacher_has_no_fresh_test_targets": true,
+  "all_teacher_soft_targets_match_costs": true,
+  "all_model_inputs_and_budgets_match": true,
+  "all_model_and_tree_actions_match_fixed_controls": true,
+  "selected_checkpoint": {
+    "step": 96,
+    "mean_validation_normalized_auc": 0.6180975083893985,
+    "mean_validation_soft_ce": 1.6131980486062871
+  },
+  "trained_updates": 96,
+  "gradient_microsteps": 480,
+  "training_wall_seconds": 2093.79135345784,
+  "fresh_model_decisions": 336,
+  "trajectories": 9240,
+  "primary_beats_bayes": false,
+  "comparisons": [
+    {
+      "control": "bayes",
+      "mean_paired_normalized_auc_difference": 0.0237217093781344,
+      "scaffold_cluster_95_percent_ci": [
+        0.008205146737354323,
+        0.044014670141685905
+      ],
+      "wins": 52,
+      "ties": 43,
+      "losses": 73,
+      "scaffold_clusters": 143,
+      "bootstrap_draws": 10000
+    },
+    {
+      "control": "rule",
+      "mean_paired_normalized_auc_difference": 0.01276377348074553,
+      "scaffold_cluster_95_percent_ci": [
+        -0.005864246165908612,
+        0.034257100643302674
+      ],
+      "wins": 66,
+      "ties": 30,
+      "losses": 72,
+      "scaffold_clusters": 143,
+      "bootstrap_draws": 10000
+    },
+    {
+      "control": "base_llm",
+      "mean_paired_normalized_auc_difference": -0.007906788899857761,
+      "scaffold_cluster_95_percent_ci": [
+        -0.03479783818899078,
+        0.018482180898684107
+      ],
+      "wins": 45,
+      "ties": 79,
+      "losses": 44,
+      "scaffold_clusters": 143,
+      "bootstrap_draws": 10000
+    },
+    {
+      "control": "extra_trees",
+      "mean_paired_normalized_auc_difference": 0.023304554415940138,
+      "scaffold_cluster_95_percent_ci": [
+        0.00810595381885724,
+        0.04294958470343215
+      ],
+      "wins": 51,
+      "ties": 41,
+      "losses": 76,
+      "scaffold_clusters": 143,
+      "bootstrap_draws": 10000
+    },
+    {
+      "control": "training_global",
+      "mean_paired_normalized_auc_difference": 0.0237217093781344,
+      "scaffold_cluster_95_percent_ci": [
+        0.008316043069485704,
+        0.04425330818255194
+      ],
+      "wins": 52,
+      "ties": 43,
+      "losses": 73,
+      "scaffold_clusters": 143,
+      "bootstrap_draws": 10000
+    }
+  ],
+  "means": {
+    "bayes": {
+      "normalized_auc": 0.6682552087917644,
+      "auc": 1.4330605728941057,
+      "final_rmse": 1.0392557559562325,
+      "normalized_final_rmse": 0.49162076516116404
+    },
+    "rule": {
+      "normalized_auc": 0.6792131446891533,
+      "auc": 1.4470275307550549,
+      "final_rmse": 1.04171646696683,
+      "normalized_final_rmse": 0.496068392307505
+    },
+    "base_llm": {
+      "normalized_auc": 0.6998837070697566,
+      "auc": 1.530258919708925,
+      "final_rmse": 1.123125650829695,
+      "normalized_final_rmse": 0.5144376946215836
+    },
+    "finetuned_llm": {
+      "normalized_auc": 0.6919769181698988,
+      "auc": 1.4879118511720828,
+      "final_rmse": 1.098275908708798,
+      "normalized_final_rmse": 0.5162139145730895
+    },
+    "training_global": {
+      "normalized_auc": 0.6682552087917644,
+      "auc": 1.4330605728941057,
+      "final_rmse": 1.0392557559562325,
+      "normalized_final_rmse": 0.49162076516116404
+    },
+    "extra_trees": {
+      "normalized_auc": 0.6686723637539587,
+      "auc": 1.4320028688387612,
+      "final_rmse": 1.0421001578708389,
+      "normalized_final_rmse": 0.49232634505774037
+    },
+    "random": {
+      "normalized_auc": 0.9011854136222288,
+      "auc": 1.894323353634046,
+      "final_rmse": 1.3206396741832764,
+      "normalized_final_rmse": 0.6417976271430732
+    },
+    "fixed_angular_diversity": {
+      "normalized_auc": 0.6714234163072726,
+      "auc": 1.4421810229631715,
+      "final_rmse": 1.0411650619260173,
+      "normalized_final_rmse": 0.4929935249773825
+    },
+    "fixed_sector_balance": {
+      "normalized_auc": 0.6708284619825514,
+      "auc": 1.4361262886044202,
+      "final_rmse": 1.038559407315491,
+      "normalized_final_rmse": 0.49029088909004387
+    },
+    "fixed_orthogonal_focus": {
+      "normalized_auc": 0.7044508268768483,
+      "auc": 1.4961053404406208,
+      "final_rmse": 1.0483684815763776,
+      "normalized_final_rmse": 0.5007086725003156
+    },
+    "fixed_cis_focus": {
+      "normalized_auc": 0.9814494578381352,
+      "auc": 2.05968630828018,
+      "final_rmse": 1.59143472193531,
+      "normalized_final_rmse": 0.757861355294559
+    }
+  },
+  "retrospective_menu_oracle_normalized_auc": 0.6378644080526434,
+  "strategies": {
+    "base": {
+      "angular_diversity": 139,
+      "sector_balance": 7,
+      "uniform": 1,
+      "orthogonal_focus": 12,
+      "cis_focus": 9
+    },
+    "finetuned": {
+      "angular_diversity": 81,
+      "uniform": 42,
+      "sector_balance": 34,
+      "cis_focus": 6,
+      "orthogonal_focus": 5
+    }
+  },
+  "letters": {
+    "base": {
+      "C": 30,
+      "A": 52,
+      "D": 40,
+      "B": 46
+    },
+    "finetuned": {
+      "C": 67,
+      "D": 30,
+      "B": 60,
+      "E": 11
+    }
+  },
+  "planning": {
+    "base": {
+      "seconds": 506.0051625338383,
+      "median_seconds": 2.993398999911733,
+      "prompt_tokens": 67933
+    },
+    "finetuned": {
+      "seconds": 505.90703780343756,
+      "median_seconds": 2.9916099375113845,
+      "prompt_tokens": 67933
+    }
+  },
+  "independent_data": {
+    "qm_frames_checked": 7032,
+    "source_files_hashes_match": true,
+    "qdata_xyz_coordinate_order_matches": true,
+    "max_coordinate_difference_angstrom": 5.000018177270249e-10,
+    "overlapping_old_development_datasets_exactly_match": 60,
+    "fresh_test_to_training_Morgan_radius2_2048_Tanimoto": {
+      "median": 0.20204081632653062,
+      "p95": 0.4479166666666668,
+      "maximum": 0.5652173913043478
+    }
+  }
+}

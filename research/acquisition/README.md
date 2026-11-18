@@ -180,3 +180,7 @@ python finetune_analyze_stable.py --data qlora-data --supervision qlora-supervis
 Both the untuned and adapted primary models use the same BF16 base
 representation, so numeric conversion is not counted as a fine-tuning benefit.
 The old early-stop diagnostic is deliberately blocked from fresh QM scoring.
+
+### Completed QM-supervised fine-tuning test
+
+The full BF16 retry completed 96 optimizer updates on a 95-molecule training pool, with validation-only selection and 168 fresh test molecules across 143 scaffold groups. Fine-tuned normalized acquisition AUC was 0.69198 versus Bayes 0.66826, rule 0.67921, untuned LLM 0.69988 and ExtraTrees 0.66867. The primary fine-tuned-minus-Bayes 95% cluster interval was [+0.00821, +0.04401], indicating worse acquisition in this trial. The small gain over the untuned LLM was not reliable. See [the complete report](results/qm-finetune/REPORT.md), [model card](results/qm-finetune/MODEL_CARD.md), and the reproducibility archive including trained adapter weights and the failed numerical diagnostic.
