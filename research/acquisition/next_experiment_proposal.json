@@ -1,0 +1,104 @@
+{
+  "status": "proposed design, not an executed or preregistered confirmation",
+  "title": "Chemically constrained hypothesis generation for Bayesian force field repair",
+  "hypothesis": "Given acquired QM residuals and verified chemistry tools, an LLM can propose useful changes to torsion parameter sharing and representation that a fixed-model acquisition policy cannot propose. Bayesian inference chooses coefficients and QM configurations; data validate every structural edit.",
+  "scope": {
+    "first_stage": "Portable periodic torsion terms only; background charges, bonds, angles and nonbonded parameters frozen",
+    "baseline": "Pin a modern classical force field and disclose its training-record overlap; require new test data outside its fitting set for an OOD claim",
+    "actions": [
+      "keep current model",
+      "propose one validated local SMIRKS specialization",
+      "propose shrinkage or harmonic-set revision within 1..6 for one scoped torsion family",
+      "request an existing cheap candidate that discriminates two hypotheses",
+      "abstain and flag inadequate data or representation"
+    ],
+    "not_allowed": [
+      "invent force constants or QM labels",
+      "change molecular charge/protonation/spin to improve fit",
+      "use evaluation labels to accept edits",
+      "export unsupported coupling terms as if they were portable",
+      "derive exact relaxed-profile symmetry from a local methyl group alone"
+    ],
+    "test_task": "Each primary ligand task resets to the same baseline. Only that ligand support QM labels and training-only retrieval enter adaptation. No parameter learning is carried between fresh test tasks; untouched-analogue transfer is secondary and clustered by chemical family."
+  },
+  "architecture": {
+    "state": [
+      "atom-mapped graph and verified parameter assignments",
+      "observed QM energies and forces when available",
+      "residuals by parameter group and conformer branch",
+      "posterior covariance, identifiability and posterior-predictive checks",
+      "training-only retrieved QM analogues with source/theory metadata"
+    ],
+    "llm": "Open 7B model with a validated stable compute path and LoRA; constrained JSON program proposals rather than A-E decisions",
+    "critic": "Shared candidate-independent utility scorer trained on development rollouts; the identical scorer is used for all proposal generators",
+    "compiler": "Validate SMIRKS matching, atom-map/permutation consistency, coverage, term support, parameter count and scope; reject invalid proposals",
+    "bayesian_layer": "Fit numerical parameters with priors and compare candidate models using observed-data evidence or nested support-only validation; retain no-edit option. Use shared Bayesian parameter/model-discrimination acquisition for every method",
+    "call_budget": "At most two LLM calls per task: after 8 shared support configurations and optionally after 16. At most two nontrivial proposals per call. No per-candidate calls",
+    "latency": "Cache graph/tool/retrieval state; score candidates independently; hash semantic programs and tie-break by canonical identity, never displayed position"
+  },
+  "supervision": {
+    "labels": "Validated edit programs and cost-aware out-of-sample utility from development-only repair rollouts; include no-edit/abstention cases",
+    "grouping": "Split molecules, scaffolds and target chemical environments before generating episodes; repeated episodes do not increase independent molecule count",
+    "loss": "Program SFT plus regret-weighted candidate utility/preference learning; select checkpoints by downstream cost-error objective, not token loss alone",
+    "initial_targets": {
+      "training_parents": 1000,
+      "validation_parents": 200,
+      "fresh_test_parents": 300,
+      "minimum_test_scaffold_groups": 150,
+      "training_rollout_episodes": 5000
+    },
+    "counts_status": "Targets subject to public-data inventory, overlap audit and development-only power calculation; not a claim that these cohorts have been obtained"
+  },
+  "data": {
+    "retired": "All current benchmark cohorts are development-only now; no part of the existing inspected scaffold universe is called a new fresh scaffold test",
+    "source_candidates": [
+      "QCArchive/OpenFF records with consistent theory and available QC provenance",
+      "SPICE conformers and forces as a separate protocol-specific benchmark"
+    ],
+    "qm_protocol": "One level of theory per fitted benchmark. Do not pool B3LYP-D3BJ/DZVP and SPICE omegaB97M-D3BJ/def2-TZVPPD labels as the same target",
+    "deduplication": [
+      "nonstereo parent and canonical state identity",
+      "record and geometry hashes",
+      "scaffold and held-out chemical-environment blocks",
+      "baseline and pretrained-GNN fitting-record exclusion where auditable"
+    ],
+    "prospective": "After retrospective success, about 20 blinded ligands with cheap MM candidate geometries and new QM only on acquired states; actual energy/gradient evaluation counts and core-hours logged. Costs require a concrete compute plan before launch"
+  },
+  "controls": [
+    "fixed model plus pure Bayesian acquisition",
+    "verified chemistry rules plus the same compiler, Bayesian fitter and acquisition",
+    "support-only cross-validation over the same representation library",
+    "Bayesian model averaging over an equally budgeted rule-generated hypothesis library",
+    "retrieval-only proposal generator with the same tools",
+    "learned non-LLM graph/descriptor proposal generator with identical supervision",
+    "BespokeFit-style local refitting baseline under the same QM budget",
+    "LLM proposals with residual evidence removed (ablation)",
+    "model revision with fixed acquired IDs versus model revision plus updated acquisition (factorial ablation)"
+  ],
+  "fairness": "Equal support data, QM candidate pool, candidate-hypothesis slots, priors, fit/evidence budget and validation tools. All methods may keep the baseline or abstain. Exact graph symmetry tools are shared, not an LLM-only advantage",
+  "evaluation": {
+    "support_budget": "8 common initial QM configurations, then batches of 4 to 32. A QM gradient calculation counts once as a configuration, not once per force component",
+    "primary": "Campaign-mean held-out centered relative-energy RMSE area under the error-versus-QM-evaluations curve, at budgets 8/16/24/32",
+    "primary_comparators": "Pure Bayes and the strongest non-LLM revision method selected on validation before test",
+    "target_success": "At least 10% lower primary error AUC point estimate versus both primary controls, with both paired 97.5% scaffold-cluster intervals entirely below zero; proposed effect-size gate, not a power guarantee",
+    "seeds": "Three independent fine-tuning seeds and five acquisition seeds; hierarchical uncertainty treats scaffold/molecule as independent units, not trajectories",
+    "secondary": [
+      "held-out forces",
+      "barrier and conformer ranking error",
+      "parameter count and edit precision",
+      "out-of-domain rejection and abstention calibration",
+      "total QM core-hours and LLM wall time",
+      "transfer to untouched conformer families"
+    ],
+    "physical_validation": "Off-grid and distinct conformer families; native energy/force comparisons after GROMACS/LAMMPS/NAMD export where engines are available; precision tolerances fixed on controls. Short MD checks are stability checks, not thermodynamic accuracy claims",
+    "fresh_set_policy": "Finalize cohort inventory, power and protocol before any test outcomes; a failed test is reported without retuning on it"
+  },
+  "gates": [
+    "On retired development data, verify model-revision headroom with observed-only CV/BMA and transparent hindsight references",
+    "Reject representation gains caused only by conformer-branch artifacts or high-frequency overfit using off-grid/force validation",
+    "Require proposal validity and semantic permutation invariance before expensive fine-tuning",
+    "If rules/CV/BMA explain all useful gains, keep those methods and do not claim an LLM contribution",
+    "Run new QM or cloud jobs only after an explicit compute specification and authorized budget"
+  ],
+  "candidate_contribution": "Data-efficient, validated model-structure repair and targeted QM experimentation, complementary to graph-to-parameter force fields; novelty must still be established by a focused literature review and comparative results"
+}

@@ -1,0 +1,170 @@
+{
+  "kind": "posthoc exploratory analysis of retired test set; not a fresh comparison",
+  "molecules": 168,
+  "action_order": [
+    "uniform",
+    "angular_diversity",
+    "sector_balance",
+    "orthogonal_focus",
+    "cis_focus"
+  ],
+  "regret_decomposition": {
+    "actual_mean": 0.6919769181698987,
+    "bayes_mean": 0.6682552087917644,
+    "independent_action_mixture_mean": 0.6825662742795418,
+    "mixture_penalty": 0.014311065487777386,
+    "assignment_effect": 0.009410643890356951,
+    "total_regret": 0.023721709378134337
+  },
+  "action_groups": [
+    {
+      "strategy": "uniform",
+      "selected_count": 42,
+      "mean_regret_when_selected": 0.0,
+      "contribution_to_overall_mean_regret": 0.0,
+      "fixed_strategy_mean": 0.6682552087917644,
+      "oracle_best_count": 35
+    },
+    {
+      "strategy": "angular_diversity",
+      "selected_count": 81,
+      "mean_regret_when_selected": 0.004270840829036819,
+      "contribution_to_overall_mean_regret": 0.0020591553997141806,
+      "fixed_strategy_mean": 0.6714234163072726,
+      "oracle_best_count": 37
+    },
+    {
+      "strategy": "sector_balance",
+      "selected_count": 34,
+      "mean_regret_when_selected": 0.01530055495002622,
+      "contribution_to_overall_mean_regret": 0.003096540882743402,
+      "fixed_strategy_mean": 0.6708284619825514,
+      "oracle_best_count": 35
+    },
+    {
+      "strategy": "orthogonal_focus",
+      "selected_count": 5,
+      "mean_regret_when_selected": 0.003656000959827188,
+      "contribution_to_overall_mean_regret": 0.00010880955237580916,
+      "fixed_strategy_mean": 0.7044508268768485,
+      "oracle_best_count": 44
+    },
+    {
+      "strategy": "cis_focus",
+      "selected_count": 6,
+      "mean_regret_when_selected": 0.5168016992124284,
+      "contribution_to_overall_mean_regret": 0.01845720354330101,
+      "fixed_strategy_mean": 0.9814494578381352,
+      "oracle_best_count": 17
+    }
+  ],
+  "same_action_frequency_permutation": {
+    "draws": 10000,
+    "expected_mean": 0.6825662742795418,
+    "permutation_2_5_97_5_percentiles": [
+      0.6725810082124046,
+      0.6982949576970129
+    ],
+    "actual_percentile": 0.906,
+    "interpretation": "Descriptive label-assignment diagnostic; permutations are not scaffold-adjusted causal evidence of chemical reasoning."
+  },
+  "always_letter_counterfactual_means": {
+    "A": 0.7326941337169902,
+    "B": 0.732623850948837,
+    "C": 0.7479865333134771,
+    "D": 0.7422811850548395,
+    "E": 0.7408216687624284
+  },
+  "always_angular_diversity_mean": 0.6714234163072726,
+  "menu_oracle_mean": 0.6378644080526434,
+  "menu_headroom_relative_to_bayes": 0.04547783592150201,
+  "top_five_losses": [
+    {
+      "molecule": "torsion-18886372",
+      "strategy": "cis_focus",
+      "regret": 1.1231513954213603,
+      "bayes_auc": 0.43454731485165493,
+      "llm_auc": 1.5576987102730153,
+      "best_strategy": "uniform"
+    },
+    {
+      "molecule": "torsion-18886339",
+      "strategy": "cis_focus",
+      "regret": 0.7268760069158597,
+      "bayes_auc": 1.051767837382956,
+      "llm_auc": 1.7786438442988157,
+      "best_strategy": "sector_balance"
+    },
+    {
+      "molecule": "torsion-18536017",
+      "strategy": "cis_focus",
+      "regret": 0.47179394278043885,
+      "bayes_auc": 0.5437859607636503,
+      "llm_auc": 1.0155799035440891,
+      "best_strategy": "angular_diversity"
+    },
+    {
+      "molecule": "torsion-18537044",
+      "strategy": "cis_focus",
+      "regret": 0.27942109381597,
+      "bayes_auc": 0.5663398963764483,
+      "llm_auc": 0.8457609901924183,
+      "best_strategy": "sector_balance"
+    },
+    {
+      "molecule": "torsion-18045648",
+      "strategy": "cis_focus",
+      "regret": 0.25081437132219964,
+      "bayes_auc": 0.33888929568859216,
+      "llm_auc": 0.5897036670107918,
+      "best_strategy": "angular_diversity"
+    }
+  ],
+  "top_five_share_of_total_regret": 0.7156536808482853,
+  "representation_diagnostic": {
+    "full_pool_test_rmse_h3": 0.5031919283712286,
+    "full_pool_train_rmse_h3": 0.29449968006070765,
+    "full_pool_oracle_over_h_test_rmse": 0.30992558481227256,
+    "h3_acquisition_auc": 0.668255208792248,
+    "same_ids_pool_only_cv_h_auc": 0.636175484536639,
+    "same_ids_hindsight_h_oracle_auc": 0.5183705272258158
+  },
+  "hindsight_harmonic_counts": {
+    "6": 18,
+    "4": 40,
+    "3": 62,
+    "2": 46,
+    "1": 2
+  },
+  "representation_scope": "Same retired Bayes acquisition IDs, unchanged alpha=1/noise=.1, H in [1,2,3,4,6]; CV uses observed labels only. Hindsight H uses evaluator labels and is not deployable. Full-pool references are finite-data errors, not irreducible error floors.",
+  "training_validation": [
+    {
+      "step": 0,
+      "mean_validation_normalized_auc": 0.7025594982189304,
+      "mean_validation_soft_ce": 4.743240391863737
+    },
+    {
+      "step": 24,
+      "mean_validation_normalized_auc": 0.6433816168856109,
+      "mean_validation_soft_ce": 1.5972708193159844
+    },
+    {
+      "step": 48,
+      "mean_validation_normalized_auc": 0.6974985608098407,
+      "mean_validation_soft_ce": 1.7508201692083072
+    },
+    {
+      "step": 72,
+      "mean_validation_normalized_auc": 0.783991562847811,
+      "mean_validation_soft_ce": 1.9366027443712932
+    },
+    {
+      "step": 96,
+      "mean_validation_normalized_auc": 0.6180975083893985,
+      "mean_validation_soft_ce": 1.6131980486062871
+    }
+  ],
+  "training_unique_parents": 95,
+  "training_scaffolds": 37,
+  "test_median_nearest_train_similarity": 0.20204081632653062
+}

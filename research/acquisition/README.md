@@ -184,3 +184,7 @@ The old early-stop diagnostic is deliberately blocked from fresh QM scoring.
 ### Completed QM-supervised fine-tuning test
 
 The full BF16 retry completed 96 optimizer updates on a 95-molecule training pool, with validation-only selection and 168 fresh test molecules across 143 scaffold groups. Fine-tuned normalized acquisition AUC was 0.69198 versus Bayes 0.66826, rule 0.67921, untuned LLM 0.69988 and ExtraTrees 0.66867. The primary fine-tuned-minus-Bayes 95% cluster interval was [+0.00821, +0.04401], indicating worse acquisition in this trial. The small gain over the untuned LLM was not reliable. See [the complete report](results/qm-finetune/REPORT.md), [model card](results/qm-finetune/MODEL_CARD.md), and the reproducibility archive including trained adapter weights and the failed numerical diagnostic.
+
+### Planner failure analysis and next experiment
+
+The [postmortem](results/planner-postmortem/REPORT.md) includes a controlled option-order probe and retired-data model-family diagnostics. These are exploratory, not new held-out confirmation. The [draft next protocol](next_experiment_proposal.json) assigns the LLM bounded, tool-checked model-revision proposals while retaining Bayesian fitting and acquisition; it has not been executed. All inspected cohorts are retired from future fresh-test claims.

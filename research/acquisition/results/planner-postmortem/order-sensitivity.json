@@ -1,0 +1,283 @@
+{
+  "kind": "posthoc causal prompt-order intervention on 20 retired molecules; not an independent performance test",
+  "molecules": 20,
+  "calls": 100,
+  "changed_semantic_action_under_rotation": 20,
+  "rotation0_exact_action_repeats": 20,
+  "rotation0_max_logit_absolute_difference": 0.0,
+  "unique_action_counts": {
+    "2": 7,
+    "3": 12,
+    "4": 1
+  },
+  "mean_within_molecule_normalized_auc_range": 0.04806417108957529,
+  "letters": {
+    "D": 16,
+    "C": 46,
+    "B": 30,
+    "E": 8
+  },
+  "seconds": 302.3180458783172,
+  "per_molecule": [
+    {
+      "molecule": "torsion-1762073",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.06314522111806764,
+      "actions": [
+        "uniform",
+        "angular_diversity",
+        "angular_diversity",
+        "uniform",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18536042",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.00041797832930323686,
+      "actions": [
+        "angular_diversity",
+        "uniform",
+        "uniform",
+        "uniform",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18536064",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.1833825453454181,
+      "actions": [
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity",
+        "sector_balance"
+      ]
+    },
+    {
+      "molecule": "torsion-18536208",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.027413286059995823,
+      "actions": [
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity",
+        "sector_balance"
+      ]
+    },
+    {
+      "molecule": "torsion-18536962",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.014379592465099178,
+      "actions": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18536974",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.05758342069190536,
+      "actions": [
+        "angular_diversity",
+        "angular_diversity",
+        "sector_balance",
+        "sector_balance",
+        "uniform"
+      ]
+    },
+    {
+      "molecule": "torsion-18536996",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.009310544401516185,
+      "actions": [
+        "angular_diversity",
+        "sector_balance",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18537010",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.1468618949396827,
+      "actions": [
+        "sector_balance",
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18537065",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.054018272183419036,
+      "actions": [
+        "angular_diversity",
+        "uniform",
+        "uniform",
+        "uniform",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18537114",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.02560372509250941,
+      "actions": [
+        "uniform",
+        "angular_diversity",
+        "angular_diversity",
+        "sector_balance",
+        "sector_balance"
+      ]
+    },
+    {
+      "molecule": "torsion-18537172",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.042371224588482415,
+      "actions": [
+        "sector_balance",
+        "sector_balance",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18886187",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.008958107587414721,
+      "actions": [
+        "uniform",
+        "sector_balance",
+        "angular_diversity",
+        "angular_diversity",
+        "uniform"
+      ]
+    },
+    {
+      "molecule": "torsion-18886210",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.010821106915114953,
+      "actions": [
+        "angular_diversity",
+        "angular_diversity",
+        "sector_balance",
+        "uniform",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-18886280",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.036578360136040655,
+      "actions": [
+        "orthogonal_focus",
+        "angular_diversity",
+        "angular_diversity",
+        "uniform",
+        "uniform"
+      ]
+    },
+    {
+      "molecule": "torsion-37024993",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.01997417215052133,
+      "actions": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-37024994",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.11996302328207165,
+      "actions": [
+        "sector_balance",
+        "angular_diversity",
+        "angular_diversity",
+        "uniform",
+        "uniform"
+      ]
+    },
+    {
+      "molecule": "torsion-37025317",
+      "unique_semantic_actions": 3,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.023256075325471415,
+      "actions": [
+        "uniform",
+        "sector_balance",
+        "sector_balance",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-37025318",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.036537330307846894,
+      "actions": [
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    },
+    {
+      "molecule": "torsion-37025508",
+      "unique_semantic_actions": 4,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.04364988110707174,
+      "actions": [
+        "angular_diversity",
+        "angular_diversity",
+        "uniform",
+        "sector_balance",
+        "orthogonal_focus"
+      ]
+    },
+    {
+      "molecule": "torsion-37025583",
+      "unique_semantic_actions": 2,
+      "rotation0_repeats_original": true,
+      "evaluation_auc_range": 0.03705765976455322,
+      "actions": [
+        "angular_diversity",
+        "uniform",
+        "uniform",
+        "angular_diversity",
+        "angular_diversity"
+      ]
+    }
+  ]
+}
