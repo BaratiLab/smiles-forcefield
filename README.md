@@ -87,15 +87,15 @@ Each ZIP includes the relevant engine folder, structures, provenance, atom mappi
 
 ## GitHub and the website
 
-The intended repository is `BaratiLab/smiles-forcefield`. `web/` contains a standalone static copy of the same interface served by the API. `.github/workflows/pages.yml` publishes it to GitHub Pages after repository access and Pages configuration are established.
+The public repository is https://github.com/BaratiLab/smiles-forcefield and the website is https://baratilab.github.io/smiles-forcefield/. The initial Safari publication contains a complete source ZIP plus a Pages workflow; direct file-tree publication is awaiting GitHub CLI authorization. `web/` contains a standalone static copy of the same interface served by the API. `.github/workflows/pages.yml` publishes it to GitHub Pages after repository access and Pages configuration are established.
 
 GitHub Pages cannot execute Python, AmberTools, GROMACS or LAMMPS. Host the API separately, then set its HTTPS address in the website's Connection settings or pass `?api=https://your-api-host` in the website URL. Set `SMILES_CORS_ORIGINS=https://baratilab.github.io` on the API. API keys are held only in the browser page's memory and sent in a header; do not hardcode a shared secret into a public Pages build.
 
-Publication steps once authenticated:
+Direct file-tree publication once GitHub CLI is authenticated:
 
 ```bash
 # From this project directory; gh must be authenticated with lab write access.
-gh repo create BaratiLab/smiles-forcefield --public --source . --remote origin --push
+git push -u origin main
 # In repository Settings → Pages, choose GitHub Actions as source.
 # Run the Publish website workflow if the initial push did not trigger it.
 ```
