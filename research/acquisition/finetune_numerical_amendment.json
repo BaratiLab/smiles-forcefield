@@ -1,0 +1,20 @@
+{
+  "version": "qlora-numerical-early-stop-v1",
+  "recorded_at_utc": "2026-11-18T12:12:25.923898+00:00",
+  "reason": "Frozen training run raised ValueError Nonfinite training at update 84 before that update was logged or checkpointed; original failure log retained",
+  "scheduled_updates": 96,
+  "completed_finite_updates": 83,
+  "failed_update": 84,
+  "completed_finite_microsteps": 415,
+  "attempted_microsteps": 420,
+  "completed_nonzero_validation_checkpoints": [
+    24,
+    48,
+    72
+  ],
+  "selection_rule": "Unchanged: choose lowest validation acquisition AUC among completed nonzero checkpoints; tie chooses earliest",
+  "selected_step": 24,
+  "no_fresh_test_predictions_or_QM_outcomes_seen": true,
+  "no_retraining_or_hyperparameter_change": true,
+  "interpretation": "Technical early-stopping amendment; this is not completion of the 96-update protocol. Selected checkpoint has 24 updates; available training pool 95 parents; 83 unique parents used before failure."
+}

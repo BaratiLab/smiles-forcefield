@@ -145,3 +145,5 @@ validation-selected LoRA weights and can be loaded with MLX-LM. Report all
 controls, including the same-prompt base model and the cost-regret ExtraTrees
 selector, whether or not fine-tuning helps. A lower training loss alone is not
 evidence of improved acquisition. See the completed report for results.
+
+Numerical amendment recorded before fresh testing: the initial fine-tuning run stopped at update 84 on a nonfinite loss/gradient check, after 83 finite updates. The unchanged validation rule selects checkpoint 24 from the completed checkpoints 24/48/72. See `finetune_numerical_amendment.json`; all failed logs are retained. This recovered pilot is not described as completion of the planned 96-update schedule.

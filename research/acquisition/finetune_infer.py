@@ -9,7 +9,11 @@ def infer(data,supervision,training,model_path,out):
  from mlx.utils import tree_flatten
  data=Path(data);supervision=Path(supervision);training=Path(training);out=Path(out);out.mkdir(parents=True,exist_ok=True)
  split=json.loads((data/'split.json').read_text());inputs=json.loads((supervision/'inputs.json').read_text());finished=json.loads((training/'training_complete.json').read_text());provenance=json.loads((training/'provenance.json').read_text())
- assert not provenance['smoke_only'] and finished['trained_updates']==96
+ assert not provenance['smoke_only']
+ if finished.get('status')=='technical_early_stop':
+  amendment=json.loads((training/'training-amendment.json').read_text());assert finished['amendment_sha256']==hashfile(training/'training-amendment.json')
+  assert amendment['completed_finite_updates']==finished['trained_updates']==83 and finished['selected_checkpoint']['step']==24
+ else:assert finished['trained_updates']==96
  assert provenance['split_sha256']==hashfile(data/'split.json') and provenance['teacher_sha256']==hashfile(supervision/'teacher.json')
  assert provenance['protocol_sha256']==hashfile(Path(__file__).with_name('finetune_protocol.json'))
  checkpoints=[v for v in json.loads((training/'validation.json').read_text()) if v['step']>0]
